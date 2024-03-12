@@ -1,13 +1,16 @@
 {
   "name": "travel-assistant",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Travel-Assistant is a web app to create and manage travel expense reports",
-  "main": "index.js",
+  "main": "src/backend/app.mjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "vite --config=src/frontend/vite.config.mjs --host",
+    "frontend-build": "vite --config=src/frontend/vite.config.mjs build",
+    "jest": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ricardo Hoffmann",
   "license": "ISC",
   "dependencies": {
     "@vitejs/plugin-react": "^4.2.1",
