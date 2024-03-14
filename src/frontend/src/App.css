@@ -2,3 +2,12 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.add-travelExpense-button {
+  position: relative;
+  bottom: 0;
+  right: -40%;
+  color: blue;
+  padding: 10px; /* Innenabstand */
+  font-size: 40px; /* Schriftgröße */
+}
