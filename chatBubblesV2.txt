@@ -21,14 +21,14 @@ if (tripDestinations.lenght > 1) {
   Q: Was war dein erstes Zielland bzw. Standort?
   A: {partialTripDestinations}, {partialTripDestinationsStart}
 } else {
-  {tripDestination}
+  {partialTripDestinations}, {partialTripDestinationsStart = tripStartDateTime}, {partialTripDestinationsEnd = tripEndDateTime}, 
 }
 
 Q: Was war der Anlass dieser Dienstreise zu diesem Zielland/Standort?
 A: {partialTripOccasion}
 
 Q: Gab es eine weitere Dienstreise?
-A: {isAnotherPartialTrip}, {partialTripDestinationsStart}
+A: {isAnotherPartialTrip}
 
 if (isAnotherPartialTrip) {
   Q: Was war dein nächstes Zielland bzw. Standort?
@@ -36,7 +36,7 @@ if (isAnotherPartialTrip) {
 
   Q: Was war der Anlass dieser Dienstreise zu diesem Zielland/Standort?
   A: {partialTripOccasion}
-}x
+}
 tripDestinations.forEach((destination) => {
 
 
