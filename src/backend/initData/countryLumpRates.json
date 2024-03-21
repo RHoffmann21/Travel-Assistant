@@ -1,0 +1,61 @@
+{
+  "startDate": "",
+  "endDate": "",
+  "countryRates": [{
+    "country": {
+      "code": "de",
+      "countryName": "Deutschland"
+    },
+    "rates": {
+      "arrivalDepartureDay": 14,
+      "allDay":  28, 
+      "privateOvernightStay": 20
+    }
+  },
+  {
+    "country": {
+      "code": "fr",
+      "countryName": "Frankreich"
+    },
+    "rates": {
+      "arrivalDepartureDay": 36,
+      "allDay": 53, 
+      "privateOvernightStay": 105
+    }
+  },
+  {
+    "country": {
+      "code": "fr",
+      "countryName": "Frankreich",
+      "specialLocation": "Paris & Dep. 77, 78, 91, 95"
+    },
+    "rates": {
+      "arrivalDepartureDay": 39,
+      "allDay":  58, 
+      "privateOvernightStay": 159
+    }
+  },
+  {
+    "country": {
+      "code": "gr",
+      "countryName": "Griechenland"
+    },
+    "rates": {
+      "arrivalDepartureDay": 24,
+      "allDay": 36, 
+      "privateOvernightStay": 150
+    }
+  },
+  {
+    "country": {
+      "code": "gr",
+      "countryName": "Griechenland",
+      "specialLocation": "Athen"
+    },
+    "rates": {
+      "arrivalDepartureDay": 27,
+      "allDay":  40, 
+      "privateOvernightStay": 139
+    }
+  }]
+}
