@@ -16,7 +16,9 @@ services:
       args:
         - NODE_ENV=development
       target: build
-    command: nodemon /opt/src/backend/app.mjs
+    env_file:
+      - path: ./.env
+    command: nodemon /opt/src/backend/app.js
     volumes:
       - .:/opt
     ports:
@@ -29,7 +31,7 @@ services:
     image: mongo
     command: mongod --quiet --logpath /dev/null
     ports:
-      - "27017:27017"
+      - "27018:27017"
     volumes:
       - travelAssistantDB:/data/db
     networks:
