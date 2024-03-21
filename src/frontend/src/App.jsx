@@ -1,11 +1,16 @@
-import './App.css'
-import './components/ChatBubble.css'
+import './App.css';
+import './components/ChatBubble.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'react-bootstrap/'
-import Navbar from './components/partials/Navbar';
-import Footer from './components/partials/Footer';
-import TravelReportsOverview from './TravelReportsOverview';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap/';
+import { Route, Routes } from 'react-router-dom';
+
+import TravelReportsOverview from './pages/TravelReportsOverview';
+import ChatBox from './components/ChatBox';
+import LandingPage from './pages/LandingPage';
+import Error404 from './pages/errorPages/404';
+import MainFrame from './components/MainFrame';
+// import { AuthProvider } from './Auth/AuthProvider';
 
 const conversation = [
   {
@@ -68,21 +73,36 @@ const travelReports = [
   }
 ];
 
-function App() {
+export default function App() {
 
   return (
     <>
-      <div className="row justify-content-center">
-        <div className="col-12 col-sm-11 col-md-10">
-          <Navbar />
-           <TravelReportsOverview travelReports={travelReports}/>
-            {/* <ReportCard travelReport={travelReports}></ReportCard> */}
-            {/* <ChatBox conversation={conversation}></ChatBox> */}
-          <Footer />
-        </div>
-      </div>
+      {/* <AuthProvider> */}
+        <MainFrame>
+          <Routes>
+            {/* view the landingpage */}
+            <Route path='/' element={<LandingPage/>}/> 
+            {/* view for all created travelExpenseReports of the user */}
+            <Route path='travelExpenseReports' element={<TravelReportsOverview travelReports={travelReports}/>}>
+              {/* view all created travelExpenseReports of the user */}
+              <Route path='create'/>
+              {/* view all created travelExpenseReports who needs verification from the user */}
+              <Route path='verify'/>
+              {/* view all created travelExpenseReports who needs a check from the user */}
+              <Route path='check'/> 
+              {/* view one created travelExpenseReport as chat */}
+              <Route path=':travelExpenseReportId' element={<ChatBox conversation={conversation}/>}>
+                {/* view one created travelExpenseReport to verify */}
+                <Route path='verify'/> 
+                {/* view one created travelExpenseReport to check */}
+                <Route path='check'/> 
+              </Route>
+            </Route>
+            {/* view error 404 page for undefined routes */}
+            <Route path='*' element={<Error404/>}/>  
+          </Routes>
+        </MainFrame>
+      {/* </AuthProvider> */}
     </>
   )
 }
-
-export default App
