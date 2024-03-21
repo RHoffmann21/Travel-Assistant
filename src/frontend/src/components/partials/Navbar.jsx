@@ -10,7 +10,7 @@ function Navbar () {
                 <a className="nav-link py-0 dropdown-toggle d-flex align-items-center" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src={dtsLogo} height="50" width="50" className="rounded-circle img-fluid" alt="RH"/>
                 </a>
-                <div className="dropdown-menu shadow px-2 m-2 row justify-content-end" aria-labelledby="accountDropdown" role="menu" aria-hidden="false">
+                <div className="dropdown-menu shadow px-2 m-2 row" aria-labelledby="accountDropdown" role="menu" aria-hidden="false">
                     <div className="bg-light rounded mb-2 p-3">
                         <strong className="fs-6">Ricardo Hoffmann</strong>
                         <p className="mb-0">ricardo.hoffmann@dts.de</p>

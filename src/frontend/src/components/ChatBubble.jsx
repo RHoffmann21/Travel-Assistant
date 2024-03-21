@@ -1,4 +1,3 @@
-
 function ChatBubble({ side, type, content }) {
 	return (
 		<div className={side === 'question' ? 'question messages' : 'answer messages'} >
