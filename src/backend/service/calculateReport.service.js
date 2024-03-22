@@ -5,7 +5,7 @@ const CalculateReportService = {};
  * @param {*} conversation 
  * @returns 
  */
-CalculateReportService.calculateMealAllowance = function (conversation) {
+function calculateMealAllowance(conversation) {
   let mealAllowance = 0;
   const { arrivalDepartureDay, fullDay, privateOvernightStay} = conversation.countryLumpRates.rates;
   if (conversation.wasArrivalDepartureDay) {
@@ -32,7 +32,7 @@ CalculateReportService.calculateMealAllowance = function (conversation) {
  * @param {Boolean} wasDinnerIncluded if dinner was included
  * @returns {Number} the cut of the allowance
  */
-CalculateReportService.calculateMealDeduction = function (mealAllowance, wasBreakfastIncluded, wasLunchIncluded, wasDinnerIncluded) {
+function calculateMealDeduction(mealAllowance, wasBreakfastIncluded, wasLunchIncluded, wasDinnerIncluded) {
   if(typeof (mealAllowance) === 'undefined') throw new TypeError('mealAllowance is undefined');
   let mealDeduction = 0;
   if (!wasBreakfastIncluded && !wasLunchIncluded && !wasDinnerIncluded) return mealDeduction;
@@ -48,7 +48,7 @@ CalculateReportService.calculateMealDeduction = function (mealAllowance, wasBrea
  * @param {Number} mileage mileage of the spesific date
  * @returns {Number} the calculated mileage allowance 
  */
-CalculateReportService.calculateMileageAllowance = function(mileage) {
+function calculateMileageAllowance(mileage) {
   if (typeof (mileage) === 'undefined') throw new TypeError('mileage is undefined');
   if (mileage < 1) return 0; 
   let mileageAllowance = 0;
@@ -65,7 +65,7 @@ CalculateReportService.calculateMileageAllowance = function(mileage) {
  * @param {Number} additionalPassangerCount number of passanger 
  * @returns {Number} the total sum of transportation cost
  */
-CalculateReportService.calculateTransportationCost = function(flightTicketCost, publicTransportCost, taxiCost, mileage) {
+function calculateTransportationCost(flightTicketCost, publicTransportCost, taxiCost, mileage) {
   return parseFloat(flightTicketCost + publicTransportCost + taxiCost + calculateMileageAllowance(mileage));
 }
 
@@ -74,10 +74,16 @@ CalculateReportService.calculateTransportationCost = function(flightTicketCost, 
  * @param {*} hotelCost 
  * @param {*} isPrivateOvernightStay 
  */
-CalculateReportService.calculateAccommodationCosts = function(hotelCost, isPrivateOvernightStay) {
+function calculateAccommodationCosts(hotelCost, isPrivateOvernightStay) {
 
 }
 
 // export default CalculateReportService;
 
-module.exports = CalculateReportService;
+export default {
+  calculateMealAllowance,
+  calculateMealDeduction,
+  calculateMileageAllowance,
+  calculateTransportationCost,
+  calculateAccommodationCosts
+}

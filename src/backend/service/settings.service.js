@@ -1,4 +1,4 @@
-import Settings from '../models/settings.js';
+import Settings from '../models/settings.model.js';
 import initSettings from '../initData/settings.json' assert { type: "json" };
 
 /**
@@ -22,4 +22,4 @@ async function getSettings() {
   return settings;
 }
 
-export default {importSettingsData, getSettings}
+export default { importSettingsData, getSettings };

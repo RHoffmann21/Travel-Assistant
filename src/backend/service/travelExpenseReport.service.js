@@ -1,4 +1,4 @@
-import TravelExpenseReportModel from '../models/travelExpenseReport';
+import TravelExpenseReportModel from '../models/travelExpenseReport.model';
 
 async function getAllTravelExpenseReports () {
   try {

@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 function TravelReportsOverview({travelReports}) {
 
-  fetch('127.0.0.1:5000/api/v1/settings', {
+  fetch('/api/v1/settings', {
     method: "GET",
   })
     .then((data) => {

@@ -1,7 +1,7 @@
 
-import TravelExpenseReportService from '../service/travelExpenseReportService';
+import TravelExpenseReportService from '../service/travelExpenseReport.service';
 
-export async function getTravelExpenseReports (req, res, next) {
+async function getTravelExpenseReports (req, res, next) {
   try {
     const travelExpenseReports = await TravelExpenseReportService.getAllTravelExpenseReports();
     res.send(travelExpenseReports)
@@ -26,4 +26,4 @@ async function deleteOneTravelExpenseReport (travelExpenseReportId, changes) {
   
 }
 
-// export default {getTravelExpenseReports, createOneTravelExpenseReport, getOneTravelExpenseReport, updateOneTravelExpenseReport, deleteOneTravelExpenseReport}
+export default { getTravelExpenseReports, createOneTravelExpenseReport, getOneTravelExpenseReport, updateOneTravelExpenseReport, deleteOneTravelExpenseReport }
