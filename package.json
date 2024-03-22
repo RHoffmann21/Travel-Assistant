@@ -4,6 +4,7 @@
   "description": "Travel-Assistant is a web app to create and manage travel expense reports",
   "main": "src/backend/app.js",
   "type": "module",
+  "proxy": "http://localhost:5000",
   "scripts": {
     "start": "vite --config=src/frontend/vite.config.mjs --host",
     "frontend-build": "vite --config=src/frontend/vite.config.mjs build",
