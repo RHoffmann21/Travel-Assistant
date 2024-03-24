@@ -1,4 +1,4 @@
-const CalculateReportService = {};
+import SettingsService from './settings.service.js';
 
 /**
  * @description 
@@ -32,14 +32,15 @@ function calculateMealAllowance(conversation) {
  * @param {Boolean} wasDinnerIncluded if dinner was included
  * @returns {Number} the cut of the allowance
  */
-function calculateMealDeduction(mealAllowance, wasBreakfastIncluded, wasLunchIncluded, wasDinnerIncluded) {
+async function calculateMealDeduction(mealAllowance, wasBreakfastIncluded, wasLunchIncluded, wasDinnerIncluded) {
+  const settings = await SettingsService.getSettings();
   if(typeof (mealAllowance) === 'undefined') throw new TypeError('mealAllowance is undefined');
   let mealDeduction = 0;
   if (!wasBreakfastIncluded && !wasLunchIncluded && !wasDinnerIncluded) return mealDeduction;
   if (wasBreakfastIncluded && wasLunchIncluded && wasDinnerIncluded) return parseFloat(mealAllowance) || 0;
-  wasBreakfastIncluded && (mealDeduction = parseFloat(mealAllowance * process.env.BREAKFAST_DEDUCTION_PERCENTAGE_CUT));
-  wasLunchIncluded && (mealDeduction += parseFloat(mealAllowance * process.env.LUNCH_DINNER_DEDUCTION_PERCENTAGE_CUT));
-  wasDinnerIncluded && (mealDeduction += parseFloat(mealAllowance * process.env.LUNCH_DINNER_DEDUCTION_PERCENTAGE_CUT));
+  wasBreakfastIncluded && (mealDeduction = parseFloat(mealAllowance * settings.breakfastDeductionPercentage));
+  wasLunchIncluded && (mealDeduction += parseFloat(mealAllowance * settings.lunchDeductionPercentage));
+  wasDinnerIncluded && (mealDeduction += parseFloat(mealAllowance * settings.dinnerDeductionPercentage));
   return parseFloat(mealDeduction);
 }
 
@@ -48,11 +49,12 @@ function calculateMealDeduction(mealAllowance, wasBreakfastIncluded, wasLunchInc
  * @param {Number} mileage mileage of the spesific date
  * @returns {Number} the calculated mileage allowance 
  */
-function calculateMileageAllowance(mileage) {
+async function calculateMileageAllowance(mileage) {
+  const settings = await SettingsService.getSettings();
   if (typeof (mileage) === 'undefined') throw new TypeError('mileage is undefined');
   if (mileage < 1) return 0; 
   let mileageAllowance = 0;
-  mileageAllowance = parseFloat(mileage * process.env.MILEAGE_ALLOWANCE);
+  mileageAllowance = parseFloat(mileage * settings.mileageAllowance);
   return mileageAllowance;
 }
 
@@ -65,8 +67,8 @@ function calculateMileageAllowance(mileage) {
  * @param {Number} additionalPassangerCount number of passanger 
  * @returns {Number} the total sum of transportation cost
  */
-function calculateTransportationCost(flightTicketCost, publicTransportCost, taxiCost, mileage) {
-  return parseFloat(flightTicketCost + publicTransportCost + taxiCost + calculateMileageAllowance(mileage));
+async function calculateTransportationCost(flightTicketCost, publicTransportCost, taxiCost, mileage) {
+  return parseFloat(flightTicketCost + publicTransportCost + taxiCost + await calculateMileageAllowance(mileage));
 }
 
 /**

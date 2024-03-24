@@ -1,5 +1,4 @@
 import Settings from '../models/settings.model.js';
-import initSettings from '../initData/settings.json' assert { type: "json" };
 
 /**
  * @description This function is checking if any settings are saved and if not is inserting init data 
@@ -8,17 +7,20 @@ import initSettings from '../initData/settings.json' assert { type: "json" };
 async function importSettingsData () {
   const settings = await Settings.find();
   if (typeof (settings) === 'undefined' || settings.length === 0){
-    return await new Settings(initSettings).save();
+    return await new Settings({
+      milageAllowance: 0.3,
+      breakfastDeductionPercentage: 0.2,
+      lunchDeductionPercentage: 0.4,
+      dinnerDeductionPercentage: 0.4
+    }).save();
   }
 }
 
 async function getSettings() {
   const settings = await Settings.find()
   if (typeof (settings) === 'undefined' || settings.length === 0) {
-    console.log('settings', await importSettingsData());
-    return await importSettingsData()
+    return await importSettingsData();
   }
-  console.log('settings', settings);
   return settings;
 }
 

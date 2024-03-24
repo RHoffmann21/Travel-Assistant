@@ -1,6 +1,6 @@
 import express from 'express';
 // import { ensureLoggedIn } from './lib/auth';
-import { getTravelExpenseReports } from './controller/travelExpenseReport.controller.js';
+import TravelExpenseReportController from './controller/travelExpenseReport.controller.js';
 import SettingsService from './service/settings.service.js';
 
 const router = express.Router();
@@ -13,7 +13,7 @@ const router = express.Router();
 // router.get('api/auth/logout');
 
 // to view  
-router.get('api/v1/travelExpenses', );
+router.get('api/v1/travelExpenses', TravelExpenseReportController.getTravelExpenseReports);
 // router.get('api/v1/travelExpenses/:travelExpenseId');
 // router.post('api/v1/travelExpenses/:travelExpenseId');
 // router.delete('api/v1/travelExpenses/:travelExpenseId');

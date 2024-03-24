@@ -16,4 +16,12 @@ async function updateChatById (chatId, updatedChat) {
   }
 }
 
-export default { getChatById, updateChatById };
+async function createNewChat(chat){
+  try {
+    return new Chat(chat).save();
+  } catch (error) {
+    throw new Error('Error creating ne chat', error)
+  }
+}
+
+export default { getChatById, updateChatById, createNewChat };
