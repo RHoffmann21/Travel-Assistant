@@ -5,7 +5,7 @@ const chatSchema = new mongoose.Schema({
     side: { type: String, enum: ['question', 'answer'], required: true },
     type: { type: String, enum: ['String', 'Date',], required: true },
     content: { type: String },
-    nextAnswerType: { type: String, enum: ['String', 'Date',] },
+    nextAnswerType: { type: String, enum: ['String', 'Date', 'multiDateSelect', 'select'] },
     answerAttribute: { type: String },
     considered: { type: Boolean, default: true }
   }],

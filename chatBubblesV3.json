@@ -1,0 +1,333 @@
+[
+	{
+			"side": "question",
+			"type": "String",
+			"content": "Wann hast du deine erste Dienstreise gestartet und um wie viel Uhr?",
+			"nextAnswerType": "dateTime",
+			"answerAttribute": "tripStartDateTime",
+			"considered": true,
+			"id": "ask.firstTripStart.dateTime",
+			"nextQuestions": {
+				"default": "ask.TripEnd.dateTime"
+			}
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wann hast du diese Dienstreise beendet und um wie viel Uhr?",
+		"nextAnswerType": "dateTime",
+		"answerAttribute": "tripEndDateTime",
+		"considered": true,
+		"id": "ask.TripEnd.dateTime"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Welche Zielländer/Standorte hast du besucht?",
+		"nextAnswerType": "multiSelect",
+		"answerAttribute": "tripDestinations",
+		"considered": true,
+		"id": "ask.tripDestinations.multiSelect",
+		"condition": "gt1",
+		"nextQuestions": {
+			"true": "blblblblblb",
+			"false": "blublublu"
+		}
+
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Was war dein erstes Zielland bzw. der erste Standort?",
+		"nextAnswerType": "select",
+		"answerAttribute": "firstPartialTripDestination",
+		"considered": true,
+		"id": "ask.firstTripDestination.select"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Was war der Anlass zu diesem Teil der Dienstreise?",
+		"nextAnswerType": "String",
+		"answerAttribute": "partialTripOccasion",
+		"considered": true,
+		"id": "ask.partialTripDestinationOccasion.string"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wann endete diese Teildienstreise?",
+		"nextAnswerType": "date",
+		"answerAttribute": "partialTripEndDate",
+		"considered": true,
+		"id": "ask.partialTripEndDate.dateTime"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Was war dein nächstes Zielland bzw. der nächste Standort?",
+		"nextAnswerType": "select",
+		"answerAttribute": "nextPartialTripDestination",
+		"considered": true,
+		"id": "ask.nextPartialTripDestination.select"
+	},
+
+
+
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Gibt es ein weitere Dienstreisen?",
+		"nextAnswerType": "boolean",
+		"answerAttribute": "anotherTrip",
+		"considered": true,
+		"id": "ask.anotherTrip.boolean"
+	},
+
+
+// Essen stuff
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wähle aus ob du Frühstück, Mittagessen oder Abendessen an einem der Tage gestellt bekommen hast.",
+		"nextAnswerType": "multiSelect",
+		"answerAttribute": "providedMealType",
+		"considered": true,
+		"id": "ask.providedMealType.multiSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An welchen Tage wurde dir Frühstück gestellt?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "daysWithBreakfast",
+		"considered": true,
+		"id": "ask.daysWithBreakfast.multiDateSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An welchen Tage wurde dir Mittagessen gestellt?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "daysWithLunch",
+		"considered": true,
+		"id": "ask.daysWithLunch.multiDateSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An welchen Tage wurde dir Abendessen gestellt?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "daysWithDinner",
+		"considered": true,
+		"id": "ask.daysWithDinner.multiDateSelect"
+	},
+
+
+// transportationcost stuff
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Musstest du für dein Flugticket, Bus-/Zugticket oder Taxi selbst aufkommen?",
+		"nextAnswerType": "multiSelect",
+		"answerAttribute": "paidTransportTypes",
+		"considered": true,
+		"id": "ask.paidTransportTypes.multiSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "für welche Tage fielen kosten für Flugtickets an?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "planeTransportationCostDates",
+		"considered": true,
+		"id": "ask.planeTransportationCostDates.multiDateSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "für welche Tage fielen kosten für Bus-/Zugticket an?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "busTrainTransportationCostDates",
+		"considered": true,
+		"id": "ask.busTrainTransportationCostDates.multiDateSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "für welche Tage fielen kosten für Taxifahrten an?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "cabTransportationCostDates",
+		"considered": true,
+		"id": "ask.cabTransportationCostDates.multiDateSelect"
+	},
+
+// abhängig von den dates
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wie viel hat das Flugticket für den ${planeTransportationCostDate} gekostet?",
+		"nextAnswerType": "number",
+		"answerAttribute": "planeTransportationCostDatePrice",
+		"considered": true,
+		"id": "ask.planeTransportationCostDatePrice.number"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wie viel hat das Bus-/Zugticket für den ${busTrainTransportationCostDate} gekostet?",
+		"nextAnswerType": "number",
+		"answerAttribute": "busTrainTransportationCostDatePrice",
+		"considered": true,
+		"id": "ask.busTrainTransportationCostDatePrice.number"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wie viel hat die Taxifahrt für den ${cabTransportationCostDate} gekostet?",
+		"nextAnswerType": "number",
+		"answerAttribute": "cabTransportationCostDatePrice",
+		"considered": true,
+		"id": "ask.cabTransportationCostDatePrice.number"
+	},
+
+
+// transportcost für eigenen PKW stuff
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Hast du während der Dienstreise deinen privaten PKW gefahren?",
+		"nextAnswerType": "boolean",
+		"answerAttribute": "privateCarUsed",
+		"considered": true,
+		"id": "ask.privateCarUsed.boolean"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An welchen Tag bist du mit deinen Privaten PKW gefahren?",
+		"nextAnswerType": "date",
+		"answerAttribute": "privateCarUsedDate",
+		"considered": true,
+		"id": "ask.privateCarUsedDate.date"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wie viele Kilometer zurückgelegt?",
+		"nextAnswerType": "number",
+		"answerAttribute": "privateCarUsedDateDistance",
+		"considered": true,
+		"id": "ask.privateCarUsedDateDistance.number"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Gib bitte die Einzelnen Wegstrecken mit KM angaben an.",
+		"nextAnswerType": "string",
+		"answerAttribute": "privateCarUsedDateRouteBrakedown",
+		"considered": true,
+		"id": "ask.privateCarUsedDateRouteBrakedown.string"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Gab es weitere Tage an welchen du deinen Privaten PKW für Dienstreisen benutzt hast?",
+		"nextAnswerType": "boolean",
+		"answerAttribute": "privateCarUsedMore",
+		"considered": true,
+		"id": "ask.privateCarUsedMore.boolean"
+	},
+
+
+// itemization stuff und so
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Hast du an einem der Tagen privat übernachtet?",
+		"nextAnswerType": "boolean",
+		"answerAttribute": "privateOvernightStay",
+		"considered": true,
+		"id": "ask.privateOvernightStay.boolean"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An welchen Tagen hast du privat übernachtet?",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "privateOvernightStayDates",
+		"considered": true,
+		"id": "ask.privateOvernightStayDates.dateTime"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Fielen Hotelkosten für dich an?",
+		"nextAnswerType": "boolean",
+		"answerAttribute": "hotelCostAccrued",
+		"considered": true,
+		"id": "ask.hotelCostAccrued.boolean"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An Welchen Tagen fielen Hotelkosten für dich an",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "hotelCostAccruedDates",
+		"considered": true,
+		"id": "ask.hotelCostAccruedDates.multiDateSelect"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wie viel musstest für das Hotel am  ${hotelCostAccruedDate} bezahlen?",
+		"nextAnswerType": "number",
+		"answerAttribute": "hotelCostAccruedDateCost",
+		"considered": true,
+		"id": "ask.hotelCostAccruedDateCost.number"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Fielen Bewirtungskosten für  für dich an?",
+		"nextAnswerType": "boolean",
+		"answerAttribute": "cateringCostAccrued",
+		"considered": true,
+		"id": "ask.cateringCostAccrued.boolean"
+	},
+	{
+		"side": "question",
+		"type": "String",
+		"content": "An Welchen Tagen fielen Hotelkosten für dich an",
+		"nextAnswerType": "multiDateSelect",
+		"answerAttribute": "hotelCostAccruedDates",
+		"considered": true,
+		"id": "ask.hotelCostAccruedDates.multiDateSelect"
+	},
+
+
+
+
+// für weitere Dienstreisen innerhalb eines Monats
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Wann hast du die nächste Dienstreise gestartet und um wie viel Uhr?",
+		"nextAnswerType": "dateTime",
+		"answerAttribute": "tripStartDateTime",
+		"considered": true,
+		"id": "ask.nextTripStart.dateTime"
+	}
+
+
+// für diverse belege
+	{
+		"side": "question",
+		"type": "String",
+		"content": "Lade bitte ein Beleg/Quittung dafür hoch.",
+		"nextAnswerType": "dateTime",
+		"answerAttribute": "tripStartDateTime",
+		"considered": true,
+		"id": "ask.nextTripStart.dateTime"
+	}
+]
