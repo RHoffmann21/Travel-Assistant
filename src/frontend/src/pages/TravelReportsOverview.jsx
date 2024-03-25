@@ -5,10 +5,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-bootstrap/'
 import ReportCard from '../components/ReportCard';
 import { Link } from 'react-router-dom';
+import axiso from 'axios'
 
 function TravelReportsOverview({travelReports}) {
 
-  fetch('/api/v1/settings', {
+  axiso.get('http://localhost:5000/api/v1/travelExpenses').then((data) => console.log(data)).catch((error) => console.log(error));
+
+  fetch('http://localhost:5000/api/v1/travelExpenses', {
     method: "GET",
   })
     .then((data) => {

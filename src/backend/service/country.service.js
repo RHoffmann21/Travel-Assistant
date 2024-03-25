@@ -1,5 +1,4 @@
 import Country from '../models/country.model.js'
-import initCountries from '../initData/countries.json'
 
 async function importInitData() {
   const Country = await Country.find();
@@ -8,12 +7,20 @@ async function importInitData() {
   }
 }
 
-async function getCountry(){
-  const Country = await Country.find()
-  if (typeof (Country) === 'undefined' || Country.length === 0) {
-    return await inportInitData()
+async function getCountry(countryId){
+  try {
+    return await Country.findOneById(countryId)
+  } catch (error) {
+    throw new Error('Error getting one country', error);
   }
-  return Country;
 }
 
-export default { importInitData, getCountry }
+async function getAllCountries(){
+  try {
+    return await Country.find();
+  } catch (error) {
+    throw new Error('Error getting all countries', error);
+  }
+}
+
+export default { importInitData, getCountry, getAllCountries }

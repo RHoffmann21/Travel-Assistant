@@ -1,6 +1,7 @@
-const logger = require('dts-node-logger');
-const passport = require('passport');
-const { openidStrategy, ensureLoggedIn, ensureLoggedOut } = require('dts-node-oidc-client');
+import logger from 'dts-node-logger';
+import passport from 'passport';
+
+import { openidStrategy, ensureLoggedIn, ensureLoggedOut }  from('dts-node-oidc-client');
 
 export default async function (app) {
   // Configure Passport Strategy
