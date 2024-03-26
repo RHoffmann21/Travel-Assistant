@@ -1,1 +1,1285 @@
-<mxfile host="Electron" modified="2024-03-25T16:31:05.518Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.3.0 Chrome/104.0.5112.114 Electron/20.1.3 Safari/537.36" etag="jmfbmxBffbRwKxa5_RmD" version="20.3.0" type="device"><diagram id="L4NvkSTI6OKeX2f231ty" name="Seite-1">7VxJc9s2FP4tPWimOajDVctR8tIc3EnTdJpJbhAJkaghgAEhy/KvL0CA4gJKYpyYpOVeLPJhf+/DB7wH0CP3avP4OwNJ/AcNIR45Vvg4cq9HjjOf2eKvFOyVwJ9PlSBiKFQiuxB8Qk9QCy0t3aIQppWMnFLMUVIVBpQQGPCKDDBGd9Vsa4qrrSYggobgUwCwKf2MQh4r6cyZFvL3EEVx3rI9mauUDcgz65GkMQjpriRyb0buFaOUq6fN4xXEUne5XlS52yOph44xSHibAh/X8Prb5sPH9cM/9hcPfcXsSzDWtTwAvNUD/gwIkb3lgHHxe40gSTmDKBXpt3okfJ+rh9EtCaFswRq5y12MOPyUgECm7gQehCzmGyzebPGo24KMw8ejg7APqhGQgnQDOduLLLqAp5W5r77uCtPYub7jklkmWgY0GqJDxYXCxIPW2Xfob2boz1ARDAWg9CtlPKYRJQDfFNJlVYlFnjtKE626fyHnez07wJbTqmKFgeg9vKKYMiEJ4RpsMT8oXHbgtLpFf+mWBfDEQPW4BCoiyE/kmzabj0EMOHqo9uOnW8MxrFGG7wHURzFs94Fhu3cQey1ATMKFZFPxFmCQpiioqqUK4Q7wmK8F5/DoNJuipGu/QdW5rDVsdQt/UkR4YelZ1dLOvGZBNUpdqEzdtXpst1aRV6tIqcGoKEPDYdTPB8jkPEDE6pbIx2DL8H7JQHAvzXJuNlWn3k+YW/b5udXp1LJNSrrQBWLackLaVrMBu1khpoY59H5HEBwc/Han//2O7b8VPOdMch7Qbp+Azrt5dM+jgD2sLY/bP45Nx+eVLGlNuutWdSaHXioFuG0pYNIrBbjmogZxEMvZ/xXJCq7c0cIT6mZCsoLpNpAgGdzq5vXOCs78zUB70hLax0zYEbRNz0PjtxHcw1rl/P7xbDLDyF/W1SbH719fKNCd1oGCI5ECbcyx94MhgTwLXa9T+CJeutOwNzet7UzARkI/kor+3/Aio3fS8Pbw7W7uZRerNZMHG451RyN0b5g439omjAYwTc+z40rsfqPM7B+2HCMCX4w1J72zptsmHnoZc8RpOUfcXn3cvJuVqE0qS6Vyhql9LSAyLn14/Uu5v7d/Q4S1Kzys3e60f5y38IEvBOdeW5z3Gpx0TOJRjlwJ6xnuIUuLDTAg4RCcueHxuPNqjy2aPIduqcFk3Aulhvxk7dn+QTfUkHezZJCMBNIyC/Tt/w5wiWtBAReC47axStfvFcdmRGLx/I1bL2GdWe+o9kwyuFRU+21RPesT1V7DcvncyMsdWEFcVTTAKCJykyL0J+N1SwlnFAC80AkbFIbKpjBFT2CV1SetmsggRDZafykbPDEf9AVKXXh02G+UzXYCjUdnj/WbY0/nlRmUX975wds143qttRpeLuLiNXlOYqlxbStT8SSbB2kCSMW+k29bedlzGagps5AqiFa/ZgQjOmKVH95lFVlrSvh4DTYI71WB9xA/QGn8UnqazVCZatvJYzlBNS1TCGUbgEtpD4AhIH4FhADfMnnH9mS+ACTHsuw06clEz1IqsLDgDsjGQgkBIpFZkrIkBkRX6SiZwCQfa7RL8QHweRoSE4nolqx8qFkKZ6Kytag/b0mGqJaKpbNLwKVmdpSF1Y4d6hJjWd0jUZ2sUxHcWPN8JV8RDxvXrCm5QNqw+H1X6mYIA8oE6CkZ8xgF9ySLvsmyiCCOcuXU85YMeTJfqS+VfGtMAa9rJkRpgsE+z55F9RzrF7RJxGIAiKLyHLPiKeOtE+cHE83+twr4On9lXhSPb3y5mp/hTL9Kbc87fFgwBvalDHo1OEqotlW7PWe5tSvl31lAPKg+dB4Td82zkFccE5/3vuV0W1z6GEgsxZ2e90K73a6/mfMEd9aS/7xezxNc86sNfQt0B6QLqoOs6kZoiGCaOaaFQzrAaOsAGMK8O/P6D2lsq3e9em8mhOW1DWF5vYawPDOEpaliSCGrodGD92a+lPPaOgFer9/KeeYOWfF1eQ0kys0L4uGdN9YhPgCq9huu210oxtt+7eM7vWLc9FrKiE7zLcgTkh+tD4yz7QF8GNriPvRAvD675vU1ndJ0SwYtDmkGojvfPb9b6FZ3r+frnLruGmdtt8pzLmxhf8mvHsVr8R84VPCx+Dcm7s1/</diagram></mxfile>
+<mxfile host="65bd71144e">
+    <diagram id="L4NvkSTI6OKeX2f231ty" name="Seite-1">
+        <mxGraphModel dx="2933" dy="1113" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-1" value="Wann start Dienstreise?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-2" target="QfeDqmOQfvV1Y4iZlrYc-7" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-2" value="Dienstreise start" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-4" value="" style="endArrow=classic;html=1;rounded=0;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-1" target="QfeDqmOQfvV1Y4iZlrYc-2" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80" y="290" as="sourcePoint"/>
+                        <mxPoint x="130" y="240" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-7" target="QfeDqmOQfvV1Y4iZlrYc-10" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-7" value="Wann ende Dienstreise?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-10" target="QfeDqmOQfvV1Y4iZlrYc-13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-10" value="Dienstreise ende" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-13" target="QfeDqmOQfvV1Y4iZlrYc-16" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-13" value="Welche Zielländer besucht?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-16" target="QfeDqmOQfvV1Y4iZlrYc-21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-16" value="besuchte Zielländer" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-23" value="[Zielländer=1]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-21" target="QfeDqmOQfvV1Y4iZlrYc-22" edge="1">
+                    <mxGeometry y="-40" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-25" value="[Zielländer&amp;gt;1]" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-21" target="QfeDqmOQfvV1Y4iZlrYc-24" edge="1">
+                    <mxGeometry y="10" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-21" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-22" target="QfeDqmOQfvV1Y4iZlrYc-33" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-22" value="Was ist der anlass der Reise" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=default;" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-24" target="QfeDqmOQfvV1Y4iZlrYc-30" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-24" value="Welches ist das erste Zielland?" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-26" value="" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+                    <mxGeometry x="320" y="520" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-30" target="7">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-30" value="erstes Zielland" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="441" y="640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" style="edgeStyle=none;html=1;" edge="1" parent="1" source="QfeDqmOQfvV1Y4iZlrYc-33" target="51">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="1140" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="QfeDqmOQfvV1Y4iZlrYc-33" value="Anlass der Reise/Teilreise" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="Zielländer" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="540" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="Dienstreise start" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="140" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Dienstreise ende" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="340" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="erstes Zielland" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="640" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Anlass Reise/Teilreise" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="840" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="7" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="Was ist der anlass der Teilreise" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="9" target="12">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Anlass der Teilreise" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" style="edgeStyle=none;html=1;" edge="1" parent="1" source="11" target="23">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="[Ende Teilreise&amp;lt;&lt;br&gt;Dienstreis ende]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="24">
+                    <mxGeometry x="0.2556" y="-1" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-21" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="52" style="edgeStyle=none;html=1;" edge="1" parent="1" source="11" target="51">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="360" value="[Ende Teilreise==&lt;br&gt;Dienstreis ende]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="52">
+                    <mxGeometry x="-0.5037" y="1" relative="1" as="geometry">
+                        <mxPoint x="-21" y="-21" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="11" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="1140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="12" target="16">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Ende der Teilreise?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="16" target="11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="Ende Teilreise" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="1040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Anlass Teilreise" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="840" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="Ende Teilreise" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="1040" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="23" target="27">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="Was nächstes Zielland?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="681" y="1140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" style="edgeStyle=none;html=1;" edge="1" parent="1" source="27" target="7">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="741" y="770"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="27" value="nächstes Zielland" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="681" y="1040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="nächstes Zielland" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="811" y="1040" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="51" target="53">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Frühstück erhalten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="53" target="55">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="Frühstück erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Frühstück&lt;br&gt;erhalten==true]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="55" target="58">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="66" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Frühstück&lt;br style=&quot;border-color: rgb(0, 0, 0);&quot;&gt;erhalten==false]&lt;/span&gt;&lt;br&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="55" target="64">
+                    <mxGeometry y="-50" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="55" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;span style=&quot;text-align: center;&quot;&gt;Frühstück erhalten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="1240" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="58" target="60">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="An welchen Tagen Frühstück?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="1340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" style="edgeStyle=none;html=1;" edge="1" parent="1" source="60" target="64">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="tage Frühstück erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="1340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="&lt;span style=&quot;text-align: center;&quot;&gt;tage Frühstück erhalten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="1340" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="64" target="68">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="Mittagessen erhalten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="68" target="71">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="Mittagessen erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="&lt;span style=&quot;text-align: center;&quot;&gt;Mittagessen erhalten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="1540" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Mittagessen&lt;br&gt;erhalten==true]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" target="77" source="71">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="160" y="1670" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="76" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="77" target="78">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="An welchen Tagen Mittagessen?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="1640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="92" style="edgeStyle=none;html=1;" edge="1" parent="1" source="78" target="82">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="tage Mittagessen erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="1640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="&lt;span style=&quot;text-align: center;&quot;&gt;tage Mittagessen erhalten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="1640" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Mittagessen&lt;br style=&quot;border-color: rgb(0, 0, 0);&quot;&gt;erhalten==false]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" target="82" source="71">
+                    <mxGeometry y="-50" relative="1" as="geometry">
+                        <mxPoint x="100" y="1700" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="81" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="82" target="84">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="Abendessen erhalten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="84" target="86">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="Abendessen erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="&lt;span style=&quot;text-align: center;&quot;&gt;Abendessen&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;erhalten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="1840" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="94" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="86" target="93">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="1940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Abendessen&lt;/span&gt;&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;&lt;br&gt;erhalten==true]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="86" target="89">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint x="160" y="1970" as="sourcePoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="88" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="89" target="90">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="An welchen Tagen Abendessen?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="1940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="95" style="edgeStyle=none;html=1;" edge="1" parent="1" source="90" target="93">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" value="tage Abendessen erhalten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="1940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="91" value="&lt;span style=&quot;text-align: center;&quot;&gt;tage&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;Abendessen&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;erhalten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="1940" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="99" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="93" target="98">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="93" value="Flugticket kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="2040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="103" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="98" target="102">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="98" value="Flugticket kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="2140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="100" value="&lt;span style=&quot;text-align: center;&quot;&gt;Flugticket kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="2140" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="106" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="102" target="178">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="240" y="2270" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="110" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Flugticket kosten&lt;br&gt;==true]&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="106">
+                    <mxGeometry x="0.3762" y="2" relative="1" as="geometry">
+                        <mxPoint x="-15" y="-28" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="109" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Flugticket kosten&lt;br style=&quot;border-color: rgb(0, 0, 0);&quot;&gt;==false]&lt;/span&gt;&lt;br&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" target="108">
+                    <mxGeometry x="-0.0197" y="-51" relative="1" as="geometry">
+                        <mxPoint x="101" y="2305" as="sourcePoint"/>
+                        <mxPoint x="101" y="2343" as="targetPoint"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="102" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="2240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="156" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" target="155">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="2644" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="192" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="108" target="155">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="108" value="Bus/Zug Ticket kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="2540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="136" value="&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[Bus/Zug&lt;/span&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;ticket&lt;br&gt;kosten==true]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="138" target="200">
+                    <mxGeometry y="20" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="240" y="2774" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="137" value="&lt;br&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[Bus/Zug&lt;/span&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;ticket&lt;br style=&quot;border-color: rgb(0, 0, 0);&quot;&gt;kosten==false]&lt;/span&gt;&lt;br&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="138" target="145">
+                    <mxGeometry x="-0.5" y="-50" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="138" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="2744" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="169" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="145" target="168">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="145" value="Taxifahrt kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="3044" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="157" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="155" target="138">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="Bus/Zugticket kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="2644" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="159" value="&lt;br&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[Taxisfahrt kosten&lt;/span&gt;&lt;span style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0);&quot;&gt;kosten==true]&lt;/span&gt;&lt;br&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="162" target="223">
+                    <mxGeometry y="40" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <mxPoint x="240" y="3272" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="160" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="162" target="239">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="3342" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="161" value="[Taxisfahrt kosten&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;&lt;br&gt;kosten==false]&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="160">
+                    <mxGeometry x="-0.55" y="1" relative="1" as="geometry">
+                        <mxPoint x="-51" y="11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="162" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="3242" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="168" target="162">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="168" value="Taxifahrt kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="3142" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="171" value="&lt;span style=&quot;text-align: center;&quot;&gt;Taxifahrt kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="3142" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="173" value="&lt;span style=&quot;text-align: center;&quot;&gt;Bus/Zugticket kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="2644" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="174" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="175" target="176">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="175" value="Flugzeugticket preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="2338" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="184" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="176" target="183">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="176" value="Flugzeugticket preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="2338" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="177" value="&lt;span style=&quot;text-align: center;&quot;&gt;Flugzeugticket preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="2338" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="180" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="178" target="179">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="178" value="Welcher Tag Flugzeugticket kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="2240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="181" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="179" target="175">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="179" value="Tag Flugzeugticket kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="2240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="182" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag Flugzeugticket kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="2240" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="186" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="183" target="185">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="183" value="Weiterer Tag Flugzeugticket kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="2440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="191" style="edgeStyle=none;html=1;" edge="1" parent="1" source="185" target="188">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="weiterer Tag Flugzeugticket kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="2440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="187" value="&lt;span style=&quot;text-align: center;&quot;&gt;weiterer Tag Flugzeugticket kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="2440" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="189" style="edgeStyle=none;html=1;" edge="1" parent="1" source="188" target="178">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="2570"/>
+                            <mxPoint x="1120" y="2200"/>
+                            <mxPoint x="300" y="2200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="212" value="[weiterer Tag Flugzeugticket kosten==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="189">
+                    <mxGeometry x="0.3398" y="-1" relative="1" as="geometry">
+                        <mxPoint x="324" y="381" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="190" style="edgeStyle=none;html=1;" edge="1" parent="1" source="188" target="108">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="213" value="[weiterer Tag Flugzeugticket kosten==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="190">
+                    <mxGeometry x="-0.6911" y="4" relative="1" as="geometry">
+                        <mxPoint x="-21" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="188" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="2540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="194" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="195" target="197">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="195" value="Bus/Zugticket preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440.99999999999994" y="2842" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="196" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="197" target="205">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="197" value="Bus/Zugticket preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="2842" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="198" value="&lt;span style=&quot;text-align: center;&quot;&gt;Bus/Zugticket&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="2842" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="199" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="200" target="202">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="200" value="Welcher Tag Bus/Zugticket kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="239.99999999999994" y="2744" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="201" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="202" target="195">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="202" value="Tag Bus/Zugticket kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440.99999999999994" y="2744" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="203" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;Bus/Zugticket&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="2744" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="204" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="205" target="207">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="205" value="Weiterer Tag Bus/Zugticket kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="2944" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="206" style="edgeStyle=none;html=1;" edge="1" parent="1" source="207" target="210">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="207" value="weiterer Tag Bus/Zugticket kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="2944" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="208" value="&lt;span style=&quot;text-align: center;&quot;&gt;weiterer Tag Flugzeugticket kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="2944" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="209" style="edgeStyle=none;html=1;" edge="1" parent="1" source="210" target="200">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="3074"/>
+                            <mxPoint x="1120" y="2700"/>
+                            <mxPoint x="299.99999999999994" y="2704"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="214" value="[weiterer Tag&amp;nbsp;&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Bus/Zugticket&lt;/span&gt;&lt;br&gt;&amp;nbsp;kosten==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="209">
+                    <mxGeometry x="-0.8428" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-27" y="14" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="215" style="edgeStyle=none;html=1;" edge="1" parent="1" source="210" target="145">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="238" value="[weiterer Tag&amp;nbsp;&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Bus/Zugticket&amp;nbsp;&lt;/span&gt;kosten==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="215">
+                    <mxGeometry x="-0.6296" y="-4" relative="1" as="geometry">
+                        <mxPoint x="-1" y="20" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="210" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="3044" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="217" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="218" target="220">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="218" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&lt;/span&gt;&amp;nbsp;preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="3340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="219" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="220" target="228">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="220" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&lt;/span&gt;&amp;nbsp;preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="3340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="221" value="&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="3340" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="222" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="223" target="225">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="223" value="Welcher Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&amp;nbsp;&lt;/span&gt;&lt;br&gt;kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="239.99999999999994" y="3242" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="224" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="225" target="218">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="225" value="Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&lt;/span&gt;&amp;nbsp;kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="3242" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="226" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="3242" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="227" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="228" target="230">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="228" value="Weiterer Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&lt;/span&gt;&amp;nbsp;kosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="3442" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="229" style="edgeStyle=none;html=1;" edge="1" parent="1" source="230" target="235">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="230" value="weiterer Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&lt;/span&gt;&amp;nbsp;kosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="3442" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="231" value="&lt;span style=&quot;text-align: center;&quot;&gt;weiterer Tag&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Taxisfahrt&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;kosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="3442" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="232" style="edgeStyle=none;html=1;" edge="1" parent="1" source="235" target="223">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="3572"/>
+                            <mxPoint x="1120" y="3202"/>
+                            <mxPoint x="299.99999999999994" y="3202"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="233" value="[weiterer Tag Taxisfahrt&lt;br&gt;&amp;nbsp;kosten==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="232">
+                    <mxGeometry x="-0.8428" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-27" y="14" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="234" style="edgeStyle=none;html=1;" edge="1" parent="1" source="235" target="239">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="3572" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="236" value="[weiterer Tag Taxisfahrt&lt;br&gt;&amp;nbsp;kosten==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="234">
+                    <mxGeometry x="-0.5995" y="4" relative="1" as="geometry">
+                        <mxPoint x="47" y="14" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="235" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="3542" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="242" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="239" target="240">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="239" value="mit privat PKW gefahren?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="39.99999999999994" y="3542" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="245" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="240" target="243">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="240" value="mit privat PKW gefahren" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="3640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="241" value="&lt;span style=&quot;text-align: center;&quot;&gt;mit privat PKW gefahren&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="3640" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="247" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="243" target="246">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="275" style="edgeStyle=none;html=1;" edge="1" parent="1" source="243" target="274">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="243" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="3740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="249" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="246" target="248">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="246" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Welcher Tag mit privat PKW gefahren?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="3740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="253" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="248" target="252">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="248" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Tag mit privaten PKW gefahren&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="3740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="251" value="&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Tag mit privaten PKW gefahren&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="3740" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="255" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="252" target="254">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="252" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Wie viele KM gefahren?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="3840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="258" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="254" target="257">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="254" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;gefahrene KM&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="3840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="256" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;gefahrene KM&lt;/span&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="3840" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="260" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="257" target="259">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="257" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Einzele Wegstrecken angeben mit KM&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="3940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="263" style="edgeStyle=none;html=1;" edge="1" parent="1" source="259" target="262">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="259" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;einzelen Wegstrecken mit KM&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="3940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="261" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;einzelen Wegstrecken mit KM&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="3940" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="265" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="262" target="264">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="262" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Weiterer tag mit privaten PKW gefahren?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="4040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="268" style="edgeStyle=none;html=1;" edge="1" parent="1" source="264" target="267">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="264" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Weiterer tag mit privaten PKW gefahren&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="4040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="266" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Weiterer tag mit privaten PKW gefahren&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="1170" y="4040" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="269" style="edgeStyle=none;html=1;" edge="1" parent="1" source="267" target="246">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1320" y="4170"/>
+                            <mxPoint x="1320" y="3680"/>
+                            <mxPoint x="300" y="3680"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="272" value="[&lt;span style=&quot;&quot;&gt;Weiterer tag mit privaten PKW gefahren==ture]&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="269">
+                    <mxGeometry x="-0.9394" y="1" relative="1" as="geometry">
+                        <mxPoint x="70" y="11" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="270" style="edgeStyle=none;html=1;" edge="1" parent="1" source="267" target="274">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="180" y="4170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="273" value="[Weiterer tag mit privaten PKW gefahren==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="270">
+                    <mxGeometry x="-0.7279" y="5" relative="1" as="geometry">
+                        <mxPoint x="-33" y="5" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="267" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="4140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="277" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="274" target="276">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="274" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Privat übernachtet?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="4140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="280" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="276" target="279">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="276" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Privat übernachtet&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="4240" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="278" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Privat übernachtet&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="4240" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="282" value="[Privat übernachtet&lt;br&gt;==true]" style="edgeStyle=none;html=1;" edge="1" parent="1" source="279" target="281">
+                    <mxGeometry y="30" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="287" value="&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[Privat übernachtet&lt;/span&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;==false]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="279" target="286">
+                    <mxGeometry y="-50" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="279" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="4340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="284" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="281" target="283">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="281" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;an welchen Tagen Privat übernachtet?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240" y="4340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="288" style="edgeStyle=none;html=1;" edge="1" parent="1" source="283" target="286">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="283" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;tage Private übernachtet&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="440" y="4340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="285" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;tage Private übernachtet&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="4340" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="290" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="286" target="289">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="286" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Hotelkosten?&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="4440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="293" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="289" target="292">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="289" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Hotelkosten&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="4540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="291" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Hotelkosten&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="4540" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="295" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="292">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="240" y="4669.999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="323" style="edgeStyle=none;html=1;" edge="1" parent="1" source="292" target="308">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="356" value="[Hotelkosten&lt;br&gt;==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="323">
+                    <mxGeometry x="-0.5357" y="-3" relative="1" as="geometry">
+                        <mxPoint x="21" y="-23" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="326" style="edgeStyle=none;html=1;" edge="1" parent="1" source="292" target="322">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="357" value="[Hotelkosten&lt;br&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="326">
+                    <mxGeometry x="-0.1988" y="3" relative="1" as="geometry">
+                        <mxPoint x="-43" y="-76" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="292" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="4640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="302" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="303" target="305">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="303" value="Hotelkosten preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="4738" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="304" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="305" target="313">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="305" value="Hotelkosten preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="4738" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="306" value="&lt;span style=&quot;text-align: center;&quot;&gt;Hotelkosten preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="4738" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="307" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="308" target="310">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="308" value="Welcher Tag Hotelkosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="239.99999999999994" y="4640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="309" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="310" target="303">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="310" value="Tag Hotelkosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="4640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="311" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag Hotelkosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="4640" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="312" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="313" target="315">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="313" value="Weiterer Tag mit Hotelkosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="4840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="314" style="edgeStyle=none;html=1;" edge="1" parent="1" source="315" target="321">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="315" value="Weiterer Tag mit Hotelkosten" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="4840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="316" value="&lt;span style=&quot;text-align: center;&quot;&gt;Weiterer Tag mit Hotelkosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="4840" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="317" style="edgeStyle=none;html=1;" edge="1" parent="1" source="321" target="308">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1080" y="4970"/>
+                            <mxPoint x="1080" y="4600"/>
+                            <mxPoint x="299.99999999999994" y="4600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="318" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Weiterer Tag mit Hotelkosten&lt;/span&gt;==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="317">
+                    <mxGeometry x="-0.8428" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-3" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="319" style="edgeStyle=none;html=1;" edge="1" parent="1" source="321" target="322">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="4970" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="320" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Weiterer Tag mit Hotelkosten&lt;/span&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="319">
+                    <mxGeometry x="-0.5995" y="4" relative="1" as="geometry">
+                        <mxPoint x="26" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="321" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="4940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="329" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="322" target="327">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="322" value="Bewirtungskosten?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="39.99999999999994" y="4940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="327" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="5040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="328" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="5040" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="330" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" target="334">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="5099.999999999999" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="331" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="334">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="240" y="5169.999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="332" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[Bewirtungskosten&lt;/span&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;==true]&lt;/span&gt;&lt;br&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="334" target="341">
+                    <mxGeometry y="40" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="333" style="edgeStyle=none;html=1;" edge="1" parent="1" source="334" target="355">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="359" value="[Bewirtungskosten&lt;br&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="333">
+                    <mxGeometry x="-0.6333" relative="1" as="geometry">
+                        <mxPoint x="-50" y="-24" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="334" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="5140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="335" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="336" target="338">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="336" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;&amp;nbsp;preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="5238" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="337" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="338" target="346">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="338" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&amp;nbsp;&lt;/span&gt;preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="5238" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="339" value="&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="5238" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="340" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="341" target="343">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="341" value="Welcher Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="239.99999999999994" y="5140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="342" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="343" target="336">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="343" value="Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="5140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="344" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="5140" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="345" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="346" target="348">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="346" value="Weiterer Tag mit&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="5340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="347" style="edgeStyle=none;html=1;" edge="1" parent="1" source="348" target="354">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="348" value="Weiterer Tag mit&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="5340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="349" value="&lt;span style=&quot;text-align: center;&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Bewirtungskosten&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="5340" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="350" style="edgeStyle=none;html=1;" edge="1" parent="1" source="354" target="341">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="5470"/>
+                            <mxPoint x="1120" y="5100"/>
+                            <mxPoint x="299.99999999999994" y="5100"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="351" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;Bewirtungskosten&lt;/span&gt;==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="350">
+                    <mxGeometry x="-0.8428" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-3" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="352" style="edgeStyle=none;html=1;" edge="1" parent="1" source="354" target="355">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="5470" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="353" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;Bewirtungskosten&lt;/span&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="352">
+                    <mxGeometry x="-0.5995" y="4" relative="1" as="geometry">
+                        <mxPoint x="26" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="354" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="5440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="362" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="355" target="361">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="355" value="Trinkgeld?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="39.99999999999994" y="5440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="361" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="5540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="363" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="5540" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="364" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" target="369">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="5599.999999999999" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="365" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="369">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="240" y="5669.999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="366" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;&quot;&gt;Trinkgeld&lt;/span&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;==true]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="369" target="376">
+                    <mxGeometry y="40" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="367" style="edgeStyle=none;html=1;" edge="1" parent="1" source="369" target="390">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="368" value="[&lt;span style=&quot;&quot;&gt;Trinkgeld&lt;/span&gt;&lt;br&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="367">
+                    <mxGeometry x="-0.6333" relative="1" as="geometry">
+                        <mxPoint x="-50" y="-24" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="369" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="5640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="370" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="371" target="373">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="371" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;&amp;nbsp;preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="5738" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="372" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="373" target="381">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="373" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;&amp;nbsp;&lt;/span&gt;preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="5738" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="374" value="&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="772" y="5738" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="375" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="376" target="378">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="376" value="Welcher Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="239.99999999999994" y="5640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="377" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="378" target="371">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="378" value="Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="441" y="5640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="379" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="571" y="5640" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="380" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="381" target="383">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="381" value="Weiterer Tag mit&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="642" y="5840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="382" style="edgeStyle=none;html=1;" edge="1" parent="1" source="383" target="389">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="383" value="Weiterer Tag mit&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="5840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="384" value="&lt;span style=&quot;text-align: center;&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="969" y="5840" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="385" style="edgeStyle=none;html=1;" edge="1" parent="1" source="389" target="376">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1120" y="5970"/>
+                            <mxPoint x="1120" y="5600"/>
+                            <mxPoint x="299.99999999999994" y="5600"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="386" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;Trinkgeld&lt;/span&gt;==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="385">
+                    <mxGeometry x="-0.8428" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-3" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="387" style="edgeStyle=none;html=1;" edge="1" parent="1" source="389" target="390">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="5970" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="388" value="[&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;Trinkgeld&lt;/span&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="387">
+                    <mxGeometry x="-0.5995" y="4" relative="1" as="geometry">
+                        <mxPoint x="26" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="389" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="840" y="5940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="392" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="390" target="391">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="390" value="sonstiges?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="39.99999999999994" y="5940" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="391" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="6040" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="393" value="&lt;div style=&quot;text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="6040" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="394" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" target="399">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="101" y="6100" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="395" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="399">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="241" y="6170" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="396" value="&lt;br&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;&quot;&gt;sonstiges&lt;/span&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0); color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(24, 20, 29); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;==true]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="399" target="406">
+                    <mxGeometry y="40" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="397" style="edgeStyle=none;html=1;" edge="1" parent="1" source="399" target="444">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="101" y="6440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="398" value="[&lt;span style=&quot;&quot;&gt;sonstiges&lt;/span&gt;&lt;br&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="397">
+                    <mxGeometry x="-0.6333" relative="1" as="geometry">
+                        <mxPoint x="-50" y="-24" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="399" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="41" y="6140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="400" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="401" target="403">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="401" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;&amp;nbsp;preis?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="442" y="6238" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="402" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="403" target="411">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="403" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;&amp;nbsp;&lt;/span&gt;preis" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="643" y="6238" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="404" value="&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;text-align: center;&quot;&gt;preis&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="773" y="6238" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="405" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="406" target="408">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="406" value="Welcher Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="240.99999999999994" y="6140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="407" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="408" target="401">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="408" value="Tag&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="442" y="6140" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="409" value="&lt;span style=&quot;text-align: center;&quot;&gt;Tag&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="572" y="6140" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="410" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="411" target="413">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="411" value="Weiterer Tag mit&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;sonstiges&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="643" y="6340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="422" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="413" target="421">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="413" value="Weiterer Tag mit&amp;nbsp;&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="841" y="6340" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="414" value="&lt;span style=&quot;text-align: center;&quot;&gt;Weiterer Tag mit&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Trinkgeld&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="970" y="6340" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="415" style="edgeStyle=none;html=1;" edge="1" parent="1" target="406" source="419">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1520" y="6670"/>
+                            <mxPoint x="1520" y="6100"/>
+                            <mxPoint x="300.99999999999994" y="6100"/>
+                        </Array>
+                        <mxPoint x="961" y="6470" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="416" value="[&lt;span style=&quot;&quot;&gt;Weiterer Tag sonstiges&lt;/span&gt;&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;?&lt;/span&gt;==true]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="415">
+                    <mxGeometry x="-0.8428" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-78" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="417" style="edgeStyle=none;html=1;" edge="1" parent="1" source="419" target="444">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="400" y="6660" as="targetPoint"/>
+                        <mxPoint x="840" y="6660" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="418" value="[&lt;span style=&quot;&quot;&gt;Weiterer Tag sonstiges&lt;/span&gt;&lt;span style=&quot;font-size: 12px; background-color: rgb(42, 37, 47);&quot;&gt;?&lt;/span&gt;==false]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="417">
+                    <mxGeometry x="-0.5995" y="4" relative="1" as="geometry">
+                        <mxPoint x="136" y="6" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="419" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="1241" y="6640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="425" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="421" target="423">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="421" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Erläuterung sonstiges&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="841" y="6440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="428" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="423" target="427">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="423" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Erläuterung sonstiges&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="6440" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="424" value="&lt;span style=&quot;text-align: center; font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Erläuterung sonstiges&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="1170" y="6440" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="430" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="427" target="429">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="427" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Weiterer Tag sonstiges&lt;/span&gt;?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1040" y="6540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="431" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="429" target="419">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="429" value="&lt;span style=&quot;font-size: 11px; background-color: rgb(24, 20, 29);&quot;&gt;Weiterer Tag sonstiges&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1241" y="6540" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="432" value="&lt;span style=&quot;font-size: 11px; text-align: center; background-color: rgb(24, 20, 29);&quot;&gt;Weiterer Tag sonstiges&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="1370" y="6540" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="443" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="444" target="446">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="444" value="Weitere Dienstreisen?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="6640" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="445" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="446" target="448">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="446" value="weitere Dienstreise" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="6740" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="447" value="&lt;span style=&quot;text-align: center;&quot;&gt;weitere Dienstreise&lt;/span&gt;" style="shape=curlyBracket;whiteSpace=wrap;html=1;rounded=1;flipH=1;labelPosition=right;verticalLabelPosition=middle;align=left;verticalAlign=middle;size=0.5;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="6740" width="20" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="449" value="&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(42, 37, 47); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[weitere Dienstreise==false]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="448" target="QfeDqmOQfvV1Y4iZlrYc-1">
+                    <mxGeometry x="-0.9775" y="-10" relative="1" as="geometry">
+                        <mxPoint x="-170" y="6940" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="-120" y="6870"/>
+                            <mxPoint x="-120" y="3340"/>
+                            <mxPoint x="-120" y="70"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="452" value="&lt;span style=&quot;color: rgb(240, 240, 240); font-family: Helvetica; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(42, 37, 47); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;[weitere Dienstreise==false]&lt;/span&gt;" style="edgeStyle=none;html=1;" edge="1" parent="1" source="448" target="451">
+                    <mxGeometry y="80" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="448" value="Abfrage Logik" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="40" y="6840" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="451" value="" style="shape=sumEllipse;perimeter=ellipsePerimeter;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+                    <mxGeometry x="60" y="6940" width="80" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
