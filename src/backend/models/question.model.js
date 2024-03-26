@@ -1,12 +1,16 @@
 import mongoose from 'mongoose';
 
 const questionSchema = new mongoose.Schema({
-  nextAnswerType: { type: String, enum: ['String', 'DateTime', 'Date', 'MultiDateSelect', 'Select', 'MultiSelect'], required: true },
-  answerAttribute: { type: String, required: true },
-  condition: { type: String, enum: ['gt1', 'truthy'] },
+	questionId: { type: String, required: true },
+	content: { type: String, required: true },
+  followingAnswerType: { type: String, enum: ['String', 'DateTime', 'Date', 'MultiDateSelect', 'Select', 'none'], required: true },
+  followingAnswerAttribute: { type: String, required: true },
+  condition: { type: String, enum: ['gt0', 'gt1', 'truthy', 'isTripEndDate'] },
+  editable: { type: Boolean, required: true},
   nextQuestions: {
-    true: "blblblblblb",
-    false: "blublublu"
+    true: { type: String },
+    false: { type: String },
+    default: { type: String }
   },
 });
 
