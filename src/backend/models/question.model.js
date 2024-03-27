@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const questionSchema = new mongoose.Schema({
 	questionId: { type: String, required: true },
 	content: { type: String, required: true },
-  followingAnswerType: { type: String, enum: ['String', 'DateTime', 'Date', 'MultiDateSelect', 'Select', 'none'], required: true },
+  followingAnswerType: { type: String, enum: ['string', 'dateTimeSelect', 'dateSelect', 'multiDateSelect', 'select', 'none'], required: true },
   followingAnswerAttribute: { type: String, required: true },
   condition: { type: String, enum: ['gt0', 'gt1', 'truthy', 'isTripEndDate'] },
   editable: { type: Boolean, required: true},
