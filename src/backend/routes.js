@@ -1,7 +1,6 @@
 import express from 'express';
 // import { ensureLoggedIn } from './lib/auth';
 import TravelExpenseReportController from './controller/travelExpenseReport.controller.js';
-import SettingsService from './service/settings.service.js';
 
 const router = express.Router();
 
@@ -13,11 +12,10 @@ const router = express.Router();
 // router.get('api/auth/logout');
 
 // to view  
-router.get('api/v1/travelExpenses', TravelExpenseReportController.getTravelExpenseReports);
-// router.get('api/v1/travelExpenses/:travelExpenseId');
-// router.post('api/v1/travelExpenses/:travelExpenseId');
-// router.delete('api/v1/travelExpenses/:travelExpenseId');
-
-router.get('/api/v1/settings', SettingsService.getSettings);
+router.get('/api/v1/travelExpenseReports', TravelExpenseReportController.getTravelExpenseReports);
+router.post('/api/v1/travelExpenseReports/create', TravelExpenseReportController.createTravelExpenseReport);
+router.get('/api/v1/travelExpenseReports/:travelExpenseReportId', TravelExpenseReportController.getOneTravelExpenseReport);
+// router.post('api/v1/travelExpenseReports/:travelExpenseId');
+// router.delete('api/v1/travelExpenseReports/:travelExpenseId');
 
 export default router;

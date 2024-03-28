@@ -3,5 +3,4 @@ import ChatService from './chat.service.js'
 
 async function extractInfoOfOneChat(chatId){
   const chat = await ChatService.getChatById(chatId);
-  
 }
