@@ -1,18 +1,18 @@
 [
 	{
-		"questionId": "ask.tripStart.dateTime",
-		"content": "Wann hast du deine Dienstreise gestartet und um wie viel Uhr?",
-		"followingAnswerType": "dateTime",
+		"questionId": "ask.tripStart.dateTimeSelect",
+		"content": "Wann hast du deine Dienstreise begonnen und um welche Uhrzeit?",
+		"followingAnswerType": "dateTimeSelect",
 		"followingAnswerAttribute": "tripStartDateTime",
 		"editable": false,
 		"nextQuestions": {
-			"default": "ask.tripEnd.dateTime"
+			"default": "ask.tripEnd.dateTimeSelect"
 		}
 	},
 	{
-		"questionId": "ask.TripEnd.dateTime",
-		"content": "Wann hast du diese Dienstreise beendet und um wie viel Uhr?",
-		"followingAnswerType": "dateTime",
+		"questionId": "ask.TripEnd.dateTimeSelect",
+		"content": "Wann endete deine Dienstreise und um welche Uhrzeit?",
+		"followingAnswerType": "dateTimeSelect",
 		"followingAnswerAttribute": "tripEndDateTime",
 		"editable": false,
 		"nextQuestions": {
@@ -33,7 +33,7 @@
 	},
 	{
 		"questionId": "ask.firstTripDestination.select",
-		"content": "Was war dein erstes Zielland bzw. der erste Standort?",
+		"content": "Was war dein erstes Reiseziel oder der erste Ort, den du besucht hast?",
 		"followingAnswerType": "select",
 		"followingAnswerAttribute": "firstPartialTripDestination",
 		"editable": false,
@@ -43,28 +43,28 @@
 	},
 	{
 		"questionId": "ask.partialTripOccasion.string",
-		"content": "Was war der Anlass zu diesem Teil der Dienstreise?",
-		"followingAnswerType": "String",
+		"content": "Was war der Anlass für diesen Teil der Dienstreise?",
+		"followingAnswerType": "string",
 		"followingAnswerAttribute": "partialTripOccasion",
-		"editable": false,
+		"editable": true,
 		"nextQuestions": {
-			"default": "ask.partialTripEndDate.date"
+			"default": "ask.partialTripEndDate.dateSelect"
 		}
 	},
 	{
 		"questionId": "ask.tripOccasion.string",
-		"content": "Was war der Anlass der Dienstreise?",
-		"followingAnswerType": "String",
+		"content": "Was war der Grund für die Dienstreise?",
+		"followingAnswerType": "string",
 		"followingAnswerAttribute": "tripOccasion",
-		"editable": false,
+		"editable": true,
 		"nextQuestions": {
 			"default": "ask.mealsProvided.boolean"
 		}
 	},
 	{
-		"questionId": "ask.partialTripEndDate.date",
+		"questionId": "ask.partialTripEndDate.dateSelect",
 		"content": "Wann endete dieser Teil der Dienstreise?",
-		"followingAnswerType": "date",
+		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "partialTripEndDate",
 		"editable": false,
 		"condition": "isTripEndDate",
@@ -75,7 +75,7 @@
 	},
 	{
 		"questionId": "ask.nextPartialTripDestination.select",
-		"content": "Was war dein nächstes Zielland bzw. der nächste Standort?",
+		"content": "Was war dein nächstes Zielland oder Standort?",
 		"followingAnswerType": "select",
 		"followingAnswerAttribute": "nextPartialTripDestination",
 		"editable": false,
@@ -83,14 +83,9 @@
 			"default": "ask.partialTripOccasion.string"
 		}
 	},
-
-
-
-
-// Essen stuff
 	{
 		"questionId": "ask.mealsProvided.boolean",
-		"content": "Wurde Frühstück, Mittagessen oder Abendessen an einem der Tage gestellt?",
+		"content": "Wurde an einem der Tage Frühstück, Mittagessen oder Abendessen gestellt?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "mealsProvided",
 		"editable": false,
@@ -102,7 +97,7 @@
 	},
 	{
 		"questionId": "ask.daysWithBreakfast.multiDateSelect",
-		"content": "An welchen Tage wurde dir Frühstück gestellt?",
+		"content": "An welchen Tagen wurde dir ein Frühstück gestellt?",
 		"followingAnswerType": "multiDateSelect",
 		"followingAnswerAttribute": "daysWithBreakfast",
 		"editable": true,
@@ -112,7 +107,7 @@
 	},
 	{
 		"questionId": "ask.daysWithDinner.multiDateSelect",
-		"content": "An welchen Tage wurde dir Mittagessen gestellt?",
+		"content": "An welchen Tagen wurde dir ein Mittagessen gestellt?",
 		"followingAnswerType": "multiDateSelect",
 		"followingAnswerAttribute": "daysWithLunch",
 		"editable": true,
@@ -122,7 +117,7 @@
 	},
 	{
 		"questionId": "ask.daysWithDinner.multiDateSelect",
-		"content": "An welchen Tage wurde dir Abendessen gestellt?",
+		"content": "An welchen Tagen wurde dir ein Abendessen gestellt?",
 		"followingAnswerType": "multiDateSelect",
 		"followingAnswerAttribute": "daysWithDinner",
 		"editable": true,
@@ -130,39 +125,46 @@
 			"default": "ask.daysWithLunch.multiDateSelect"
 		}
 	},
-
-
-// transportationcost stuff
 	{
 		"questionId": "ask.paidForTransport.boolean",
-		"content": "Musstest du für Flugticket(s), Bus-/Zugticket(s) oder Taxifahrten selbst aufkommen?",
+		"content": "Musstest du für Flugtickets, Bus- oder Zugtickets oder Taxifahrten selbst aufkommen?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "paidForTransport",
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.flightCostDay.date",
-			"false": "???"
+			"true": "ask.flightCostDay.dateSelect",
+			"false": "ask.privateCarUsed.boolean"
 		}
 	},
-
-// Flugzeug stuff
 	{
-		"questionId": "ask.flightCostDay.date",
+		"questionId": "ask.paidForTransport.boolean",
+		"content": "Musstest du für Flugtickets, Bus- oder Zugtickets oder Taxifahrten selbst aufkommen?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "paidForTransport",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.flightCostDay.dateSelect",
+			"false": "ask.privateCarUsed.boolean"
+		}
+	},
+	{
+		"questionId": "ask.flightCostDay.dateSelect",
 		"content": "Für welchen Tag musstest du Flugticket(s) bezahlen?",
-		"followingAnswerType": "date",
+		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "flightCostDay",
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.flightCost.number",
-			"false": "ask.busTrainCostDate.date"
+			"true": "ask.flightCost.currency",
+			"false": "ask.busTrainCostDate.dateSelect"
 		}
 	},
 	{
-		"questionId": "ask.flightCost.number",
+		"questionId": "ask.flightCost.currency",
 		"content": "Was waren die kosten für das/die Flugticket(s)?",
-		"followingAnswerType": "number",
+		"followingAnswerType": "currency",
 		"followingAnswerAttribute": "flightCost",
 		"editable": true,
 		"nextQuestions": {
@@ -177,28 +179,26 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.flightCostDay.date",
-			"false": "ask.busTrainCostDate.date"
+			"true": "ask.flightCostDay.dateSelect",
+			"false": "ask.busTrainCostDate.dateSelect"
 		}
 	},
-
-// Bus/Train Stuff
 	{
-		"questionId": "ask.busTrainCostDate.date",
+		"questionId": "ask.busTrainCostDate.dateSelect",
 		"content": "Für welchen Tag fielen kosten für Bus-/Zugticket(s) an?",
-		"followingAnswerType": "date",
+		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "busTrainCostDate",
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.busTrainCost.number",
-			"false": "ask.cabCostDate.date"
+			"true": "ask.busTrainCost.currency",
+			"false": "ask.cabCostDate.dateSelect"
 		}
 	},
 	{
-		"questionId": "ask.busTrainCost.number",
+		"questionId": "ask.busTrainCost.currency",
 		"content": "Was waren die kosten für das/die Bus/Zugticket(s)?",
-		"followingAnswerType": "number",
+		"followingAnswerType": "currency",
 		"followingAnswerAttribute": "flightCost",
 		"editable": true,
 		"nextQuestions": {
@@ -213,28 +213,26 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.busTrainCostDate.date",
-			"false": "ask.cabCostDate.date"
+			"true": "ask.busTrainCostDate.dateSelect",
+			"false": "ask.cabCostDate.dateSelect"
 		}
-	}
-
-// Taxi stuff
+	},
 	{
-		"questionId": "ask.cabCostDate.date",
+		"questionId": "ask.cabCostDate.dateSelect",
 		"content": "für welchen Tag fielen kosten für Taxifahrten an?",
-		"followingAnswerType": "date",
+		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "cabCostDate",
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.cabCost.number",
+			"true": "ask.cabCost.currency",
 			"false": "ask.privateCarUsed.boolean"
 		}
 	},
 	{
-		"questionId": "ask.cabCost.number",
+		"questionId": "ask.cabCost.currency",
 		"content": "Was waren die kosten für die Taxifahrt(en)?",
-		"followingAnswerType": "number",
+		"followingAnswerType": "currency",
 		"followingAnswerAttribute": "cabCost",
 		"editable": true,
 		"nextQuestions": {
@@ -249,13 +247,10 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.cabCostDate.date",
+			"true": "ask.cabCostDate.dateSelect",
 			"false": "ask.privateCarUsed.boolean"
 		}
-	}
-
-
-// transportcost für eigenen PKW stuff
+	},
 	{
 		"questionId": "ask.privateCarUsed.boolean",
 		"content": "Hast du während der Dienstreise deinen privaten PKW gefahren?",
@@ -264,26 +259,26 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.privateCarUsedDate.date",
-			"false": "?????????"
+			"true": "ask.privateCarUsedDate.dateSelect",
+			"false": "ask.privateOvernightStay.boolean"
 		}
 	},
 	{
-		"questionId": "ask.privateCarUsedDate.date",
+		"questionId": "ask.privateCarUsedDate.dateSelect",
 		"content": "An welchen Tag bist du mit deinen Privaten PKW gefahren?",
-		"followingAnswerType": "date",
+		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "privateCarUsedDate",
 		"editable": false,
 		"nextQuestions": {
-			"default": "ask.anotherCabCost.boolean"
+			"default": "ask.privateCarUsedDistance.km"
 		}
 	},
 	{
-		"questionId": "ask.privateCarUsedDistance.number",
+		"questionId": "ask.privateCarUsedDistance.km",
 		"content": "Wie viele Kilometer hast du zurückgelegt?",
-		"followingAnswerType": "number",
+		"followingAnswerType": "km",
 		"followingAnswerAttribute": "privateCarUsedDistance",
-		"editable": false,
+		"editable": true,
 		"nextQuestions": {
 			"default": "ask.privateCarUsedRouteBrakedown.string"
 		}
@@ -293,7 +288,7 @@
 		"content": "Gib bitte die Einzelnen Wegstrecken mit KM angaben an.",
 		"followingAnswerType": "string",
 		"followingAnswerAttribute": "privateCarUsedRouteBrakedown",
-		"editable": false,
+		"editable": true,
 		"nextQuestions": {
 			"default": "ask.anotherPrivateCarUse.boolean"
 		}
@@ -306,77 +301,228 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.privateCarUsedDate.date",
-			"false": "??????"
+			"true": "ask.privateCarUsedDate.dateSelect",
+			"false": "ask.privateOvernightStay.boolean"
 		}
 	},
-
-
-// itemization stuff und so
 	{
 		"questionId": "ask.privateOvernightStay.boolean",
-		"content": "Hast du an einem der Tagen privat übernachtet?",
+		"content": "Hast du an einem der Tage privat übernachtet?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "privateOvernightStay",
 		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.privateOvernightStayDates.multiDateSelect",
+			"false": "ask.hotelCostAccrued.boolean"
+		}
 	},
 	{
+		"questionId": "ask.privateOvernightStayDates.multiDateSelect",
 		"content": "An welchen Tagen hast du privat übernachtet?",
 		"followingAnswerType": "multiDateSelect",
 		"followingAnswerAttribute": "privateOvernightStayDates",
-		"editable": false,
-		"questionId": "ask.privateOvernightStayDates.dateTime"
+		"editable": true,
+		"nextQuestions": {
+			"default": "ask.hotelCostAccrued.boolean"
+		}
 	},
 	{
+		"questionId": "ask.hotelCostAccrued.boolean",
 		"content": "Fielen Hotelkosten für dich an?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "hotelCostAccrued",
 		"editable": false,
-		"questionId": "ask.hotelCostAccrued.boolean"
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.privateOvernightStayDates.dateSelect",
+			"false": "ask.cateringCostAccrued.boolean"
+		}
 	},
 	{
-		"content": "An Welchen Tagen fielen Hotelkosten für dich an",
-		"followingAnswerType": "multiDateSelect",
-		"followingAnswerAttribute": "hotelCostAccruedDates",
+		"questionId": "ask.hotelCostAccruedDate.dateSelect",
+		"content": "An Welchem Tag fielen Hotelkosten für dich an",
+		"followingAnswerType": "dateSelect",
+		"followingAnswerAttribute": "hotelCostAccruedDate",
 		"editable": false,
-		"questionId": "ask.hotelCostAccruedDates.multiDateSelect"
+		"nextQuestions": {
+			"default": "ask.hotelCost.currency"
+		}
 	},
 	{
-		"content": "Wie viel musstest für das Hotel am  ${hotelCostAccruedDate} bezahlen?",
-		"followingAnswerType": "number",
-		"followingAnswerAttribute": "hotelCostAccruedDateCost",
+		"questionId": "ask.hotelCost.currency",
+		"content": "Wie viel musstest du am Hotelkosten bezahlen?",
+		"followingAnswerType": "currency",
+		"followingAnswerAttribute": "hotelCost",
+		"editable": true,
+		"nextQuestions": {
+			"default": "ask.anotherHotelCostAccrued.boolean"
+		}
+	},
+	{
+		"questionId": "ask.anotherHotelCostAccrued.boolean",
+		"content": "Fielen an einem weiteren Tag Hotelkosten für dich an?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "anotherHotelCostAccrued",
 		"editable": false,
-		"questionId": "ask.hotelCostAccruedDateCost.number"
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.hotelCostAccruedDate.dateSelect",
+			"false": "ask.cateringCostAccrued.boolean"
+		}
 	},
 	{
-		"content": "Fielen Bewirtungskosten für  für dich an?",
+		"questionId": "ask.cateringCostAccrued.boolean",
+		"content": "Fielen Bewirtungskosten für dich an?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "cateringCostAccrued",
 		"editable": false,
-		"questionId": "ask.cateringCostAccrued.boolean"
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.cateringCostAccruedDate.dateSelect",
+			"false": "ask.tipAccrued.boolean"
+		}
 	},
 	{
-		"content": "An Welchen Tagen fielen Hotelkosten für dich an",
-		"followingAnswerType": "multiDateSelect",
-		"followingAnswerAttribute": "hotelCostAccruedDates",
+		"questionId": "ask.cateringCostAccruedDate.dateSelect",
+		"content": "An Welchen Tag fielen Bewirtungskosten für dich an?",
+		"followingAnswerType": "dateSelect",
+		"followingAnswerAttribute": "cateringCostAccruedDate",
 		"editable": false,
-		"questionId": "ask.hotelCostAccruedDates.multiDateSelect"
+		"nextQuestions": {
+			"default": "ask.cateringCost.currency"
+		}
 	},
-
-// für diverse belege
 	{
-		"content": "Lade bitte ein Beleg/Quittung dafür hoch.",
-		"followingAnswerType": "dateTime",
-		"followingAnswerAttribute": "tripStartDateTime",
+		"questionId": "ask.cateringCost.currency",
+		"content": "Was hat die Bewirtung gekostet?",
+		"followingAnswerType": "currency",
+		"followingAnswerAttribute": "cateringCost",
+		"editable": true,
+		"nextQuestions": {
+			"default": "ask.anotherCateringCostAccrued.boolean"
+		}
+	},
+	{
+		"questionId": "ask.anotherCateringCostAccrued.boolean",
+		"content": "Fielen an einem weiteren Tag Bewirtungskosten an?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "anotherCateringCostAccrued",
 		"editable": false,
-		"questionId": "ask.nextTripStart.dateTime"
-	}
-
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.cateringCostAccruedDate.dateSelect",
+			"false": "ask.tipAccrued.boolean"
+		}
+	},
 	{
-		"content": "Gibt es ein weitere Dienstreisen?",
+		"questionId": "ask.tipAccrued.boolean",
+		"content": "Wurde Trinkgeld ausgelegt?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "tipAccrued",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.tipAccruedDate.dateSelect",
+			"false": "ask.otherCostAccrued.boolean"
+		}
+	},
+	{
+		"questionId": "ask.tipAccruedDate.dateSelect",
+		"content": "An Welchen Tag wurden Trinkgelder ausgelegt?",
+		"followingAnswerType": "dateSelect",
+		"followingAnswerAttribute": "tipAccruedDate",
+		"editable": false,
+		"nextQuestions": {
+			"default": "ask.tipCost.currency"
+		}
+	},
+	{
+		"questionId": "ask.tipCost.currency",
+		"content": "Wie hoch war das Trinkgeld?",
+		"followingAnswerType": "currency",
+		"followingAnswerAttribute": "tipCost",
+		"editable": true,
+		"nextQuestions": {
+			"default": "ask.anotherTipAccrued.boolean"
+		}
+	},
+	{
+		"questionId": "ask.anotherTipAccrued.boolean",
+		"content": "Wurden an einem weiteren Tag Tringgelder ausgelegt?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "anotherTipAccrued",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.tipAccruedDate.dateSelect",
+			"false": "ask.otherCostAccrued.boolean"
+		}
+	},
+	{
+		"questionId": "ask.otherCostAccrued.boolean",
+		"content": "Wurden sonstige kosten von dir ausgelegt?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "otherCostAccrued",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.otherCostAccruedDate.dateSelect",
+			"false": "ask.anotherTrip.boolean"
+		}
+	},
+	{
+		"questionId": "ask.otherCostAccruedDate.dateSelect",
+		"content": "An Welchen Tag wurden sonstige Kosten ausgelegt?",
+		"followingAnswerType": "dateSelect",
+		"followingAnswerAttribute": "otherCostAccruedDate",
+		"editable": false,
+		"nextQuestions": {
+			"default": "ask.otherCost.currency"
+		}
+	},
+	{
+		"questionId": "ask.otherCost.currency",
+		"content": "Wie hoch war das Trinkgeld?",
+		"followingAnswerType": "currency",
+		"followingAnswerAttribute": "otherCost",
+		"editable": true,
+		"nextQuestions": {
+			"default": "ask.otherCostExplanation.string"
+		}
+	},
+	{
+		"questionId": "ask.otherCostExplanation.string",
+		"content": "Erläutere bitte um was für kasten es sich handelt und weswegen du ",
+		"followingAnswerType": "currency",
+		"followingAnswerAttribute": "otherCostExplanation",
+		"editable": false,
+		"nextQuestions": {
+			"default": "ask.anotherOtherCostAccrued.boolean"
+		}
+	},
+	{
+		"questionId": "ask.anotherOtherCostAccrued.boolean",
+		"content": "Fielen an einem weiteren Tag sonstige Kosten an?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "anotherOtherCostAccrued",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.otherCostAccruedDate.dateSelect",
+			"false": "ask.anotherTrip.boolean"
+		}
+	},
+	{
+		"questionId": "ask.anotherTrip.boolean",
+		"content": "Gab es ein weitere Dienstreise?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "anotherTrip",
 		"editable": false,
-		"questionId": "ask.anotherTrip.boolean"
-	},
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.tripStart.dateTimeSelect",
+			"false": "Null"
+		}
+	}
 ]

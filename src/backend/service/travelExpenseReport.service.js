@@ -1,4 +1,6 @@
 import TravelExpenseReport from '../models/travelExpenseReport.model.js';
+import ChatService from './chat.service.js';
+import QuestionService from './question.service.js';
 
 async function getAllTravelExpenseReports () {
   try {
@@ -10,7 +12,7 @@ async function getAllTravelExpenseReports () {
 
 async function getOneTravelExpenseReport (travelExpenseReportId) {
   try {
-    return await TravelExpenseReport.findById(travelExpenseReportId);
+    return await TravelExpenseReport.findById(travelExpenseReportId).populate('chat.question');
   } catch (error) {
     throw Error('Error getting one TravelExpenseReports', error);
   }
@@ -25,8 +27,14 @@ async function updateOneTravelExpenseReport (travelExpenseReportId, changes) {
 }
 
 async function createNewTravelExpenseReport(travelExpenseReport){
+  const { year, month } = travelExpenseReport;
   try {
-    return await new TravelExpenseReport(travelExpenseReport).save();
+    const question = await QuestionService.getOneQuestionByQuestionId('ask.tripStart.dateTimeSelect');
+    const chat =  [{
+      question: question._id
+    }];
+    const newTravelExpenseReport = await new TravelExpenseReport({year, month, chat}).populate('chat.question')
+    return await newTravelExpenseReport.save();
   } catch (error) {
     throw new Error('Error creating new travelExpenseReport', error)
   }

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function ReportCard({ travelReport }) {
 
-	const [openChat, setOpenChat] = useState(false)
+	const [openChat, setOpenChat] = useState()
 	function handleOnClick() {
 		setOpenChat(true);
 	}
@@ -29,7 +29,7 @@ function ReportCard({ travelReport }) {
 									{travelReport.month} {travelReport.year}
 								</div>
 								<div className="col-2">
-									<Link to={`${travelReport.travelReportId}`} className="stretched-link" onClick={handleOnClick}><i className="bi bi-caret-right"></i></Link>
+									<Link to={`${travelReport.travelReportId}`} className="stretched-link"><i className="bi bi-caret-right"></i></Link>
 								</div>
 							</div>
 						</div>

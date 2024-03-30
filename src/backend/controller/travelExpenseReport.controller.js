@@ -3,7 +3,7 @@ import TravelExpenseReportService from '../service/travelExpenseReport.service.j
 async function getTravelExpenseReports (req, res, next) {
   try {
     const travelExpenseReports = await TravelExpenseReportService.getAllTravelExpenseReports();
-    return res.send('hellooooo');
+    return res.json(travelExpenseReports);
   } catch (error) {
     throw Error('Error getting all TravelExpenseReports of a user', error);
   }
@@ -12,16 +12,16 @@ async function getTravelExpenseReports (req, res, next) {
 async function createTravelExpenseReport (req, res, next) {
   const { body } = req;
   try {
-    return res.send(await TravelExpenseReportService.createNewTravelExpenseReport(body));
+    return res.json(await TravelExpenseReportService.createNewTravelExpenseReport(body));
   } catch (error) {
     throw new Error('Error creating new TravelExpenseReport', error)
   }
 }
 
 async function getOneTravelExpenseReport (req, res, next) {
-  const travelExponseReportId = req.params.travelExponseReportId;
+  const travelExpenseReportId = req.params.travelExpenseReportId;
   try {
-    return res.send(await TravelExpenseReportService.getOneTravelExpenseReport(travelExponseReportId))
+    return res.json(await TravelExpenseReportService.getOneTravelExpenseReport(travelExpenseReportId))
   } catch (error) {
     throw new Error('Error getting one TravelExpenseReport', error)
   }
@@ -31,7 +31,7 @@ async function updateOneTravelExpenseReport (req, res, next) {
   const { body } = req;
   const travelExpenseReportId = req.params.travelExpenseReportId;
   try {
-    return res.send(await TravelExpenseReportService.updateOneTravelExpenseReport(travelExpenseReportId, body))
+    return res.json(await TravelExpenseReportService.updateOneTravelExpenseReport(travelExpenseReportId, body))
   } catch (error) {
     
   }

@@ -85,7 +85,7 @@ export default function App() {
             {/* view for all created travelExpenseReports of the user */}
             <Route path='travelExpenseReports' element={<TravelReportsOverview travelReports={travelReports}/>}>
               {/* view all created travelExpenseReports of the user */}
-              <Route path='create'/>
+              <Route path='create' element={<ChatBox conversation={conversation}/>}/>
               {/* view all created travelExpenseReports who needs verification from the user */}
               <Route path='verify'/>
               {/* view all created travelExpenseReports who needs a check from the user */}

@@ -1,4 +1,3 @@
-import Chat from '../models/chat.model.js'
 
 async function getChatById(chatId) {
   const chat = await Chat.find();
@@ -16,12 +15,4 @@ async function updateChatById (chatId, updatedChat) {
   }
 }
 
-async function createNewChat(chat){
-  try {
-    return new Chat(chat).save();
-  } catch (error) {
-    throw new Error('Error creating ne chat', error)
-  }
-}
-
-export default { getChatById, updateChatById, createNewChat };
+export default { getChatById, updateChatById };
