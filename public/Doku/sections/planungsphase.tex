@@ -1,0 +1,49 @@
+Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen.
+
+\subsection{Applikationsart}
+
+Wie bereits unter Projektziel\todo genannt, soll die Applikation als Webapplikation
+entwickelt werden. Ein Grund dafür ist, dass man die Applikation so in der Zukunft
+vergleichsweise einfach aktualisieren kann. Der Technologie Stack \gl{MERN} wir für die Erstellung der Softwarelösung gewählt weil die generell Etabliert und bereits in dem Softwareetwicklungsteam verwendet wird und in diverse Projekten umgesetzt wird. Dadurch kann gegebenenfalls vom Know-How anderer Personen im Team profitiert werden. So wird die Serverapplikation mit \gl{express}  \gl{JS} entwickelt werden. Die \gl{SPA} soll mit \gl{React} (und \gl{JS}) entwickelt werden und \gl{MongoDB} zur Speicherung von Daten.
+
+\subsection{Applikationsarchitektur}
+\label{sec:Planungsphase:Applikationsarchitektur}
+
+Die Applikation wird in zwei Teilapplikationen entwickelt: Frontend und Backend. Diese Unterscheidung ist notwendig, da bereits entschieden wurde, eine \gl{SPA} zu implementieren. Eine \gl{SPA} kann nicht sicher mit Daten interagieren, daher ist eine Backend-Applikation notwendig.
+
+\subsubsection{Frontend}
+
+Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird. Im Gegensatz zu normalen Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt. Stattdessen wird die Interaktion durch Browser-seitiges \gl{JS}  ausgeführt.
+
+\subsubsection{Backend}
+
+Das Backend ist die Teilapplikation, die auf dem Server läuft und die gesamte Datenverwaltung und Businesslogik enthält. Das Backend speichert die Daten in einer \gl{MongoDB} und greift über \gl{mongoose} auf diese zu.
+
+Es wird eine HTTP-API zur Verfügung gestellt, über die das Frontend mit dem Backend kommunizieren kann. Dadurch können Reisekostenabrechnungen eingereicht, bearbeitet, genehmigt und überprüft werden. Das Backend wird auf Basis der \gl{MSC}-Architektur entwickelt. Dabei werden die Komponenten nach Typ unterteilt. In der \gl{MSC}-Architektur gibt es folgende Komponententypen:
+
+\begin{enumerate}
+  \item \textbf{M}odel\\
+  Das Model beschreibt die zu speichernden Daten im Rahmen einer einzelnen Entität. Außerdem werden im Model die klassischen CRUD-Operationen durchgeführt.
+  \item \textbf{S}ervice\\
+  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD-, und gegebenenfalls noch weitere, Operationen auszuführen. 
+  \item \textbf{C}ontroller\\
+  Controller sind die Komponenten, die die tatsächliche Interaktion mit der Außenwelt, also dem http-Client bestreiten. Sie interagieren mit den Services, um die Anfragen des Clients auszuführen.
+\end{enumerate}
+
+Neben diesen Hauptkomponenten gibt es die folgenden Komponenten:
+
+\begin{itemize}
+  \item Middleware\\
+  Neben den mitgelieferten oder nachinstallierten Middlewares können auch eigene Middlewares erstellt werden. Im konkreten Fall wird eine Middleware genutzt, die den Zugang zu bestimmten Bereichen der Applikation beschränkt. Dadurch wird eine Anfrage, bevor sie überhaupt im Controller ankommt, bereits beantwortet, falls bestimmte Anforderungen nicht erfüllt werden.
+  \item Tests\\
+  Die Tests dienen dazu, die einzelnen Komponenten/Units auf verschiedene erwartete Ergebnisse hin zu überprüfen.
+\end{itemize}
+
+\subsection{Models und Datenstruktur}
+
+Die Anforderungen machen deutlich, dass mehrere Modelle erforderlich sind. So wird ein Modell für die Länder und deren Pauschalen benötigt. Die Reisekostenabrechnung selbst, die sich aus dem Chatverlauf ergibt, sowie Grundinformationen und Dienstreisen welche die Informationen aus dem Chat verarbeitet. Sowie ein Modell, das einige Berechnungsgrundlagen speichert. Außerdem wird ein Benutzermodell benötigt, um die jeweiligen Vorgesetzten zu speichern.
+
+\subsection{Feststellung der Benutzerberechtigungen}
+\label{sec:Planungsphase:Benutzerberechtigungen}
+
+Das unter Benutzerklassifizierung beschriebene Benutzerkonzept sieht drei Benutzerklassen vor. Es wird davon ausgegangen, dass jeder Benutzer, der sich an der Anwendung bzw. am \gl{IDP} anmeldet, zunächst ein Regulärer Benutzer ist. Anschließend wird geprüft, ob ein Benutzer über eine Rolle verfügt, die ihm über den \gl{IDP} zugewiesen wurde.

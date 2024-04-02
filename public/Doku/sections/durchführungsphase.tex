@@ -1,0 +1,53 @@
+\subsection{Auswahl von Libraries}
+
+Bei der Auswahl der Libraries wurden einige Aspekte besonders berücksichtigt:
+
+\begin{itemize}
+    \item Lizenz\\
+    Selbstverständlich muss die Lizenz der Library die Nutzung im konkreten Umfeld erlauben.
+    \item Beliebtheit\\
+    Für die Beliebtheit wurde sich an den Metriken der GitHub-Stars und wöchentlichen Downloads bedient. Je beliebter eine Library ist, desto höher ist die Wahrscheinlichkeit, dass sie langfristig weiter gepflegt wird.
+    \item Dependencies\footnote{engl. Abhängigkeiten, weitere einzubindende Pakete, ohne die die gegebene Library nicht funktioniert}\\
+    Neben der Lizenz und der Beliebtheit ist auch die Anzahl und Art der Dependencies der Library ein wichtiger Punkt. Eine Library, die weniger weitere Dependencies hat, kann besser eingesetzt werden, da man so besser kontrollieren kann, welcher Code in das Projekt gelangt.
+\end{itemize}
+
+\subsection{Umgang mit \gl{git} und Aufgabenaufteilung/management}
+
+\subsubsection{\gl{git}}
+
+Im Unternehmen wird \gl{git} zur Versionsverwaltung eingesetzt. \gl{git} ist ein Versionskontrollsystem, das ursprünglich für die Entwicklung des Linux-Kernels entwickelt wurde. \gl{git} wurde 2005 veröffentlicht und ist heute de facto Industriestandard.
+
+\subsubsection{Aufgabenaufteilung/Aufgabenmanagement}
+
+Als Vorgehensmodell wählte der Autor das Kanbanboard, da dieses hauptsächlich im Softwareentwicklungsteam verwendet wird. Die Anforderungen wurden in Tasks unterteilt und grob priorisiert, dazu wurde das Online-Webtool \gl{miro} zur Visualisierung der Tasks und deren Status verwendet.
+Ein Auszug des Kanbanboards ist im Anhang zu finden.\todo
+
+
+\subsection{Vorbereitung des Applikationsgrundgerüsts}
+
+Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository, wofür ein Template für gängige Datei(endungen) verwendet wurde, eine .env-Datei mit zugehöriger .env.sample-Datei (im Anhang zu finden) zum Bereitstellen von Umgebungsvariablen, wie z.B. client-id und secret zur Authentifizierung beim \gl{IDP}. Und die für Docker notwendigen Dateien docker-compose.yml und Dockerfile.
+
+\subsection{Vorbereitung der Backendapplikation}
+
+Nachdem das Grundgerüst der Anwendung erstellt war, wurde mit der Implementierung der Backend-Anwendung begonnen. Dabei wurde zunächst die Berechnungslogik der Pauschalen in den Fokus genommen, da diese Berechnungsgrundlagen bereits in der \gl{MED} vorlagen und somit einfach analysiert und in Programmcode umgesetzt werden konnten. Danach wurde mit einer einfachen \gl{HTTP} \gl{API} begonnen, die dann im Laufe der Implementierung der \gl{SPA} immer wieder an die konkreten Anforderungen angepasst wurde. Mit den entstehenden Endpoints für das Frontend wurde parallel auch die Backend-Logik für die \gl{CRUD}-Operationen entwickelt. Bei der Implementierung einer solch umfangreichen Anwendung wird fast immer auf externe Bibliotheken zurückgegriffen. Dies war auch in diesem Projekt der Fall. Diese Übersicht enthält die wichtigsten verwendeten Libraries:
+
+\begin{itemize}
+    \item \gl{express} ist eine der Libraries, die verwendet werden, wenn ein \gl{HTTP}-Server im Node.js-Umfeld bereitgestellt werden soll. Es wird eine Middleware-basierte \gl{API} zur Verfügung gestellt, mit der nahezu alle Szenarien abgedeckt werden können.
+    \item \gl{mongoose} ist das \gl{ODM} für \gl{MongoDB}. Damit lassen sich Datenstrukturen beschreiben und die tatsächlich vorhandenen Daten sicher verwalten.
+\end{itemize}
+
+Auch intern entwickelte DTS-Libraries werden genutzt, wie beispielsweise der dts-node-oidc-client für interne Anwendungen welche den hauseigenen \gl{IDP} nutzen und der dts-node-logger, ein erweiterter Logger für Node.js-Anwendungen, der speziell für DTS-Produkte verwendet wird.
+
+Im Anhang befindet sich unter Libraries (Backend) eine detaillierte Übersicht über die verwendeten Bibliotheken. \todo
+
+\subsection{Verbindung zum \gl{IDP}}
+
+Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungsmiddleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet, wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
+
+\subsection{Vorbereitung der Single-Page-Application}
+
+Nach Fertigstellung des Großteils der \gl{API} im Backend wurde mit der Implementierung der \gl{SPA} begonnen. Dabei wurden die unternehmensinternen Stylingrichtlinien und die entsprechende Vorlage verwendet, um das Projekt gemäß den Vorgaben zu gestalten. Während der Implementierung sind kleinere Mängel und Unschönheiten aufgefallen, die behoben wurden. Im Anhang befindet sich unter Libraries (Frontend) eine detaillierte Übersicht über die verwendeten Libraries.
+
+\subsection{Testing der Kritischen Berechnungsfunktionen}
+
+Nachdem die Berechnungslogik implementiert wurde muss diese aufgrund des Ausdrücklichen Kundenwunsches ausgiebig getestet werden. Hierfür wurde \gl{jest} benutzt. Ein Auszug eines Unittest ist im Anhang unter Unittest zu finden\todo

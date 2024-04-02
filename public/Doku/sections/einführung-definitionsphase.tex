@@ -1,0 +1,50 @@
+Diese Projektdokumentation beschreibt den Ablauf des Abschlussprojekts, das der Autor im Rahmen seiner Abschlussprüfung zum Fachinformatiker für Anwendungsentwicklung bei der DTS Systeme GmbH durchgeführt hat. Die DTS Systeme GmbH ist der Ausbildungsbetrieb des Autors und wird im Abschnitt \sct{sec:Einführung-Definitionsphase:Projektumfeld}{Projektumfeld} näher beschrieben.
+
+\subsection{Projektumfeld}
+\label{sec:Einführung-Definitionsphase:Projektumfeld}
+
+DTS Systeme GmbH ist ein internationaler Anbieter von IT-Lösungen und Services sowie Hersteller von Securitysoftware. Mit über 400 Mitarbeitern an 14 Standorten bieten wir unser Know-how in den Bereichen Datacenter, Technologies und Security an.
+Das Team für Software Development entwickelt und betreut Software wie DTS Monitoring, DTS Cockpit, DTS Identity Management oder DTS Identity as a Service und betreibt den hauseigenen Shop DTS Cloud Portal.
+
+\subsection{Ausgangssituation}
+\label{sec:Einführung-Definitionsphase:Ausgangssituation}
+
+Die DTS Systeme GmbH verwendet aktuell eine Komplexe, Fehler-/Manipulationsanfällige \gl{MED} zur Erstellung von \glp{RA}. Der Prozess ist außerdem sehr zeitaufwändig. Aus den genannten Gründen soll diese \gl{MED} abgelöst werden.
+Die \gl{MED} wurde ursprünglich von einem externen Dienstleister im Auftrag der DTS Systeme GmbH erstellt. Seitdem wurde sie nicht mehr weiterentwickelt oder angepasst, weshalb einige ursprüngliche Funktionen und Felder nicht mehr benötigt werden.
+
+\subsection{Projektbeschreibung}
+\label{sec:Einführung-Definitionsphase:Projektbeschreibung}
+
+Die in der Ausgangssituation beschriebene \gl{MED} soll nun abgelöst werden.
+Im Rahmen dieses Projekts soll eine neue Lösung implementiert werden, welches langfristig eingeführt werden soll. Anschließend soll die Lösung so erweitert werden, dass es in vollem Umfang genutzt werden kann.
+Grob sind folgende Anforderungen an die Neuentwicklung zu stellen:
+
+\begin{enumerate}
+    \item \textbf{Erstellung und Einreichung von \glp{RA}}\\
+    Nutzer sollen die Möglichkeit haben, \glp{RA} in Form eines regelbasierten Chatbots zu erstellen.
+    \item \textbf{Berechnung von Kosten und Pauschalen}\\
+    Die Softwarelösung sollte in der Lage sein, Berechnungen im Hintergrund durchzuführen und diese bei Bedarf anzuzeigen.
+    \item \textbf{Genehmigung und Ablehnung von \glp{RA}}\\
+    Vorgesetzte und Prüfer sollten die Möglichkeit haben, \glp{RA} zu genehmigen oder abzulehnen.
+    \item \textbf{Integration des Hauseigenen \gl{IDP} \footnote{engl. Identitätsanbieter, bezeichnet ein zentrales Zugangssystem zu den Leistungen von Diensteanbietern, bei dem sich die Nutzer anmelden können.}}\\
+    Die Login-, Rechte- und Nutzerverwaltung soll durch den hauseigene \gl{IDP} erfolgen, so dass keine zusätzlichen Zugangsdaten benötigt werden.
+    \item \textbf{Prüfung von \glp{RA}}\\
+    Die Prüfer sollten in der Lage sein, die \gl{RA} in einer tabellarischen Ansicht im Detail einzusehen und sich die Berechnungen im Detail anzeigen zu lassen.
+\end{enumerate}
+
+Eine detaillierte Auflistung der Anforderungen an die Neuentwicklung ist im Anhang unter Lastenheft zu finden.\todo
+
+\subsection{Projektziel}
+\label{sec:Einführung-Definitionsphase:Projektziel}
+
+Das Ziel soll sein, über ein neues, selbst entwickeltes Softwarelösung zu verfügen, das auf den Servern der DTS-Gruppe gehostet werden kann und für \gl{MA} über einen Webbrowser erreichbar ist. Damit soll die allgemeine Unzufriedenheit mit der aktuellen Lösung und der zusätzliche Arbeitsaufwand für die Erstellenden, Prüfenden und Freigebenden Personengruppen reduzieren und vereinfachen.
+
+\subsection{Projektschnittstellen}
+\label{sec:Einführung-Definitionsphase:Projektschnittstellen}
+
+Wie in der \sct{sec:Einführung-Definitionsphase:Projektbeschreibung}{Projektbeschreibung} erwähnt, wird die Softwarelösung eine Schnittstelle zum hauseigenen \gl{IDP} verwenden, um Login, Rechte und Benutzerverwaltung zu übernehmen. Darüber hinaus über eine \gl{HTTP}-\gl{API} zur Kommunikation zwischen Front- und Backend sowie über eine Datenbankanbindung zur Speicherung der erforderlichen Daten.
+
+\subsection{Projektabgrenzung}
+\label{sec:Einführung-Definitionsphase:Projektabgrenzung}
+
+Da die zur Verfügung stehende Zeit begrenzt ist, muss der Projektumfang entsprechend eingegrenzt werden. So wurde unter anderem bewusst auf die Möglichkeit der Anpassung und Speicherung von Pauschalen für bestimmte Zeiträume verzichtet, da dies nicht in den engen Projektzeitplan passen würde. Eine detailliertere Auflistung der bewusst weggelassenen Features, um die Softwarelösung vollumfänglich nutzen zu können, ist unter \sct{sec:Abschlussphase:Ausblick}{Ausblick} zu finden.

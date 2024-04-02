@@ -91,8 +91,20 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.daysWithBreakfast.multiDateSelect",
+			"true": "ask.breakfastProvided.boolean",
 			"false": "ask.paidForTransport.boolean"
+		}
+	},
+	{
+		"questionId": "ask.breakfastProvided.boolean",
+		"content": "Wurde an einem der Tage Frühstück gestellt?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "breakfastProvided",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.daysWithBreakfast.multiDateSelect",
+			"false": "ask.lunchProvided.boolean"
 		}
 	},
 	{
@@ -102,17 +114,41 @@
 		"followingAnswerAttribute": "daysWithBreakfast",
 		"editable": true,
 		"nextQuestions": {
-			"default": "ask.daysWithLunch.multiDateSelect"
+			"default": "ask.lunchProvided.boolean"
 		}
 	},
 	{
-		"questionId": "ask.daysWithDinner.multiDateSelect",
+		"questionId": "ask.lunchProvided.boolean",
+		"content": "Wurde an einem der Tage Mittagessen gestellt?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "lunchProvided",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.daysWithLunch.multiDateSelect",
+			"false": "ask.dinnerProvided.boolean"
+		}
+	},
+	{
+		"questionId": "ask.daysWithLunch.multiDateSelect",
 		"content": "An welchen Tagen wurde dir ein Mittagessen gestellt?",
 		"followingAnswerType": "multiDateSelect",
 		"followingAnswerAttribute": "daysWithLunch",
 		"editable": true,
 		"nextQuestions": {
-			"default": "ask.daysWithDinner.multiDateSelect"
+			"default": "ask.dinnerProvided.boolean"
+		}
+	},
+	{
+		"questionId": "ask.dinnerProvided.boolean",
+		"content": "Wurde an einem der Tage Mittagessen gestellt?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "dinnerProvided",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.daysWithDinner.multiDateSelect",
+			"false": "ask.dinnerProvided.boolean"
 		}
 	},
 	{
@@ -122,7 +158,7 @@
 		"followingAnswerAttribute": "daysWithDinner",
 		"editable": true,
 		"nextQuestions": {
-			"default": "ask.daysWithLunch.multiDateSelect"
+			"default": "ask.paidForTransport.boolean"
 		}
 	},
 	{
@@ -133,20 +169,20 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.flightCostDay.dateSelect",
+			"true": "ask.paidForFlight.boolean",
 			"false": "ask.privateCarUsed.boolean"
 		}
 	},
 	{
-		"questionId": "ask.paidForTransport.boolean",
-		"content": "Musstest du für Flugtickets, Bus- oder Zugtickets oder Taxifahrten selbst aufkommen?",
+		"questionId": "ask.paidForFlight.boolean",
+		"content": "Musstest du für Flugtickets selbst aufkommen?",
 		"followingAnswerType": "boolean",
-		"followingAnswerAttribute": "paidForTransport",
+		"followingAnswerAttribute": "paidForFlight",
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
 			"true": "ask.flightCostDay.dateSelect",
-			"false": "ask.privateCarUsed.boolean"
+			"false": "ask.paidForBusTrain.boolean"
 		}
 	},
 	{
@@ -155,10 +191,8 @@
 		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "flightCostDay",
 		"editable": false,
-		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.flightCost.currency",
-			"false": "ask.busTrainCostDate.dateSelect"
+			"default": "ask.flightCost.currency"
 		}
 	},
 	{
@@ -180,7 +214,19 @@
 		"condition": "truthy",
 		"nextQuestions": {
 			"true": "ask.flightCostDay.dateSelect",
-			"false": "ask.busTrainCostDate.dateSelect"
+			"false": "ask.paidForBusTrain.boolean"
+		}
+	},
+	{
+		"questionId": "ask.paidForBusTrain.boolean",
+		"content": "Musstest du für Bus/Zug Tickets selbst aufkommen?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "paidForBusTrain",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.busTrainCostDate.dateSelect",
+			"false": "ask.paidForCab.boolean"
 		}
 	},
 	{
@@ -191,8 +237,7 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.busTrainCost.currency",
-			"false": "ask.cabCostDate.dateSelect"
+			"default": "ask.busTrainCost.currency"
 		}
 	},
 	{
@@ -214,7 +259,19 @@
 		"condition": "truthy",
 		"nextQuestions": {
 			"true": "ask.busTrainCostDate.dateSelect",
-			"false": "ask.cabCostDate.dateSelect"
+			"false": "ask.paidForCab.boolean"
+		}
+	},
+	{
+		"questionId": "ask.paidForCab.boolean",
+		"content": "Musstest du für Taxifahrten selbst aufkommen?",
+		"followingAnswerType": "boolean",
+		"followingAnswerAttribute": "paidForCab",
+		"editable": false,
+		"condition": "truthy",
+		"nextQuestions": {
+			"true": "ask.cabCostDate.dateSelect",
+			"false": "ask.privateCarUsed.boolean"
 		}
 	},
 	{
@@ -225,8 +282,7 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.cabCost.currency",
-			"false": "ask.privateCarUsed.boolean"
+			"default": "ask.cabCost.currency"
 		}
 	},
 	{
