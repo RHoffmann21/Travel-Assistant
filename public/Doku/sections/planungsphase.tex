@@ -2,41 +2,43 @@ Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Appli
 
 \subsection{Applikationsart}
 
-Wie bereits unter Projektziel\todo genannt, soll die Applikation als Webapplikation
-entwickelt werden. Ein Grund dafür ist, dass man die Applikation so in der Zukunft
-vergleichsweise einfach aktualisieren kann. Der Technologie Stack \gl{MERN} wir für die Erstellung der Softwarelösung gewählt weil die generell Etabliert und bereits in dem Softwareetwicklungsteam verwendet wird und in diverse Projekten umgesetzt wird. Dadurch kann gegebenenfalls vom Know-How anderer Personen im Team profitiert werden. So wird die Serverapplikation mit \gl{express}  \gl{JS} entwickelt werden. Die \gl{SPA} soll mit \gl{React} (und \gl{JS}) entwickelt werden und \gl{MongoDB} zur Speicherung von Daten.
+Wie bereits unter \sct{sec:Einführung-Definitionsphase:Projektziel}{Projektziel} genannt, soll die Applikation als Webapplikation entwickelt werden. Ein Grund dafür ist, dass man die Applikation so in der Zukunft
+vergleichsweise einfach aktualisieren kann. Der Technologie Stack \gl{MERN} wirf für die Erstellung der Softwarelösung gewählt, weil diese generell Etabliert und bereits in dem Software Development Team verwendet wird und in diverse Projekten bereits umgesetzt wird. Dadurch kann gegebenenfalls vom Know-How anderer Personen im Team profitiert werden. So wird die Serverapplikation mit \gl{express} auf der Laufzeitumgebung \gl{nodejs} entwickelt werden. Die \gl{SPA} mit \gl{React} entwickelt werden und \gl{MongoDB} zur Speicherung von Daten verwendet werden.
 
 \subsection{Applikationsarchitektur}
 \label{sec:Planungsphase:Applikationsarchitektur}
 
-Die Applikation wird in zwei Teilapplikationen entwickelt: Frontend und Backend. Diese Unterscheidung ist notwendig, da bereits entschieden wurde, eine \gl{SPA} zu implementieren. Eine \gl{SPA} kann nicht sicher mit Daten interagieren, daher ist eine Backend-Applikation notwendig.
+Die Softwarelösung wird in zwei Teilapplikationen entwickelt: \sct{sec:Planungsphase:Frontend}{Frontend} und \sct{sec:Planungsphase:Backend}{Backend}. Eine Backend Applikation ist Notwenig da sich bereits auf eine \gl{SPA} festgelegt wurde. Da eine \gl{SPA} nicht sicher mit Daten interagieren kann.
 
 \subsubsection{Frontend}
+\label{sec:Planungsphase:Frontend}
 
-Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird. Im Gegensatz zu normalen Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt. Stattdessen wird die Interaktion durch Browser-seitiges \gl{JS}  ausgeführt.
+Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird.  Im Gegensatz zu normalen Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt.Stattdessen wird die Interaktion durch browserseitiges \gl{JS} ausgeführt.
 
 \subsubsection{Backend}
+\label{sec:Planungsphase:Backend}
 
-Das Backend ist die Teilapplikation, die auf dem Server läuft und die gesamte Datenverwaltung und Businesslogik enthält. Das Backend speichert die Daten in einer \gl{MongoDB} und greift über \gl{mongoose} auf diese zu.
+Das Backend läuft auf dem Server und und übernimmt die gesamte Datenverwaltung und Businesslogik. Mit \gl{mongoose} kann das Backend dann auf die gespeicherten Daten der \gl{MongoDB} zugreifen.
 
-Es wird eine HTTP-API zur Verfügung gestellt, über die das Frontend mit dem Backend kommunizieren kann. Dadurch können Reisekostenabrechnungen eingereicht, bearbeitet, genehmigt und überprüft werden. Das Backend wird auf Basis der \gl{MSC}-Architektur entwickelt. Dabei werden die Komponenten nach Typ unterteilt. In der \gl{MSC}-Architektur gibt es folgende Komponententypen:
+Da die beiden Teilapplikationen miteinander kommunizieren müssen stellt das Backend eine \gl{HTTP}-\gl{API} zur Verfügung. Über diese kann dann das Frontend Informationen senden. Um so z.B. \glp{RA} einreichen zu können.
+Das Backend wird auf Basis der \gl{MSC}-Architektur entwickelt. Dabei werden die Komponenten nach Typ unterteilt. In der \gl{MSC}-Architektur gibt es folgende Komponententypen:
 
 \begin{enumerate}
   \item \textbf{M}odel\\
-  Das Model beschreibt die zu speichernden Daten im Rahmen einer einzelnen Entität. Außerdem werden im Model die klassischen CRUD-Operationen durchgeführt.
+  Das Model beschreibt die zu speichernden Daten im Rahmen einer einzelnen Entität. So werden im Model die klassischen CRUD-Operationen durchgeführt. Wie das Kreieren einer \gl{RA}.
   \item \textbf{S}ervice\\
-  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD-, und gegebenenfalls noch weitere, Operationen auszuführen. 
+  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD-, und gegebenenfalls noch weitere, Operationen auszuführen. Wie die Hintergrundberechnungen von Pauschalen.
   \item \textbf{C}ontroller\\
-  Controller sind die Komponenten, die die tatsächliche Interaktion mit der Außenwelt, also dem http-Client bestreiten. Sie interagieren mit den Services, um die Anfragen des Clients auszuführen.
+  Controller sind die Komponenten, die die tatsächliche Interaktion mit der Außenwelt, also dem \gl{HTTP}-Client bestreiten. Sie interagieren mit den Services, um die Anfragen des Clients auszuführen. Der Punkt, an dem die Daten vom Frontend an die Services zur Verarbeitung gesendet werden.
 \end{enumerate}
 
 Neben diesen Hauptkomponenten gibt es die folgenden Komponenten:
 
 \begin{itemize}
   \item Middleware\\
-  Neben den mitgelieferten oder nachinstallierten Middlewares können auch eigene Middlewares erstellt werden. Im konkreten Fall wird eine Middleware genutzt, die den Zugang zu bestimmten Bereichen der Applikation beschränkt. Dadurch wird eine Anfrage, bevor sie überhaupt im Controller ankommt, bereits beantwortet, falls bestimmte Anforderungen nicht erfüllt werden.
+Neben den vorinstallierten oder heruntergeladenen Middlewares können auch eigene erstellt werden. Im konkreten Fall wird eine Middleware verwendet, die den Zugriff auf bestimmte Bereiche der Applikation einschränkt. Dadurch wird eine Anfrage bereits vor dem Eintreffen im Controller beantwortet, falls bestimmte Anforderungen nicht erfüllt sind. So können z.B. nur Benutzer mit der Prüfer Rolle die Prüfungsansicht einsehen.
   \item Tests\\
-  Die Tests dienen dazu, die einzelnen Komponenten/Units auf verschiedene erwartete Ergebnisse hin zu überprüfen.
+  Die Tests dienen dazu, die einzelnen Komponenten auf verschiedene erwartete Ergebnisse hin zu überprüfen. Dabei werden die kritischen Berechnungsfunktionen auf ihr vorgesehenes Verhalten geprüft.
 \end{itemize}
 
 \subsection{Models und Datenstruktur}
@@ -46,4 +48,4 @@ Die Anforderungen machen deutlich, dass mehrere Modelle erforderlich sind. So wi
 \subsection{Feststellung der Benutzerberechtigungen}
 \label{sec:Planungsphase:Benutzerberechtigungen}
 
-Das unter Benutzerklassifizierung beschriebene Benutzerkonzept sieht drei Benutzerklassen vor. Es wird davon ausgegangen, dass jeder Benutzer, der sich an der Anwendung bzw. am \gl{IDP} anmeldet, zunächst ein Regulärer Benutzer ist. Anschließend wird geprüft, ob ein Benutzer über eine Rolle verfügt, die ihm über den \gl{IDP} zugewiesen wurde.
+Das unter \sct{sec:Analysephase:Benutzerklassifizierung}{Benutzerklassifizierung} beschriebene Benutzerkonzept sieht drei Benutzerklassen vor. Es wird davon ausgegangen, dass jeder Benutzer, der sich an der Anwendung bzw. am \gl{IDP} anmeldet, zunächst ein Regulärer Benutzer ist. Anschließend wird geprüft, ob ein Benutzer über eine Rolle verfügt, die ihm über den \gl{IDP} zugewiesen wurde.
