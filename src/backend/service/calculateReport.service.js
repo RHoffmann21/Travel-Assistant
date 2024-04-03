@@ -29,21 +29,22 @@ async function calculateMealAllowance(countryId, isArrivalDepartureDay, isfullDa
 /**
  * @description calculates the deduction for included meals
  * @param {Number} mealAllowance the allowance the spesific day
- * @param {Boolean} wasBreakfastIncluded if breackfast was included
- * @param {Boolean} wasLunchIncluded if lunch was included
- * @param {Boolean} wasDinnerIncluded if dinner was included
- * @returns {Number} the cut of the allowance
+ * @param {Boolean} breakfastIncluded if breakfast was included
+ * @param {Boolean} lunchIncluded if lunch was included
+ * @param {Boolean} dinnerIncluded if dinner was included
+ * @returns {Number} the calculated cut of the allowance
  */
-async function calculateMealDeduction(mealAllowance, wasBreakfastIncluded, wasLunchIncluded, wasDinnerIncluded) {
+async function calculateMealDeduction(mealAllowance, breakfastIncluded, lunchIncluded,
+  wasDinnerIncluded) {
   const settings = await SettingsService.getSettings();
   if(typeof (mealAllowance) === 'undefined') throw new TypeError('mealAllowance is undefined');
   let mealDeduction = 0;
-  if (!wasBreakfastIncluded && !wasLunchIncluded && !wasDinnerIncluded) return mealDeduction;
-  if (wasBreakfastIncluded && wasLunchIncluded && wasDinnerIncluded) return parseFloat(mealAllowance) || 0;
-  wasBreakfastIncluded && (mealDeduction = parseFloat(mealAllowance * settings.breakfastDeductionPercentage));
-  wasLunchIncluded && (mealDeduction += parseFloat(mealAllowance * settings.lunchDeductionPercentage));
-  wasDinnerIncluded && (mealDeduction += parseFloat(mealAllowance * settings.dinnerDeductionPercentage));
-  return parseFloat(mealDeduction);
+  if (!breakfastIncluded && !lunchIncluded && !wasDinnerIncluded) return mealDeduction;
+  if (breakfastIncluded && lunchIncluded && wasDinnerIncluded) return mealAllowance;
+  breakfastIncluded && (mealDeduction = mealAllowance * settings.breakfastDeductionPercentage);
+  lunchIncluded && (mealDeduction += mealAllowance * settings.lunchDeductionPercentage);
+  wasDinnerIncluded && (mealDeduction += mealAllowance * settings.dinnerDeductionPercentage);
+  return mealDeduction;
 }
 
 /**

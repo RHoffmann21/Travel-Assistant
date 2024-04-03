@@ -1,52 +1,54 @@
-\subsection{Zieldefinition}
-Digitalisierung von Erstellung, Verwaltung & Validierung der Reisekostenabrechnungen mithilfe einer Single-Page-Application (SPA).
+\subsection{Lastenheft}
+\label{sec:Anhang:Lastenheft}
+\textbf{Zieldefinition}\\
+Digitalisierung von Erstellung, Verwaltung \& Validierung der Reisekostenabrechnungen mithilfe einer Single-Page-Application (SPA).
 
-\subsection{Ist Zustand}
+\textbf{Ist Zustand}\\
 Mitarbeiter im Außendienst müssen für Dienstreisen eine Reisekostenabrechnung (im Folgenden: RA) erstellen. Diese RA muss bis zum 8. des Folgemonats eingereicht werden. Bisher erstellten die Außendienstmitarbeiter die Reisekostenabrechnung mit Hilfe einer komplexen und sehr unübersichtlichen Microsoft-Excel-Dateivorlage (im Folgenden Excel-Datei genannt). Aufgrund dieser Komplexität und der fehlenden Hilfestellung kommt es vor allem bei den ersten Anwendungen zu vielen Rückfragen in der Accounting Abteilung oder bei anderen Kollegen. In die Excel-Datei, die auch Berechnungen durchführt, müssen verschiedene Angaben zur Dienstreise eingetragen werden. Nachdem die Excel-Datei ausgefüllt wurde, muss diese ausgedruckt und vom Vorgesetzten genehmigt und unterschrieben werden. Wurde die RA genehmigt, muss diese mit Quittungen bzw. Belegen per „Hauspost“ (interner Abhol- und Postdienst am Standort Herford), was im günstigsten Fall einen halben Tag dauert, oder per Post, was 2-3 Tage dauert, an die Buchhaltung geschickt werden.
-Diese prüfen die RAs und geben sie bei Fehlern an den Außendienstmitarbeiter zur Anpassung zurück. Ist die RA korrekt ausgefüllt & sind die notwendigen Belege & Quittungen vorhanden, wird diese dann an die Payroll Accounting Abteilung weitergeleitet, damit die Reisekosten erstattet werden können.
+Diese prüfen die RAs und geben sie bei Fehlern an den Außendienstmitarbeiter zur Anpassung zurück. Ist die RA korrekt ausgefüllt \& sind die notwendigen Belege \& Quittungen vorhanden, wird diese dann an die Payroll Accounting Abteilung weitergeleitet, damit die Reisekosten erstattet werden können.
 
-\subsection{Soll Zustand}
+\textbf{Soll Zustand}\\
 Die Excel-Datei soll durch eine moderne SPA ersetzt werden. Diese SPA soll die Möglichkeit bieten, eine RA digital zu erstellen, freizugeben und zu prüfen. Die Außendienstmitarbeiter sollen mit Hilfe eines regelbasierten Chatbots durch das Ausfüllen einer RA geführt werden. Die Bearbeitung soll jederzeit zu einem anderen Zeitpunkt fortgesetzt werden können. Sobald alle notwendigen Angaben gemacht wurden, kann der Außendienstmitarbeiter die RA freigeben. Diese muss dann zunächst vom jeweiligen Teamleiter/Vorgesetzten über die SPA bestätigt werden, bevor sie der Accounting Abteilung zur Prüfung vorgelegt wird. Die SPA sollte dann die Berechnungen der RA aufschlüsseln, damit die Buchhaltung diese besser nachvollziehen/prüfen kann. Werden Unstimmigkeiten/Unvollständigkeiten festgestellt, so wird die RA mit dem entsprechenden Vermerk zur Bearbeitung an den Außendienstmitarbeiter zurückgegeben und nach Anpassung wieder an die Accounting Abteilung freigegeben. Sobald die RA fehlerfrei ist, kann die Accounting Abteilung die Informationen an die Payroll Accounting Abteilung weiterleiten. 
 
-\subsection{Funktionale Anforderungen}
-\begin{enumerate}[label*=\arabic*.]
+\textbf{Funktionale Anforderungen}
+\begin{enumerate}
 	\item Datenbank + Anbindung zur Speicherung
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Vollständige/ Unvollständige RA Daten speichern können
 		\item RA Daten speichern können
 		\item Belege (Bilder) speichern können
 	\end{enumerate}
 	\item Erstellung einer RA
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Erstellung durch ein Regelbasierenden Chatbot
 		\item Möglichkeit bieten zu gewissen „fragen“ zusätzlich belege hochzuladen
 	\end{enumerate}
 	\item Übersicht der RAs
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Nutzer können alle selbst erstellten RAs einsehen
 		\item Anzeige des jeweiligen Status der RAs
 	\end{enumerate}
 	\item Übersicht Freigabe der RAs
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Vorgesetzte haben eine Übersicht über eingereichte RAs für ihre zuständigen Mitarbeiter
 	\end{enumerate}
 	\item Freigabe/Ablehnung von RAs durch Vorgesetzten
 	\item Übersicht Prüfung der RAs
-	\begin{enumerate}[label*=\arabic*.]
-		\item Prüfer können alle vom Nutzer & Vorgesetzten Freigegebenen RAs einsehen
+	\begin{enumerate}
+		\item Prüfer können alle vom Nutzer \& Vorgesetzten Freigegebenen RAs einsehen
 	\end{enumerate}
 	\item Prüfung der RAs
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Prüfer haben eine detaillierte Ansicht der RA
 		\item Prüfer haben eine Aufschlüsselung der Berechnungen einer RA
 		\item Prüfer haben die Möglichkeit Vermerke zu schreiben
 		\item Prüfer haben die Möglichkeit die RA freizugeben oder zurückzusenden 
 	\end{enumerate}
 	\item Statische Implementierung von Pauschalen
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Kilometer Pauschale
 		\item Länder Pauschalen
-		\begin{enumerate}[label*=\arabic*.]
+		\begin{enumerate}
 			\item Pauschalbeträge 8-24 Std. oder (An/Abreisetag)
 			\item Pauschalbeträge Ganztags
 			\item Pauschalbeträge Privatübernachtung
@@ -54,38 +56,38 @@ Die Excel-Datei soll durch eine moderne SPA ersetzt werden. Diese SPA soll die M
 		\item Prozentuale Abzüge für erhaltene Mahlzeiten
 	\end{enumerate}
 	\item Berechnung von Pauschalen
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Pauschalen/Werte sollen im Hintergrunde anhand der Benutzer Angaben berechnet werden
 		\item Nachvollziehbarkeit soll für Prüfer gegeben sein
 	\end{enumerate}
 	\item Login, Rechte und Benutzer Verwaltung
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Integration des Hauseigenen Identity Providers (IDP)
-		\item Benutzer & Rechte werden über den hauseigenen IDP verwaltet
+		\item Benutzer \& Rechte werden über den hauseigenen IDP verwaltet
 	\end{enumerate}
 \end{enumerate}
 
-\subsection{Nicht Funktionale Anforderungen}
-\begin{enumerate}[label*=\arabic*.]
+\textbf{Nicht Funktionale Anforderungen}
+\begin{enumerate}
 	\item Benutzung des Corporate Designs
 	\item Sprache für die Oberflächen: Deutsch
 	\item Erstellung von RAs soll durch Fragestellungen vom Regelbasierenden Chatbot auch für neu Einsteiger selbsterklärend sein
 	\item Zwischen Speicherung 
-	\begin{enumerate}[label*=\arabic*.]
+	\begin{enumerate}
 		\item Von RAs
 		\item Von Prüfungen der RAs
 	\end{enumerate}
 	\item Intuitive Benutzung
 \end{enumerate}
 
-\subsection{Rollen}
+\textbf{Rollen}
 \begin{itemize}
 	\item Regulärer Benutzer – Mitarbeiter im Außendienst
 	\item Prüfer – Mitarbeiter in der Accounting Abteilung
 	\item Vorgesetzter - Übergeordneter Mitarbeiter des Außendienst Mitarbeiters
 \end{itemize}
 
-\subsection{Status}
+\textbf{Status}
 \begin{itemize}
 	\item Offen – noch nicht zur Prüfung/Freigabe gesendete RA
 	\item In Bearbeitung – RA ist zur Bearbeitung/Freigabe bei der Accounting Abteilung/Vorgesetzten
@@ -93,7 +95,7 @@ Die Excel-Datei soll durch eine moderne SPA ersetzt werden. Diese SPA soll die M
 	\item Fertig – Wurde erfolgreich abgearbeitet
 \end{itemize}
 
-\subsection{Abnahme- und Testkriterien}
+\textbf{Abnahme- und Testkriterien}
 \begin{enumerate}
 	\item Reibungslose Erstellung und Verwaltung von RAs sowie die Prüfung soll gegeben sein
 	\item Erfüllt alle Funktionalen Anforderungen

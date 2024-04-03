@@ -18,6 +18,8 @@
 \graphicspath{ {./images/} }
 \usepackage{multirow}
 \usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{lscape}
 
 \usepackage[
 backend=biber,
@@ -52,7 +54,6 @@ sorting=ynt
 \glsaddall
 \makenoidxglossaries
 
-%\usepackage{blindtext}
 \begin{document}
 
 \makeatletter
@@ -121,10 +122,35 @@ Legende:
 \printnoidxglossary[title={Glossar}, type=main]
 
 \section{Anhang}
+
+\input{attachments/microsoftexceldatei}
+\pagebreak
+
+\input{attachments/lastenheft}
+
 \input{attachments/ressourcen}
 \pagebreak
 %\label{sec:Amotisationsrechnung}
 \input{attachments/amortisationsrechnung}
 \pagebreak
 \input{attachments/libraries}
+
+\subsection{Lastenheft}
+
+\subsection{Pflichtenheft}
+%\input{attachments/pflichtenheft}
+
+\subsection{Anwendungsfall Diagramm}
+%\input{attachments/anwendungsfalldiagramm}
+
+\subsection{Decision Tree}
+%\input{attachments/decisiontree}
+
+\subsection{Quellcode Ausschnitte}
+%\input{attachments/quellcodeausschnitte}
+
+\subsection{Quellcode Ausschnitte}
+%\input{attachments/quellcode}
+%Prozess_Reisekostenabrechnung_ALT
+
 \end{document}
