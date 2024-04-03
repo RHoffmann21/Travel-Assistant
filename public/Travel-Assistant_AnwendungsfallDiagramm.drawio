@@ -1,1 +1,233 @@
-<mxfile host="Electron" modified="2024-04-02T19:05:38.209Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/20.3.0 Chrome/104.0.5112.114 Electron/20.1.3 Safari/537.36" etag="bSmZX_ZEauywufpnGDBA" version="20.3.0" type="device"><diagram id="cajD-FGb1kDTuz6nXscE" name="Seite-1">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</diagram></mxfile>
+<mxfile host="65bd71144e">
+    <diagram id="cajD-FGb1kDTuz6nXscE" name="Seite-1">
+        <mxGraphModel dx="-141" dy="649" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-12" value="" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-1" target="2ZF6ptOpIEEvym-gZNjq-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-16" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-1" target="2ZF6ptOpIEEvym-gZNjq-15" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-18" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-1" target="2ZF6ptOpIEEvym-gZNjq-13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-20" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-1" target="2ZF6ptOpIEEvym-gZNjq-19" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-50" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-1" target="2ZF6ptOpIEEvym-gZNjq-48" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-22" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-4" target="2ZF6ptOpIEEvym-gZNjq-21" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-71" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-4" target="2ZF6ptOpIEEvym-gZNjq-70" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-76" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-4" target="2ZF6ptOpIEEvym-gZNjq-69" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MFESCSOZ6SqHmT5D4SGM-8" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=block;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-4" target="2ZF6ptOpIEEvym-gZNjq-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="2ZF6ptOpIEEvym-gZNjq-4" target="2ZF6ptOpIEEvym-gZNjq-65">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-4" value="Prüfer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="2200" y="680" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-29" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-5" target="2ZF6ptOpIEEvym-gZNjq-23" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-41" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=none;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-5" target="2ZF6ptOpIEEvym-gZNjq-36" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="MFESCSOZ6SqHmT5D4SGM-7" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;labelBackgroundColor=none;endArrow=block;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-5" target="2ZF6ptOpIEEvym-gZNjq-1" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" style="edgeStyle=none;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="2ZF6ptOpIEEvym-gZNjq-5" target="2ZF6ptOpIEEvym-gZNjq-25">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-5" value="Vorgesetzter" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1290" y="680" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-33" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=block;endFill=0;" parent="1" source="2ZF6ptOpIEEvym-gZNjq-32" target="2ZF6ptOpIEEvym-gZNjq-5" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-32" value="Geschäftsführung" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1290" y="510" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="MFESCSOZ6SqHmT5D4SGM-2" value="Travel-Assistant" style="swimlane;" parent="1" vertex="1">
+                    <mxGeometry x="1360" y="80" width="800" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-15" value="Einsicht seiner Reisekosten-abrechnungen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="295" y="200" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-48" value="Status der&lt;br&gt;Reisekosten-abrechnung&lt;br&gt;Einsehen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="540" y="515" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-57" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-15" target="2ZF6ptOpIEEvym-gZNjq-48" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-806.6973846227563" y="511.38259895951705" as="sourcePoint"/>
+                        <mxPoint x="-833.1999999999978" y="458.60000000000423" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-58" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-57" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-19" value="Bearbeiten&lt;br&gt;Reisekosten-abrechnung" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="415" y="460" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-59" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-15" target="2ZF6ptOpIEEvym-gZNjq-19" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-792.7528286418913" y="195.13589174842832" as="sourcePoint"/>
+                        <mxPoint x="-833.7934397888678" y="227.09077650391896" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-60" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-59" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-13" value="Freigabe&lt;br&gt;Reisekosten-abrechnung" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="140" y="500" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-14" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-11" target="2ZF6ptOpIEEvym-gZNjq-13" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-17" value="&amp;lt;&amp;lt;extend&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-14" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-62" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=none;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-11" target="2ZF6ptOpIEEvym-gZNjq-13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="-782.7528286418913" y="205.13589174842832" as="sourcePoint"/>
+                        <mxPoint x="-823.7934397888678" y="237.09077650391896" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-63" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-62" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-11" value="Erstellung&lt;br&gt;Reisekosten- abrechnung" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="230" y="370" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="MFESCSOZ6SqHmT5D4SGM-4" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: Helvetica; font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&amp;lt;&amp;lt;include&amp;gt;&amp;gt;&lt;/span&gt;" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-15" target="2ZF6ptOpIEEvym-gZNjq-11" edge="1">
+                    <mxGeometry x="0.1139" y="-2" relative="1" as="geometry">
+                        <mxPoint x="1778.2757639523065" y="440.85989206824" as="sourcePoint"/>
+                        <mxPoint x="1616.7377062276453" y="603.1434595224544" as="targetPoint"/>
+                        <Array as="points"/>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-36" value="Reisekosten-abrechnung&lt;br&gt;ablehnung" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="10" y="244" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-43" value="Rückmeldung&lt;br&gt;zur Reisekosten-abrechnung hinzufügen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="40" y="70" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-39" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-43" target="2ZF6ptOpIEEvym-gZNjq-36" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="366.92970342489684" y="1010.0458543757477" as="sourcePoint"/>
+                        <mxPoint x="362.5350477044856" y="959.9732110942132" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-40" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-39" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-25" value="Einsehen Freigegebener Reisekosten-abrechnung" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="140" y="234" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-44" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-25" target="2ZF6ptOpIEEvym-gZNjq-43" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="549.9479426856572" y="1030.698879859175" as="sourcePoint"/>
+                        <mxPoint x="337.42702145519274" y="948.3757832206466" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-45" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-44" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-23" value="Reisekosten-abrechnung&lt;br&gt;genehmigen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="110" y="400" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-27" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-25" target="2ZF6ptOpIEEvym-gZNjq-23" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="260" y="750.0000000000001" as="sourcePoint"/>
+                        <mxPoint x="280" y="1020" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-28" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-27" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-65" value="Berechnugen / Belege&lt;br&gt;Prüfen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="500" y="50" width="120" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-70" value="Reisekosten-abrechnung zur Bearbeitung zurück schicken" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="490" y="180" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-69" value="Rückmeldung&lt;br&gt;zur Reisekosten-abrechnung hinzufügen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="295" y="80" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-72" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-69" target="2ZF6ptOpIEEvym-gZNjq-70" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="520" y="1050" as="sourcePoint"/>
+                        <mxPoint x="520" y="1000" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-73" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-72" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-74" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-65" target="2ZF6ptOpIEEvym-gZNjq-69" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="530" y="1060" as="sourcePoint"/>
+                        <mxPoint x="530" y="1010" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-75" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-74" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-21" value="Einsehen&lt;br&gt;Genehmigter&lt;br&gt;Reisekosten-abrechnungen" style="ellipse;whiteSpace=wrap;html=1;verticalAlign=top;" parent="MFESCSOZ6SqHmT5D4SGM-2" vertex="1">
+                    <mxGeometry x="670" y="60" width="120" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-67" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=classicThin;startFill=1;dashed=1;" parent="MFESCSOZ6SqHmT5D4SGM-2" source="2ZF6ptOpIEEvym-gZNjq-21" target="2ZF6ptOpIEEvym-gZNjq-65" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="563.3239793808234" y="1051.3789906871439" as="sourcePoint"/>
+                        <mxPoint x="536.8000000000131" y="998.6000000000263" as="targetPoint"/>
+                        <Array as="points"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-68" value="&amp;lt;&amp;lt;include&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="2ZF6ptOpIEEvym-gZNjq-67" vertex="1" connectable="0">
+                    <mxGeometry x="0.2458" y="2" relative="1" as="geometry">
+                        <mxPoint x="-2" y="-10" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2ZF6ptOpIEEvym-gZNjq-1" value="MA" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1745" y="690" width="30" height="60" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

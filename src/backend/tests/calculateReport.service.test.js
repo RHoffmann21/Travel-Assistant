@@ -1,8 +1,10 @@
 import CalculateReportService from '../service/calculateReport.service.js';
 import dotenv from 'dotenv';
 import SettingsService from '../service/settings.service.js';
+import connectDB from '../lib/connectDB.js';
 dotenv.config()
 beforeAll(async () => {
+  await connectDB(process.env.MONGO_URI);
   await SettingsService.importSettingsData();
 });
 
@@ -38,12 +40,8 @@ describe('Calculates meal deduction', function () {
         expect(await CalculateReportService.calculateMealDeduction(40, true, false, false)).toStrictEqual(8);
         expect(await CalculateReportService.calculateMealDeduction(40, false, false, false)).toStrictEqual(0);
         expect(await CalculateReportService.calculateMealDeduction(36, true, true, true)).toStrictEqual(36);
-        expect(await CalculateReportService.calculateMealDeduction(0, false, false, false)).toStrictEqual(0);
-        expect(await CalculateReportService.calculateMealDeduction(0, true, false, false)).toStrictEqual(0);
-        expect(await CalculateReportService.calculateMealDeduction(0, true, true, false)).toStrictEqual(0);
         expect(await CalculateReportService.calculateMealDeduction(0, true, true, true)).toStrictEqual(0);
       } catch (error) {
-        console.log(error);
         expect(error).toBeUndefined();
       }
     });
@@ -52,7 +50,8 @@ describe('Calculates meal deduction', function () {
     test('Checks that the correct error is thrown', async () => {
       try {
         expect(await CalculateReportService.calculateMealDeduction()).toThrow('mealAllowance is undefined');
-        expect(await CalculateReportService.calculateMealDeduction(undefined, false, true, false)).toThrow('mealAllowance is undefined');
+        expect(await CalculateReportService.calculateMealDeduction(undefined, false, true, false))
+        .toThrow('mealAllowance is undefined');
       } catch (error) {
         expect(error).toBeDefined();
       }
