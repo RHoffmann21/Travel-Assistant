@@ -1,29 +1,34 @@
 \subsection{Ist-Analyse}
 
-Wie bereits unter Ausgangssituation beschrieben, wird derzeit eine veraltete und unübersichtliche / fehleranfällige \gl{MED} zur Erstellung der \gl{RA} verwendet. Der Prozess zur Einreichung einer \gl{RA} wird im folgenden Abschnitt \sct{sec:Analysephase:Reisekostenabrechnungsprozess}{Reisekostenabrechnungsprozess} näher erläutert.
+Wie bereits unter \sct{sec:Einführung-Definitionsphase:Ausgangssituation}{Ausgangssituation} beschrieben, wird derzeit eine veraltete und unübersichtliche / fehleranfällige \gl{MED} zur Erstellung der \gl{RA} verwendet. 
 
 \subsubsection{Reisekostenabrechnungsprozess}
 \label{sec:Analysephase:Reisekostenabrechnungsprozess}
 
-Der \gl{MA} im Außendienst füllt die \gl{RA} aus und legt sie seinem Vorgesetzten (und ggf. der \gl{GF}) vor, welche prüfen, ob die Dienstreise(n) genehmigt wurde(n). Ist dies der Fall, wird die an die Payroll Accounting Abteilung weitergeleitet und dort auf Manipulationen überprüft. Weist die \gl{RA} keine Manipulationen vor, kann sie an die Accountig Abteilung weitergeleitet werden, die die Berechnungen und die Übereinstimmung der Belege mit den eingetragenen Kosten überprüft. Ist die \gl{RA} in Ordnung, kann eine entsprechende Auszahlung veranlasst werden. Sollte jedoch in einem der oben genannten Fälle etwas mit der \gl{RA} nicht in Ordnung sein, muss diese vom Mitarbeiter bearbeitet werden oder wird schlichtweg abgelehnt.
+Der \gl{MA} im Außendienst füllt die \gl{RA} aus und legt sie seinem Vorgesetzten (und ggf. der \gl{GF}) vor, welche prüfen, ob die Dienstreise(n) genehmigt wurde(n). Ist dies der Fall, wird diese an die Payroll Accounting Abteilung weitergeleitet und dort auf Manipulationen überprüft. Weist die \gl{RA} keine Manipulationen vor, kann sie an die Accountig Abteilung weitergeleitet werden, die die Berechnungen und die Übereinstimmung der Belege mit den eingetragenen Kosten überprüft. Ist die \gl{RA} in Ordnung, kann eine entsprechende Auszahlung veranlasst werden. Sollte jedoch in einem der oben genannten Fälle etwas mit der \gl{RA} nicht in Ordnung sein, muss diese vom Mitarbeiter bearbeitet werden oder wird schlichtweg abgelehnt.
 
 Eine grobe Darstellung des aktuellen Reisekostenabrechnungsprozesses ist in visueller Form im Anhang unter \sct{sec:Anhang:ProzessAlt}{Prozess Alt} zu finden.
 
 \subsubsection{Herausforderungen}
 
-Wie in der \sct{sec:Einführung-Definitionsphase:Ausgangssituation}{Ausgangssituation} beschrieben, ist diese \gl{MED} komplex, was zu Fehlern führt, wie z.B. dass Bedingungen falsch verstanden werden und dementsprechend eingetragen werden, obwohl sie nicht eingetragen werden sollten. Grundsätzlich kann es aufgrund der Art der \gl{MED} zu Manipulationen der Berechnungslogik oder der Pauschalen kommen. Zudem kommt es häufig vor, dass notwendige Belege nicht beigefügt werden oder die angegebenen Kosten nicht validiert werden können. Diese Herausforderungen erschweren den Einsatz in den Abteilungen, in diese verwendet wird.
+Wie in der \sct{sec:Einführung-Definitionsphase:Ausgangssituation}{Ausgangssituation} beschrieben, ist diese \gl{MED} komplex, was zu Fehlern führt, wie z.B. dass Bedingungen falsch verstanden werden und dementsprechend eingetragen werden, obwohl sie nicht eingetragen werden sollten. Grundsätzlich kann es aufgrund der Art der \gl{MED} zu Manipulationen der Berechnungslogik oder der Pauschalen kommen. Zudem kommt es häufig vor, dass notwendige Belege nicht beigefügt werden oder die angegebenen Kosten nicht validiert werden können. Diese Herausforderungen erschweren den Einsatz in den Abteilungen, in denen diese verwendet wird.
+
+\subsection{Soll-Zustand}
+
+Die \gl{MED} soll durch eine moderne \gl{SPA} ersetzt werden. Diese  \gl{SPA} soll die Möglichkeit bieten, eine \gl{RA} digital zu erstellen, zu bearbeiten, freizugeben und zu prüfen. Ein regelbasierter Chatbot soll dem \gl{MA} zu der Dienstreise Fragen stellen und die Antworten im Hintergrund verarbeiten. Im Anhang unter \sct{sec:Anhang:Lastenheft}{Lastenheft} können nähere Details zum Soll-Zustand/Anforderungen entnommen werden.
+
 
 \subsection{Wirtschaftlichkeit}
 Da diese Softwarelösung die veraltete \gl{MED} ablösen soll, spielt die Wirtschaftlichkeit eine untergeordnete Rolle. Dennoch können monatliche Einsparungen erzielt werden, die sich anhand folgender Annahmen/Durchschnittswerten ergeben.
 
 Von folgenden Personalkosten wird ausgegangen:
 \begin{itemize}
-\item Azubi/Autor: 7€
-\item \gl{MA} im Außendienst: 25€
-\item Junior Software Developer: 27€ 
-\item Accounting Abteilung/ Payroll Accounting/ Betreuerin: 30€
-\item Vorgesetzter: 45€
-\item \gl{GF}: 100€
+\item Azubi/Autor: 7€/h
+\item \gl{MA} im Außendienst: 25€/h
+\item Junior Software Developer: 27€/h
+\item Accounting Abteilung/ Payroll Accounting/ Betreuerin: 30€/h
+\item Vorgesetzter: 45€/h
+\item \gl{GF}: 100€/h
 \end{itemize}
 
 Folgende Annahmen gelten universell:
@@ -47,7 +52,7 @@ Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der bestehende
 \item 25\% der \glp{RA} müssen nachgeprüft werden - 1 \gl{MA} Accounting à 7 Minuten
 \end{itemize}
 
-Summe der Monatlichen Kosten/Verluste durch die Aktuelle Lösung: 589,33 €
+\textbf{Summe der Monatlichen Kosten/Verluste durch die Aktuelle Lösung: 589,33 €}
 
 Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der Neu entwickelten Softwarelösung Travel-Assistant:
 \begin{itemize}
@@ -59,7 +64,7 @@ Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der Neu entwic
 \item Wartung der Softwarelösung – 1 Junior Software Developer à 2 Stunden
 \end{itemize}
 
-Summe der Monatlichen Kosten/Verluste durch die Neuentwickelte Softwarelösung: 411,50€
+\textbf{Summe der Monatlichen Kosten/Verluste durch die Neuentwickelte Softwarelösung: 411,50€}
 
 Monatliche Kosten Ersparnis: 177,83€
 
@@ -72,7 +77,7 @@ Entwicklungskosten des Travel-Assistant:
 \item Feedback/Testing - 1 \gl{MA} im Außendienst à 1 Stunde
 \end{itemize}
 
-Summe Projekt Entwicklungskosten: 1.095,00€
+\textbf{Summe Projekt Entwicklungskosten: 1.095,00€}
 
 Damit die Softwarelösung Vollumfänglich eingesetzt werden kann muss diese um einige Features weiterentwickelt werden, siehe Ausblick. Angenommen wird:
 \begin{itemize}
@@ -80,7 +85,7 @@ Damit die Softwarelösung Vollumfänglich eingesetzt werden kann muss diese um e
 \item Zusätzliche Meetings - 1 Junior Software Developer, 2 \gl{MA} Accounting à 4 Stunden
 \end{itemize}
 
-Summe Entwicklungskosten bis zum Vollumfänglich einsatz : 1.023,00 € (2.118,00 €)
+\textbf{Summe Entwicklungskosten bis zum Vollumfänglich einsatz : 1.023,00 € (2.118,00 €)}
 
 \includegraphics[width=1\textwidth]{amortisationsrechnung.png}
 

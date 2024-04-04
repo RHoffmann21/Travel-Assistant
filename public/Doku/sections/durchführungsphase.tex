@@ -10,15 +10,13 @@ Bei der Auswahl der Libraries wurden einige Aspekte besonders berücksichtigt:
     Für die Beliebtheit wurde sich an den Metriken der wöchentlichen Downloads bedient. Je beliebter eine Library ist, desto höher ist die Wahrscheinlichkeit, dass sie langfristig weiter gepflegt wird.
     \item Dependencies\footnote{engl. Abhängigkeiten, weitere einzubindende Pakete, ohne die die gegebene Library nicht funktioniert}\\
 	Die Anzahl und Art der Dependencies der Library ist ein nicht unwesentlicher Faktor. Eine Library welche weniger Dependencies beinhaltet, kann besser eingesetzt werden. So kann man besser kontrollieren welcher Code in das Projekt gelangt.
-	\item Schwachstellen
-	Die Sicherheit der Library ist einer der wichtigsten Punkte. Wenn eine Library Schwachstellen aufweist, sollte sie nicht benutzt werden. Daher ist es ratsam, eine Library mit weniger Dependencies zu verwenden, da sie weniger Risikopotential bietet.   
+	\item Schwachstellen\\
+	Die Sicherheit der Library ist einer der wichtigsten Punkte. Daher ist es ratsam, eine Library mit weniger Dependencies zu verwenden, da sie weniger Risikopotential bietet. Und darauf zu achten das vorhandene Schwachstellen Risiko arm sind.
 \end{itemize}
 
-\subsection{Umgang mit git und Aufgabenaufteilung/Management}
+\subsubsection{Versionierung}
 
-\subsubsection{git}
-
-Im Unternehmen wird \gl{git} zur Versionsverwaltung eingesetzt. \gl{git} ist ein Versionskontrollsystem. \gl{git} wurde 2005 veröffentlicht und ist heute de facto Industriestandard. 
+Im Unternehmen wird \gl{git} zur Versionsverwaltung eingesetzt. \gl{git} ist ein Versionskontrollsystem. \gl{git} wurde 2005 veröffentlicht und ist heute de facto Industriestandard. Auch für dieses Projekt wird \gl{git} verwendet.
 
 \subsubsection{Aufgabenaufteilung/Aufgabenmanagement}
 
@@ -27,13 +25,13 @@ Ein Auszug des \sct{sec:Anhang:KanbanBoard}{Kanbanboards} ist im Anhang zu finde
 
 \subsection{Vorbereitung des Applikationsgrundgerüsts}
 
-Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository, wofür ein Template für gängige Datei(-endungen) verwendet wurde, eine .env-Datei mit zugehöriger .env.sample Datei zum Bereitstellen von Umgebungsvariablen, wie z.B. client-id und secret zur Authentifizierung beim \gl{IDP}. Und die für Docker notwendigen Dateien docker-compose.yml und Dockerfile.
+Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository, wofür ein Template für gängige Datei(-endungen) verwendet wurde, eine .env-Datei mit zugehöriger .env.sample Datei zum Bereitstellen von Umgebungsvariablen, wie z.B. client-id und secret zur Authentifizierung beim \gl{IDP} und die für Docker notwendigen Dateien docker-compose.yml und Dockerfile.
 
 \subsection{Implementierung Backendapplikation}
 
-Nachdem das Grundgerüst der Anwendung erstellt war, wurde mit der Implementierung der Backend-Anwendung begonnen. Dabei wurde zunächst die Berechnungslogik der Pauschalen in den Fokus genommen (Ein Ausschnitt einer Funktion ist im Anhang unter \sct{sec:Anhang:Code-Ausschnitt}{Code-Ausschnitt} zu finden), da diese Berechnungsgrundlagen bereits in der \gl{MED} vorlagen und somit einfach analysiert und in Programmcode umgesetzt werden konnten. Danach wurde mit einer einfachen \gl{HTTP} \gl{API} begonnen, die dann im Laufe der Implementierung der \gl{SPA} immer wieder an die konkreten Anforderungen angepasst wurde. Mit den entstehenden Endpoints für das Frontend wurde parallel auch die Backend-Logik für die \gl{CRUD}-Operationen entwickelt. Bei der Implementierung einer solch umfangreichen Anwendung wird fast immer auf externe Bibliotheken zurückgegriffen.
+Nachdem das Grundgerüst der Anwendung erstellt war, wurde mit der Implementierung der Backend-Anwendung begonnen. Dabei wurde zunächst die Berechnungslogik der Pauschalen in den Fokus genommen (Ein Ausschnitt einer Funktion ist im Anhang unter \sct{sec:Anhang:Code-Ausschnitt}{Code-Ausschnitt} zu finden), da diese Berechnungsgrundlagen bereits in der \gl{MED} vorlagen und somit einfach analysiert und in Programmcode umgesetzt werden konnten. Danach wurde mit einer einfachen \gl{REST}-\gl{API} begonnen, die dann im Laufe der Implementierung der \gl{SPA} immer wieder an die konkreten Anforderungen angepasst wurde. Mit den entstehenden Endpoints für das Frontend wurde parallel auch die Backend-Logik für die \gl{CRUD}-Operationen entwickelt. Bei der Implementierung einer solch umfangreichen Anwendung wird fast immer auf externe Bibliotheken zurückgegriffen.
 
-Auch intern entwickelte DTS-Libraries werden genutzt, wie beispielsweise der dts-node-oidc-client für interne Anwendungen welche den hauseigenen \gl{IDP} nutzen und der dts-node-logger, ein erweiterter Logger für Node.js-Anwendungen, der speziell für DTS-Produkte verwendet wird.
+Auch intern entwickelte DTS-Libraries werden genutzt, wie beispielsweise der dts-node-oidc-client für interne Anwendungen, welche den hauseigenen \gl{IDP} nutzen und der dts-node-logger, ein erweiterter Logger für Node.js-Anwendungen, der speziell für DTS-Produkte verwendet wird.
 
 Im Anhang befindet sich unter \sct{sec:Anhang:Libraries:Backend}{Libraries (Backend)} eine detaillierte Übersicht über die verwendeten Bibliotheken.
 
@@ -49,6 +47,9 @@ Nach Fertigstellung des Großteils der \gl{API} im Backend wurde mit der Impleme
 
 Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs Middleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet (Ausschnitt davon kann im Anhang unter \sct{sec:Anhang:IdP-Login}{IDP-Login} eingesehen werden), wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
 
-\subsection{Testing der Kritischen Berechnungsfunktionen}
+\subsection{Testing}
 
-Nachdem die Berechnungslogik implementiert wurde muss diese aufgrund des Ausdrücklichen Kundenwunsches ausgiebig getestet werden. Hierfür wurde \gl{jest} benutzt. Ein Auszug eines Unittest ist im Anhang unter \sct{sec:Anhang:Unittest-Ausschnitt}{Unittest-Ausschnitt} zu finden.
+Nachdem die Berechnungslogik implementiert wurde, muss diese aufgrund des Ausdrücklichen Kundenwunsches ausgiebig getestet werden. Hierfür wurde \gl{jest} benutzt. Ein Auszug eines Unittest ist im Anhang unter \sct{sec:Anhang:Unittest-Ausschnitt}{Unittest-Ausschnitt} zu finden.
+
+Nachdem eine Lauffähige Version vorhanden war wurde diese mithilfe eines Ausendienst Mitarbeiter auf Funktionalität getestet.
+Das Feedback wurde dann entegengenommen \todo

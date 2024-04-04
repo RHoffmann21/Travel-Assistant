@@ -1,4 +1,4 @@
-Diese Projektdokumentation beschreibt den Ablauf des Abschlussprojekts, das der Autor im Rahmen seiner Abschlussprüfung zum Fachinformatiker für Anwendungsentwicklung bei der DTS Systeme GmbH durchgeführt hat. Die DTS Systeme GmbH ist der Ausbildungsbetrieb des Autors und wird im Abschnitt \sct{sec:Einführung-Definitionsphase:Projektumfeld}{Projektumfeld} näher beschrieben.
+Diese Projektdokumentation beschreibt den Ablauf des Abschlussprojekts, das der Autor im Rahmen seiner Abschlussprüfung zum Fachinformatiker für Anwendungsentwicklung bei der DTS Systeme GmbH durchgeführt hat. Die DTS Systeme GmbH ist der Ausbildungsbetrieb des Autors.
 
 \subsection{Projektumfeld}
 \label{sec:Einführung-Definitionsphase:Projektumfeld}
@@ -22,15 +22,15 @@ Im Rahmen dieses Projekts soll eine neue Lösung implementiert werden, welches l
 Grob werden folgende Anforderungen an die Neuentwicklung gestellt:
 
 \begin{enumerate}
-    \item \textbf{Erstellung und Einreichung von \glp{RA}}\\
+    \item \textbf{Erstellung und Einreichung von Reisekostenabrechnungen}\\
     Nutzer sollen die Möglichkeit haben, \glp{RA} in Form eines regelbasierten Chatbots zu erstellen.
     \item \textbf{Berechnung von Kosten und Pauschalen}\\
     Die Softwarelösung sollte in der Lage sein, Berechnungen im Hintergrund durchzuführen und diese bei Bedarf anzuzeigen.
-    \item \textbf{Genehmigung und Ablehnung von \glp{RA}}\\
+    \item \textbf{Genehmigung und Ablehnung von Reisekostenabrechnungen}\\
     Vorgesetzte und Prüfer sollten die Möglichkeit haben, \glp{RA} zu genehmigen oder abzulehnen.
     \item \textbf{Integration des Hauseigenen \gl{IDP}}
     Die Login-, Rechte- und Nutzerverwaltung soll durch den hauseigene \gl{IDP} erfolgen, so dass keine zusätzlichen Zugangsdaten benötigt werden.
-    \item \textbf{Prüfung von \glp{RA}}\\
+    \item \textbf{Prüfung von Reisekostenabrechnungen}\\
     Die Prüfer sollten in der Lage sein, die \gl{RA} in einer tabellarischen Ansicht im Detail einzusehen und sich die Berechnungen im Detail anzeigen zu lassen.
 \end{enumerate}
 
@@ -40,12 +40,12 @@ Eine detaillierte Auflistung der Anforderungen an die Neuentwicklung ist im Anha
 \subsection{Projektziel}
 \label{sec:Einführung-Definitionsphase:Projektziel}
 
-Das Ziel soll sein, über ein neues, selbst entwickeltes Softwarelösung zu verfügen, das auf den Servern der DTS-Gruppe gehostet werden kann und für \gl{MA} über einen Webbrowser erreichbar ist. Damit soll die allgemeine Unzufriedenheit mit der aktuellen Lösung und der zusätzliche Arbeitsaufwand für die Erstellenden, Prüfenden und Freigebenden Personengruppen reduzieren und vereinfachen.
+Das Ziel ist eine neue, selbst entwickelte Softwarelösung, die die aktuelle Methode der Erstellung von \gl{RA} ablöst. Die Software soll auf dem Server der DTS-Gruppe gehostet werden und über einen Webbrowser für \gl{MA} erreichbar sein. Dadurch soll die allgemeine Unzufriedenheit mit der aktuellen Lösung reduziert und der Arbeitsaufwand für die erstellenden, prüfenden und freigebenden Personengruppen vereinfacht werden.
 
 \subsection{Projektschnittstellen}
 \label{sec:Einführung-Definitionsphase:Projektschnittstellen}
 
-Wie in der \sct{sec:Einführung-Definitionsphase:Projektbeschreibung}{Projektbeschreibung} erwähnt, wird die Softwarelösung eine Schnittstelle zum hauseigenen \gl{IDP} verwenden, um Login, Rechte und Benutzerverwaltung zu übernehmen. Darüber hinaus über eine \gl{HTTP}-\gl{API} zur Kommunikation zwischen Front- und Backend sowie über eine Datenbankanbindung zur Speicherung der erforderlichen Daten.
+Wie in der \sct{sec:Einführung-Definitionsphase:Projektbeschreibung}{Projektbeschreibung} erwähnt, wird die Softwarelösung eine Schnittstelle zum hauseigenen \gl{IDP} verwenden, um Login, Rechte und Benutzerverwaltung zu übernehmen. Darüber hinaus wird eine \gl{REST}-\gl{API} zur Kommunikation zwischen Front- und Backend sowie über eine Datenbankanbindung zur Speicherung der erforderlichen Daten implementiert.
 
 \subsection{Projektabgrenzung}
 \label{sec:Einführung-Definitionsphase:Projektabgrenzung}
