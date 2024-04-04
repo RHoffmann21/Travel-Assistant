@@ -37,13 +37,17 @@ Auch intern entwickelte DTS-Libraries werden genutzt, wie beispielsweise der dts
 
 Im Anhang befindet sich unter \sct{sec:Anhang:Libraries:Backend}{Libraries (Backend)} eine detaillierte Übersicht über die verwendeten Bibliotheken.
 
-\subsection{Verbindung zum IdP}
+\subsection{Implementierung Chatbot}
+Nachdem nun die \gl{CRUD}-Services vorhanden waren, wurde mit der Implementation der Chatbot Logik begonnen. Grundlegend wird Bei jeder Antwort der Nutzers auf eine Frage, die gestellte Frage an sich sowie die Antwort an den dafür vorgesehenen Endpoint gesendet (Ein Beispiel davon ist im Anhang unter Chatbot-Antwort\todo zu finden). Das Backend erhält nun diese Informationen und geht wie folgt vor:
 
-Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs Middleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet (Ausschnitt davon kann im Anhang unter \sct{sec:Anhang:IdP-Login}{IDP-Login} eingesehen werden), wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
 
 \subsection{Implementierung Single-Page-Application}
 
 Nach Fertigstellung des Großteils der \gl{API} im Backend wurde mit der Implementierung der \gl{SPA} begonnen. Dabei wurden die unternehmensinternen Stylingrichtlinien und die entsprechende Vorlage verwendet, um das Projekt gemäß den Vorgaben zu gestalten. Während der Implementierung sind kleinere Mängel und Unschönheiten aufgefallen, die behoben wurden. Im Anhang befindet sich unter \sct{sec:Anhang:Libraries:Frontend}{Libraries (Frontend)} eine detaillierte Übersicht über die verwendeten Libraries.
+
+\subsection{Verbindung zum IdP}
+
+Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs Middleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet (Ausschnitt davon kann im Anhang unter \sct{sec:Anhang:IdP-Login}{IDP-Login} eingesehen werden), wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
 
 \subsection{Testing der Kritischen Berechnungsfunktionen}
 
