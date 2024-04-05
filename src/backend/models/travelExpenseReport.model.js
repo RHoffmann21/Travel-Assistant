@@ -9,7 +9,7 @@ const travelExpenseReportSchema = new mongoose.Schema({
       _id: false
     }],
   trip: [{type: mongoose.Schema.Types.ObjectId, ref: 'Trip' }],
-  status: { type: String, enum:['pending', 'verified', 'accepted', 'declined', 'needsEditing' ], default: 'pending' },
+  status: { type: String, enum:['pending', 'verified', 'accepted', 'declined', 'needsEditing'], default: 'pending' },
   comment: { type: String }
 });
 
