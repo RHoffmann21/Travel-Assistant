@@ -1,0 +1,50 @@
+\subsection{Pflichtenheft}
+\label{sec:Anhang:Pflichtenheft}
+\textit{Version 1.1}\\
+
+\todo Das Pflichtenheft muss noch erstellt werden
+\textbf{Projektbeschreibung}\\
+\todo 
+Das Projekt soll die erste Version einer Softwarelösung sein, welche in Zukunft die Aktuelle Methode der Erstellung von Reisekostenabrechnungen welche mit einer Microsoft Excel Datei erstellt wird, ablösen.  Hierzu wird dem Auftragsnehmer ein Zeitraum von 80 Stunden eingeräumt. 
+
+\textbf{Anforderungen}\\
+Die Funktionalen und Nicht-Funktionalen Anforderungen, welche im Lastenheft niedergeschrieben sind werden unverändert übernommen.
+
+\textbf{Architektur}\\
+Die Softwarelösung wird mit dem Technologie-Stack MERN entwickelt.
+Somit wird die Softwarelösung in zwei Abschnitte unterteilt. Frontend welches React nutzt und Backend welches express auf einem Node.js Server nutzt. Die Daten werden in einer MongoDB gespeichert.
+Die Jeweiligen Komponenten laufen Seperat in Docker Containern.
+Programmiert wird die Softwarelösung in JavaScript geschrieben.
+
+\textbf{Benutzeroberfläche}
+Die Oberfläche wird für bestimmte Bereiche wie folgt umgesetzt:
+Mobile-First:
+- erstellen und bearbeiten von \glp{RA}
+Desktop Ansicht:
+- prüfen
+- validieren
+Ein grobes Layout der Oberflächen sind unter \sct{sec:Anhang:Sketches}{Sketches} zu finden.
+
+Prozess
+
+Zielsetzung
+Eine Softwarelösung erstellen welche das Erstellen, Verwalten \& Validieren der Reisekostenabrechnungen mithilfe einer Single-Page-Application (SPA) Digitalisiert.
+Anforderungen
+Die Anforderungen werden wie im Lastenheft beschrieben vollumfänglich übernommen
+Benutzerrollen und -berechtigungen
+Die Benutzerrollen werden wie im Lastenheft beschrieben übernommen und erweitert:
+•	Nutzer – Mitarbeiter im Außendienst
+•	Prüfer – Mitarbeiter der Accounting Abteilung
+•	GF – Geschäftsführung
+•	Vorgesetzter - Übergeordneter Mitarbeiter des Außendienst Mitarbeiters
+
+\textbf{Status}
+Die Möglichen Stati einer RA werden aus dem Lastenheft übernommen und wie folgt ergänzt:
+\begin{itemize}
+\item \verb|pending|
+\end{itemize}
+'pending', 'verified', 'accepted', 'declined', 'needsEditing'
+
+\textbf{Abnahme}
+Eine Gewöhnliche Projektabnahme gibt es nicht. Da diese erste Version der Softwarelösung noch nicht Vollumfänglich eingesetzt werden kann, ist eine Präsentation dieser an den Kunden ausreichend. Hierfür sollen alle Funktionen 
+  

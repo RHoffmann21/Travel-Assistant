@@ -14,11 +14,11 @@ Bei der Auswahl der Libraries wurden einige Aspekte besonders berücksichtigt:
 	Die Sicherheit der Library ist einer der wichtigsten Punkte. Daher ist es ratsam, eine Library mit weniger Dependencies zu verwenden, da sie weniger Risikopotential bietet. Und darauf zu achten das vorhandene Schwachstellen Risiko arm sind.
 \end{itemize}
 
-\subsubsection{Versionierung}
+\subsection{Versionierung}
 
 Im Unternehmen wird \gl{git} zur Versionsverwaltung eingesetzt. \gl{git} ist ein Versionskontrollsystem. \gl{git} wurde 2005 veröffentlicht und ist heute de facto Industriestandard. Auch für dieses Projekt wird \gl{git} verwendet.
 
-\subsubsection{Aufgabenaufteilung/Aufgabenmanagement}
+\subsection{Aufgabenaufteilung/Aufgabenmanagement}
 
 Als Vorgehensmodell wurde das Kanbanboard, da dieses hauptsächlich im Softwareentwicklungsteam verwendet wird. Die Anforderungen wurden in Tasks unterteilt und grob priorisiert, dazu wurde das Online-Webtool \gl{miro} zur Visualisierung der Tasks und deren Status verwendet.
 Ein Auszug des \sct{sec:Anhang:KanbanBoard}{Kanbanboards} ist im Anhang zu finden.
@@ -29,20 +29,18 @@ Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{g
 
 \subsection{Implementierung Backendapplikation}
 
-Nachdem das Grundgerüst der Anwendung erstellt war, wurde mit der Implementierung der Backend-Anwendung begonnen. Dabei wurde zunächst die Berechnungslogik der Pauschalen in den Fokus genommen (Ein Ausschnitt einer Funktion ist im Anhang unter \sct{sec:Anhang:Code-Ausschnitt}{Code-Ausschnitt} zu finden), da diese Berechnungsgrundlagen bereits in der \gl{MED} vorlagen und somit einfach analysiert und in Programmcode umgesetzt werden konnten. Danach wurde mit einer einfachen \gl{REST}-\gl{API} begonnen, die dann im Laufe der Implementierung der \gl{SPA} immer wieder an die konkreten Anforderungen angepasst wurde. Mit den entstehenden Endpoints für das Frontend wurde parallel auch die Backend-Logik für die \gl{CRUD}-Operationen entwickelt. Bei der Implementierung einer solch umfangreichen Anwendung wird fast immer auf externe Bibliotheken zurückgegriffen.
+Nachdem das Grundgerüst der Anwendung erstellt war, wurde mit der Implementierung der Backend-Anwendung begonnen. Dabei wurde zunächst die Berechnungslogik der Pauschalen in den Fokus genommen (Ein Ausschnitt einer Funktion ist im Anhang unter \sct{sec:Anhang:Berechnungs-Ausschnitt}{Berechnungs-Ausschnitt} zu finden), da diese Berechnungsgrundlagen bereits in der \gl{MED} vorlagen und somit einfach analysiert und in Programmcode umgesetzt werden konnten. Danach wurde mit einer einfachen \gl{REST}-\gl{API} begonnen, die dann im Laufe der Implementierung der \gl{SPA} immer wieder an die konkreten Anforderungen angepasst wurde. Mit den entstehenden Endpoints für das Frontend wurde parallel auch die Backend-Logik für die \gl{CRUD}-Operationen entwickelt. Bei der Implementierung einer solch umfangreichen Anwendung wird fast immer auf externe Bibliotheken zurückgegriffen.
 
 Auch intern entwickelte DTS-Libraries werden genutzt, wie beispielsweise der dts-node-oidc-client für interne Anwendungen, welche den hauseigenen \gl{IDP} nutzen und der dts-node-logger, ein erweiterter Logger für Node.js-Anwendungen, der speziell für DTS-Produkte verwendet wird.
 
 Im Anhang befindet sich unter \sct{sec:Anhang:Libraries:Backend}{Libraries (Backend)} eine detaillierte Übersicht über die verwendeten Bibliotheken.
 
-\subsection{Implementierung Chatbot}
-Nachdem nun die \gl{CRUD}-Services vorhanden waren, wurde mit der Implementation der Chatbot Logik begonnen. Grundlegend wird Bei jeder Antwort der Nutzers auf eine Frage, die gestellte Frage an sich sowie die Antwort an den dafür vorgesehenen Endpoint gesendet (Ein Beispiel davon ist im Anhang unter Chatbot-Antwort\todo zu finden). Das Backend erhält nun diese Informationen und geht wie folgt vor:
-
-
 \subsection{Implementierung Single-Page-Application}
 
-Nach Fertigstellung des Großteils der \gl{API} im Backend wurde mit der Implementierung der \gl{SPA} begonnen. Dabei wurden die unternehmensinternen Stylingrichtlinien und die entsprechende Vorlage verwendet, um das Projekt gemäß den Vorgaben zu gestalten. Während der Implementierung sind kleinere Mängel und Unschönheiten aufgefallen, die behoben wurden. Im Anhang befindet sich unter \sct{sec:Anhang:Libraries:Frontend}{Libraries (Frontend)} eine detaillierte Übersicht über die verwendeten Libraries.
+Nach Fertigstellung des Großteils der \gl{API} im Backend wurde mit der Implementierung der \gl{SPA} begonnen. Dabei wurden die unternehmensinternen Stylingrichtlinien und die entsprechende Vorlage verwendet, um das Projekt gemäß den Vorgaben zu gestalten. Im Anhang befindet sich unter \sct{sec:Anhang:Libraries:Frontend}{Libraries (Frontend)} eine detaillierte Übersicht über die verwendeten Libraries.
 
+\subsection{Implementierung Chatbot}
+Nachdem nun die \gl{CRUD}-Services und das Frontend grob vorhanden waren, wurde mit der Implementation der Chatbot Logik begonnen. Das Backend erhält nun Informationen wie im Abschnitt \sct{sec:ModelleDatenstruktur:ChatbotDatenstrukturLogik}{Chatbot Datenstruktur und Logik} beschrieben. Diese Informationen werden dann an die Services gesendet wie z.B. der Service welcher die nächste Frage ermitteln soll (Ein Quellcode Ausschnitt ist unter \sct{sec:Anhang:Chatbot-Ausschnitt}{Chatbot-Quellcode} zu finden).  Im Gleichen Schritt speichert das backend die Änderung am Chat. Entscheidet sich der \gl{MA} die \gl{RA} freizugeben, wird erstmal der Chat ausgewertet. Mit diesen Ausgewerteten Daten werden dann Berechnungen durchgeführt welche dann in dem Konstrukt der  kann nun die \gl{RA} an mit den vorhanden Daten angereichert werden
 \subsection{Verbindung zum IdP}
 
 Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs Middleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet (Ausschnitt davon kann im Anhang unter \sct{sec:Anhang:IdP-Login}{IDP-Login} eingesehen werden), wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
@@ -51,5 +49,4 @@ Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs Middlewa
 
 Nachdem die Berechnungslogik implementiert wurde, muss diese aufgrund des Ausdrücklichen Kundenwunsches ausgiebig getestet werden. Hierfür wurde \gl{jest} benutzt. Ein Auszug eines Unittest ist im Anhang unter \sct{sec:Anhang:Unittest-Ausschnitt}{Unittest-Ausschnitt} zu finden.
 
-Nachdem eine Lauffähige Version vorhanden war wurde diese mithilfe eines Ausendienst Mitarbeiter auf Funktionalität getestet.
-Das Feedback wurde dann entegengenommen \todo
+Nachdem eine Lauffähige Version vorhanden war wurde diese mithilfe eines Außendienst \gl{MA} auf Funktionalität getestet und um Feedback einzuholen.

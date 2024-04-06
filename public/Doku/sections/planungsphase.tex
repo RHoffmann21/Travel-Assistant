@@ -1,4 +1,4 @@
-Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen. Die folgenden Abschnitte Orientieren sich anhand der vorgaben des Pflichtenhefts.\todo LINK PLFICHTENHEFT
+Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen. Die folgenden Abschnitte Orientieren sich anhand der vorgaben des \sct{sec:Anhang:Pflichtenheft}{Pflichtenhefts}\todo IST NOCH NICHT FERTIG .
 
 \subsection{Applikationsart}
 
@@ -13,8 +13,9 @@ Die Softwarelösung wird in zwei Teilapplikationen entwickelt: \sct{sec:Planungs
 \subsubsection{Frontend}
 \label{sec:Planungsphase:Frontend}
 
-Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird.  Im Gegensatz zu üblichen Server-Side Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt.Statt dessen wird die Interaktion durch browserseitiges \gl{JS} ausgeführt.
+Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird.  Im Gegensatz zu üblichen Server-Side Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt.Statt dessen wird die Interaktion durch browserseitiges \gl{JS} ausgeführt. 
 So wird beispielsweise bei der Erstellung einer \gl{RA} mithilfe des Chatbots, eine Anfrage an das Backend gestellt, welches dann eine passende Frage zurückgibt. Diese Informationen werden anschließend vom Frontend verarbeitet und angezeigt.
+Das Frontend wird nach dem Layout der zuvor erstellten Sketches (im Anhang unter \sct{sec:Anhang:Sketches}{Sketches} zu finden) entwickelt und gestaltet. 
 
 \subsubsection{Backend}
 \label{sec:Planungsphase:Backend}
@@ -46,8 +47,8 @@ Eine Kernkomponente des Backends ist die Logik des Chatbots. Hierfür werden End
 \subsection{Modelle und Datenstruktur}
 \label{sec:Planungsphase:ModelleDatenstruktur}
 
-Die Anforderungen machen deutlich, dass mehrere Modelle und Datenstrukturen erforderlich sind. So wird ein Modell für die Länder und deren Pauschalen benötigt, die Reisekostenabrechnung, die sich aus dem Chatverlauf ergibt, sowie Grundinformationen und Dienstreisen welche die Informationen aus dem Chat verarbeiteten, sowie ein Modell, das einige Berechnungsgrundlagen speichert. Außerdem wird ein Benutzermodell benötigt, um die jeweiligen Vorgesetzten zu speichern und ein Modell welches die Fragen für den Chatbot abspeichert.
-Die Chatverläufe müssen ebenfalls gespeichert werden, um eine spätere Anpassung der \gl{RA} zu ermöglichen durch.
+Die Anforderungen machen deutlich, dass mehrere Modelle und Datenstrukturen erforderlich sind. So wird ein Modell für die Länder und deren Pauschalen benötigt, die Reisekostenabrechnung, die sich aus dem Chatverlauf und Dienstreisen ergibt welche die Informationen aus dem Chat verarbeitet abspeichert, sowie ein Modell, das einige Berechnungsgrundlagen speichert. Außerdem wird ein Benutzermodell benötigt, um die jeweiligen Vorgesetzten zu speichern und ein Modell welches die Fragen für den Chatbot abspeichert.
+Die Chatverläufe müssen deswegen gespeichert werden, um eine spätere Anpassung der \gl{RA} zu ermöglichen.
 
 \subsubsection{Chatbot Datenstruktur und Logik}
 \label{sec:ModelleDatenstruktur:ChatbotDatenstrukturLogik}

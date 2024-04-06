@@ -5,8 +5,9 @@ const questionSchema = new mongoose.Schema({
 	content: { type: String, required: true },
   followingAnswerType: { type: String, enum: ['string', 'dateTimeSelect', 'dateSelect', 'multiDateSelect', 'select', 'currency', 'km', 'none'], required: true },
   followingAnswerAttribute: { type: String, required: true },
-  condition: { type: String, enum: ['gt0', 'gt1', 'truthy', 'isTripEndDate'] },
+  condition: { type: String, enum: ['gt1', 'truthy', 'isTripEndDate'] },
   editable: { type: Boolean, required: true},
+  receiptNecessary: { type: Boolean, default:false },
   nextQuestions: {
     true: { type: String },
     false: { type: String },
@@ -15,3 +16,5 @@ const questionSchema = new mongoose.Schema({
 });
 
 export default mongoose.model('Question', questionSchema);
+
+
