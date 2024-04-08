@@ -41,4 +41,21 @@ async function deleteOneTravelExpenseReport (req, res, next) {
   
 }
 
-export default { getTravelExpenseReports, createTravelExpenseReport, getOneTravelExpenseReport, updateOneTravelExpenseReport, deleteOneTravelExpenseReport }
+async function updateTravelExpenseReportChat (req, res, next) {
+  const { body } = req;
+  const travelExpenseReportId = req.params.travelExpenseReportId;
+  try {
+    return res.json(await TravelExpenseReportService.updateOneTravelExpenseReport(travelExpenseReportId, body))
+  } catch (error) {
+    
+  }
+}
+
+export default { 
+  getTravelExpenseReports,
+  createTravelExpenseReport,
+  getOneTravelExpenseReport,
+  updateOneTravelExpenseReport,
+  deleteOneTravelExpenseReport,
+  updateTravelExpenseReportChat
+}

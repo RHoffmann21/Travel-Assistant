@@ -18,7 +18,7 @@ async function getFollowUpQuestion(question, answer, travelExpenseReport){
 }
 
 /**
- * @description this function is getting
+ * @description this function is getting te result of give condition
  * @param {String} condition the condtionen for the if-statement
  * @param {String} answer the user answer to the origin qestion
  * @param {Object} travelExpenseReport the existing travelexpense report
