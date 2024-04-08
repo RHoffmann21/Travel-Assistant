@@ -17,5 +17,6 @@ router.post('/api/v1/travelExpenseReports/create', TravelExpenseReportController
 router.get('/api/v1/travelExpenseReports/:travelExpenseReportId', TravelExpenseReportController.getOneTravelExpenseReport);
 // router.post('api/v1/travelExpenseReports/:travelExpenseId');
 // router.delete('api/v1/travelExpenseReports/:travelExpenseId');
+router.post('/api/v1/travelExpenseReports/:travelExpenseReportId/chat', TravelExpenseReportController.updateTravelExpenseReportChat);
 
 export default router;
