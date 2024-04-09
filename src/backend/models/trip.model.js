@@ -19,27 +19,38 @@ const tripSchema = new mongoose.Schema({
   daysWithLunch: [{ type: Date }],
   daysWithDinner: [{ type: Date }],
   transportationCost: [{
-    type: { type: String, enum: ['cab', 'flight', 'busTrain'] },
-    dates: [{
-      date: { type: Date },
-      cost: { type: Number },
-      reciept: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
-    }]
+    type: { type: String, enum: ['cab', 'flight', 'busTrain']},
+    date: { type: Date },
+    cost: { type: Number },
+    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
   }],
-  privateCarTransportation: {
-    dates: [{
+  privateCarTransportation: [{
       date: { type: date },
       mileage: { type: Number },
       routeBreakdown: { type: String },
-    }]
-  },
+  }],
   daysWithPrivateOvernightStay: [{ type: Date }],
-  daysWithHotelStay: [{ type: Date }],
-  other: {
-    occasion: { type: String },
+  hotelCost: [{ 
+    date: { type: Date },
+    cost: { type: Number },
+    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+  }],
+  cateringCost: [{
+    date: { type: Date },
+    cost: { type: Number }, 
+    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+  }],
+  tip: [{
+    date: { type: Date },
+    cost: { type: Number }, 
+    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+  }],
+  other: [{
+    date: { type: Date },
+    explanation: { type: String },
     cost: { type: Number },
     reciept: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
-  },
+  }],
 });
 
 export default mongoose.model('Trip', tripSchema);

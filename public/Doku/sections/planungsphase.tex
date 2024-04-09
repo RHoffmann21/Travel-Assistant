@@ -1,43 +1,43 @@
-Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen. Die folgenden Abschnitte Orientieren sich anhand der vorgaben des \sct{sec:Anhang:Pflichtenheft}{Pflichtenhefts}\todo IST NOCH NICHT FERTIG .
+Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen. Die folgenden Abschnitte orientieren sich anhand der Vorgaben des \sct{sec:Anhang:Pflichtenheft}{Pflichtenhefts}\todo IST NOCH NICHT FERTIG .
 
 \subsection{Applikationsart}
 
 Wie bereits unter \sct{sec:Einführung-Definitionsphase:Projektziel}{Projektziel} genannt, soll die Applikation als Webapplikation entwickelt werden. Ein Grund dafür ist, dass man die Applikation so in der Zukunft
-vergleichsweise einfach aktualisieren kann. Der Technologie Stack \gl{MERN} wird für die Erstellung der Softwarelösung gewählt, weil dieser generell etabliert und bereits in dem Software Development Team verwendet und in diverse Projekten bereits umgesetzt wird. Dadurch kann gegebenenfalls vom Know-How anderer Personen im Team profitiert werden. So wird die Serverapplikation mit \gl{express} auf der Laufzeitumgebung \gl{nodejs} und \gl{SPA} mit \gl{React} entwickelt und \gl{MongoDB} zur Speicherung von Daten verwendet werden.
+einfach aktualisieren kann. Die Full-Stack Lösung \gl{MERN} wird für die Erstellung der Softwarelösung gewählt, weil dieser generell etabliert ist und bereits in der Abteilung für Softwareentwicklung verwendet und in diversen Projekten umgesetzt wird. Dadurch kann gegebenenfalls vom Know-How anderer Personen im Team profitiert werden. So wird die Serverapplikation mit \gl{express} auf der Laufzeitumgebung \gl{nodejs} und die \gl{SPA} mit \gl{React} entwickelt.\gl{MongoDB} wird zur Speicherung von Daten verwendet werden. Die Softwarelösung wird auf \gl{JS} basieren.
 
 \subsection{Applikationsarchitektur}
 \label{sec:Planungsphase:Applikationsarchitektur}
 
-Die Softwarelösung wird in zwei Teilapplikationen entwickelt: \sct{sec:Planungsphase:Frontend}{Frontend} und \sct{sec:Planungsphase:Backend}{Backend}. Eine Backend Applikation ist Notwenig da sich bereits auf eine \gl{SPA} festgelegt wurde. Da eine \gl{SPA} nicht sicher mit Daten interagieren kann.
+Die Softwarelösung wird in zwei Teilapplikationen entwickelt: \sct{sec:Planungsphase:Frontend}{Frontend} und \sct{sec:Planungsphase:Backend}{Backend}. Eine Backend Applikation ist Notwenig um sicherzustellen, dass die \gl{SPA} sicher mit den Daten interagieren kann.
 
 \subsubsection{Frontend}
 \label{sec:Planungsphase:Frontend}
 
-Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird.  Im Gegensatz zu üblichen Server-Side Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt.Statt dessen wird die Interaktion durch browserseitiges \gl{JS} ausgeführt. 
+Das Frontend wird durch eine \gl{SPA} repräsentiert. Eine \gl{SPA} ist eine Applikation, die vollständig im Browser ausgeführt wird.  Im Gegensatz zu üblichen Server-Side Webanwendungen wird nicht bei jeder Interaktion mit dem Server \gl{HTML} zurückgegeben und vom Browser dargestellt. Stattdessen wird die Interaktion durch clientseitiges \gl{JS} ausgeführt. 
 So wird beispielsweise bei der Erstellung einer \gl{RA} mithilfe des Chatbots, eine Anfrage an das Backend gestellt, welches dann eine passende Frage zurückgibt. Diese Informationen werden anschließend vom Frontend verarbeitet und angezeigt.
 Das Frontend wird nach dem Layout der zuvor erstellten Sketches (im Anhang unter \sct{sec:Anhang:Sketches}{Sketches} zu finden) entwickelt und gestaltet. 
 
 \subsubsection{Backend}
 \label{sec:Planungsphase:Backend}
 
-Das Backend läuft auf dem Server und und übernimmt die gesamte Datenverwaltung und Businesslogik. Mit \gl{mongoose} kann das Backend dann auf die gespeicherten Daten der \gl{MongoDB} zugreifen.
-Da die beiden Teilapplikationen miteinander kommunizieren müssen stellt das Backend eine \gl{REST}-\gl{API} zur Verfügung. Über diese kann dann das Frontend Informationen senden. Um so z.B. \glp{RA} einreichen zu können.
+Das Backend läuft auf dem Server und übernimmt die gesamte Datenverwaltung und die Businesslogik. \gl{mongoose} (eine \gl{JS}-Library) ermöglicht die Datenmodellierung für \gl{MongoDB}, so dass das Backend auf die gespeicherten Daten zugreifen kann.
+Da die beiden Teilapplikationen miteinander kommunizieren müssen, stellt das Backend eine \gl{REST}-\gl{API} zur Verfügung. Über diese kann das Frontend Informationen senden und empfangen, um so z.B. \glp{RA} einreichen zu können.
 Das Backend wird auf Basis der \gl{MSC}-Architektur entwickelt. Dabei werden die Komponenten nach Typ unterteilt. In der \gl{MSC}-Architektur gibt es folgende Komponententypen:
 
 \begin{enumerate}
   \item \textbf{M}odel\\
-  Das Model beschreibt die zu speichernden Daten im Rahmen einer einzelnen Entität. So werden im Model die klassischen CRUD-Operationen durchgeführt. Wie das Kreieren einer \gl{RA}.
+  Das Model beschreibt die zu speichernden Daten im Rahmen einer einzelnen Entität. So werden im Model die klassischen CRUD-Operationen durchgeführt, wie das Erstellen einer \gl{RA}.
   \item \textbf{S}ervice\\
-  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD-, und gegebenenfalls noch weitere, Operationen auszuführen. Wie die Hintergrundberechnungen von Pauschalen.
+  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD-, und gegebenenfalls noch weitere, Operationen auszuführen. Ein Beispiel für eine Operation wäre die Hintergrundberechnungen von Pauschalen.
   \item \textbf{C}ontroller\\
-  Controller sind die Komponenten, die die tatsächliche Interaktion mit der Außenwelt, also dem \gl{HTTP}-Client übernehmen. Sie interagieren mit den Services, um die Anfragen des Clients auszuführen. Der Punkt, an dem die Daten vom Frontend an die Services zur Verarbeitung gesendet werden.
+  Controller sind die Komponenten, die die tatsächliche Interaktion mit dem \gl{HTTP}-Client übernehmen. Sie interagieren mit den Services, um die Anfragen des Clients auszuführen. Controller stellen somit den Punkt dar, an dem die Daten vom Frontend an die Services zur Verarbeitung gesendet werden.
 \end{enumerate}
 
-Neben diesen Hauptkomponenten gibt es die folgenden Komponenten:
+Neben diesen Hauptkomponenten gibt es die weitere Komponenten:
 
 \begin{itemize}
   \item Middleware\\
-Neben den vorinstallierten oder heruntergeladenen Middlewares können auch eigene erstellt werden. Im konkreten Fall wird eine Middleware verwendet, die den Zugriff auf bestimmte Bereiche der Applikation einschränkt. Dadurch wird eine Anfrage bereits vor dem Eintreffen im Controller beantwortet, falls bestimmte Anforderungen nicht erfüllt sind. So können z.B. nur Benutzer mit der Prüfer Rolle die Prüfungsansicht einsehen.
+Neben den vorinstallierten oder heruntergeladenen Middlewares können auch eigene erstellt werden. Im konkreten Fall wird eine Middleware verwendet, die den Zugriff auf bestimmte Bereiche der Applikation einschränkt. Dadurch wird eine Anfrage bereits vor dem Eintreffen im Controller beantwortet, falls bestimmte Anforderungen nicht erfüllt sind. So können z.B. nur Benutzer mit der Prüferrolle die Prüfungsansicht einsehen.
   \item Tests\\
   Die Tests dienen dazu, die einzelnen Komponenten auf verschiedene erwartete Ergebnisse hin zu überprüfen. Dabei werden die kritischen Berechnungsfunktionen auf ihr vorgesehenes Verhalten geprüft.
 \end{itemize}
@@ -61,11 +61,11 @@ Die Chatbot-Fragen sind in der Datenbank wie folgt gespeichert:\\
 
 Um Folgefragen zu ermitteln, wird das Objekt \verb|nextQuestions| in Verbindung mit dem Attribut \verb|condition| verwendet, um eine If-Abfrage zu bilden. Dadurch wird geprüft, ob die Antwort auf diese Frage \textit{true} oder \textit{false} ist, und basierend auf dem Ergebnis wird die entsprechende Frage aus \verb|nextQuestions| an das Frontend zurückgegeben.
 
-Bei Fragen die keine \verb|condition| haben, also keine Abzweigungen, enthält das \verb|nextQuestions| Objekt ein Attribut namens \verb|default| diese wird dann dem Frontend zurückgegeben.
+Bei Fragen die keine \verb|condition| haben, also keine Abzweigungen, enthält das \verb|nextQuestions| Objekt ein Attribut namens \verb|default|. Diese wird dann dem Frontend zurückgegeben.
 
-Im Anhang ist eine visualisierte Form der Fragenabfolge des Chatbots in Form eines \sct{sec:Anhang:DecisionTree}{Decision Trees} zu finden.  
+Im Anhang ist eine Visualisierung der Fragenabfolge des Chatbots in Form eines \sct{sec:Anhang:DecisionTree}{Decision Trees} zu finden.  
 
 \subsection{Feststellung der Benutzerberechtigungen}
 \label{sec:Planungsphase:Benutzerberechtigungen}
 
-Das unter \sct{sec:Analysephase:Benutzerklassifizierung}{Benutzerklassifizierung} beschriebene Benutzerkonzept sieht drei Benutzerklassen vor. Es wird davon ausgegangen, dass jeder Benutzer, der sich an der Anwendung bzw. am \gl{IDP} anmeldet, zunächst ein Regulärer Benutzer ist. Anschließend wird geprüft, ob ein Benutzer über eine Rolle verfügt, die ihm über den \gl{IDP} zugewiesen wurde.
+Das unter \sct{sec:Analysephase:Benutzerklassifizierung}{Benutzerklassifizierung} beschriebene Benutzerkonzept sieht drei Benutzerklassen vor. Es wird davon ausgegangen, dass jeder Benutzer, der sich in der Anwendung bzw. mit dem \gl{IDP} anmeldet, zunächst ein Regulärer Benutzer ist. Anschließend wird geprüft, ob ein Benutzer über eine Rolle verfügt, die ihm über den \gl{IDP} zugewiesen wurde.

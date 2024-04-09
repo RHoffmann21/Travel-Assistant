@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const dateSchema = new mongoose.Schema({
+  date: { type: Date, required: true },
   startDateTime: { type: Date, required: true },
   startEndTime: { type: Date, required: true },
   destination: { type: mongoose.Schema.Types.ObjectId, ref: 'Country', required: true },
