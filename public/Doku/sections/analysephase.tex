@@ -5,13 +5,13 @@ Wie bereits unter \sct{sec:Einführung-Definitionsphase:Ausgangssituation}{Ausga
 \subsubsection{Reisekostenabrechnungsprozess}
 \label{sec:Analysephase:Reisekostenabrechnungsprozess}
 
-Der \gl{MA} im Außendienst füllt die \gl{RA} aus und legt sie seinem Vorgesetzten (und ggf. der \gl{GF}) vor, welche prüfen, ob die Dienstreise(n) genehmigt wurde(n). Ist dies der Fall, wird diese an die Payroll Accounting Abteilung weitergeleitet und dort auf Manipulationen überprüft. Weist die \gl{RA} keine Manipulationen vor, kann sie an die Accountig Abteilung weitergeleitet werden, die die Berechnungen und die Übereinstimmung der Belege mit den eingetragenen Kosten überprüft. Ist die \gl{RA} in Ordnung, kann eine entsprechende Auszahlung veranlasst werden. Sollte jedoch in einem der oben genannten Fälle etwas mit der \gl{RA} nicht in Ordnung sein, muss diese vom Mitarbeiter bearbeitet werden oder wird schlichtweg abgelehnt.
+Der \gl{MA} im Außendienst füllt die \gl{RA} aus und legt sie seinem Vorgesetzten (und ggf. der \gl{GF}) vor, welche prüfen, ob die Dienstreise(n) genehmigt wurde(n). Ist dies der Fall, wird diese an die Payroll Accounting Abteilung weitergeleitet und dort auf Manipulationen, wie z.B. falsche Pauschalbeträge (die als Berechnungsgrundlage dienen), überprüft. Weist die \gl{RA} keine Manipulationen vor, kann sie an die Accountig Abteilung weitergeleitet werden, die die Berechnungen und die Übereinstimmung der Belege mit den eingetragenen Kosten überprüft. Ist die \gl{RA} in Ordnung, kann eine entsprechende Auszahlung veranlasst werden. Sollte jedoch in einem der oben genannten Fälle etwa mit der \gl{RA} nicht in Ordnung sein, muss diese vom Mitarbeiter bearbeitet werden oder wird schlichtweg abgelehnt.
 
-Eine grobe Darstellung des aktuellen Reisekostenabrechnungsprozesses ist in visueller Form im Anhang unter \sct{sec:Anhang:ProzessAlt}{Prozess Alt} zu finden.
+Eine grobe Darstellung des aktuellen Prozesses der Reisekostenabrechnung ist in visueller Form im Anhang unter \sct{sec:Anhang:ProzessAlt}{Prozess Alt} zu finden.
 
 \subsubsection{Herausforderungen}
 
-Wie in der \sct{sec:Einführung-Definitionsphase:Ausgangssituation}{Ausgangssituation} beschrieben, ist diese \gl{MED} komplex, was zu Fehlern führt, wie z.B. dass Bedingungen falsch verstanden werden und dementsprechend eingetragen werden, obwohl sie nicht eingetragen werden sollten. Grundsätzlich kann es aufgrund der Art der \gl{MED} zu Manipulationen der Berechnungslogik oder der Pauschalen kommen. Zudem kommt es häufig vor, dass notwendige Belege nicht beigefügt werden oder die angegebenen Kosten nicht validiert werden können. Diese Herausforderungen erschweren den Einsatz in den Abteilungen, in denen diese verwendet wird.
+Wie in der \sct{sec:Einführung-Definitionsphase:Ausgangssituation}{Ausgangssituation} beschrieben, ist diese \gl{MED} komplex, was zu Fehlern führt. Z.B. dass Bedingungen falsch verstanden werden und dementsprechend eingetragen werden, obwohl sie nicht eingetragen werden sollten. Grundsätzlich kann es aufgrund der Art der \gl{MED} zu Manipulationen der Berechnungslogik oder der Pauschalen kommen. Zudem kommt es häufig vor, dass notwendige Belege nicht beigefügt werden oder die angegebenen Kosten nicht validiert werden können. Diese Herausforderungen erschweren den Einsatz in den Abteilungen, in welchen diese verwendet wird.
 
 \subsection{Soll-Zustand}
 
@@ -23,7 +23,7 @@ Da diese Softwarelösung die veraltete \gl{MED} ablösen soll, spielt die Wirtsc
 
 Von folgenden Personalkosten wird ausgegangen:
 \begin{itemize}
-\item Azubi/Autor: 7€/h
+\item Auszubildender/Autor: 7€/h
 \item \gl{MA} im Außendienst: 25€/h
 \item Junior Software Developer: 27€/h
 \item Accounting Abteilung/ Payroll Accounting/ Betreuerin: 30€/h
@@ -44,8 +44,8 @@ Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der bestehende
 \item \gl{RA} erstellen - 1 \gl{MA} im Außendienst à 15 Minutent
 \item Jeden 2. Monat Einführung eines \gl{MA} - 2 \gl{MA} im Außendienst à 1 Stunde
 \item 20\% der Ersteller bitten Kollegen um Hilfe - 2 \gl{MA} im Außendienst à 15 Minuten
-\item 90\% der \gl{RA} wird über die Hauspost geliefert - 1 Azubi à 10 Minuten
-\item 10\% der \gl{RA} wird selbst gebracht – 1 \gl{MA} im Außendienst à 10 Minuten
+\item 90\% der \glp{RA} wird über die Hauspost geliefert - 1 Auszubildender à 10 Minuten
+\item 10\% der \glp{RA} persönlich eingereicht – 1 \gl{MA} im Außendienst à 10 Minuten
 \item Prüfung auf Manipulation - 1 \gl{MA} Payroll Accounting à 10 Minuten
 \item Prüfung auf Richtigkeit - 1 \gl{MA} Accounting à 12 Minuten
 \item 25\% der \glp{RA} müssen korrigiert werden – 1 \gl{MA} im Außendienst à 10 Minuten
@@ -54,7 +54,7 @@ Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der bestehende
 
 \textbf{Summe der monatlichen Kosten durch die aktuelle Lösung: 589,33 €}
 
-Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der Neu entwickelten Softwarelösung Travel-Assistant:
+Folgende Annahmen gelten für den Prozess rund um die \gl{RA} mit der neu entwickelten Softwarelösung Travel-Assistant:
 \begin{itemize}
 \item \gl{RA} erstellen - 1 Mitarbeiter im Außendienst à 20 Minuten
 \item 10\% der Ersteller bitten Kollegen um Hilfe - 2 \gl{MA} im Außendienst à 5 Minuten
@@ -79,13 +79,15 @@ Entwicklungskosten des Travel-Assistant:
 
 \textbf{Summe Projekt Entwicklungskosten: 1.095,00€}
 
-Damit die Softwarelösung Vollumfänglich eingesetzt werden kann muss diese um einige Features weiterentwickelt werden, siehe Ausblick. Angenommen wird:
+Damit die Softwarelösung Vollumfänglich eingesetzt werden kann, muss diese um einige Features weiterentwickelt werden. Angenommen wird:
 \begin{itemize}
 \item Weiterentwicklung - 1 Junior Software Developer à 25 Stunden
 \item Zusätzliche Meetings - 1 Junior Software Developer, 2 \gl{MA} Accounting à 4 Stunden
 \end{itemize}
 
-\textbf{Summe Entwicklungskosten bis zum Vollumfänglich einsatz: 1.023€ (2.118€)}
+\textbf{Summe Weiterentwicklungskosten: 1.023€}
+
+\textbf{Entgültige Summe der Entwicklungskosten bis zum vollumfänglichen Einsatz : 2.118€}
 
 \includegraphics[width=1\textwidth]{amortisationsrechnung.png}
 
@@ -97,7 +99,7 @@ Detailierte Berechnung ist im Anhang unter \sct{sec:Anhang:Amortisationsrechnung
 \subsection{Anwendungsfälle und Benutzerklassifizierung}
 \label{sec:Analysephase:Benutzerklassifizierung}
 
-Um herauszufinden, wie das Berechtigungskonzept aussehen sollte, wurde analysiert, welche Personengruppen wie mit der Softwarelösung arbeiten müssen.
+Um herauszufinden, auf welche Art und Weise das Berechtigungskonzept aussehen sollte, wurde analysiert, welche Personengruppen wie mit der Softwarelösung arbeiten müssen.
 Grundsätzlich lassen sich folgende drei Personengruppen feststellen:
 
 \begin{enumerate}
@@ -109,4 +111,4 @@ Grundsätzlich lassen sich folgende drei Personengruppen feststellen:
     Personen, die berechtigt sind, \glp{RA} auf ihre Richtigkeit zu prüfen.
 \end{enumerate}
 
-Im Anhang ist ein \sct{sec:Anhang:Anwendungsfalldiagramm}{Anwendungsfalldiagramm} zu finden welches möglichen Aktionen der Jeweiligen Personengruppen zuordnet.
+Im Anhang ist ein \sct{sec:Anhang:Anwendungsfalldiagramm}{Anwendungsfalldiagramm} zu finden welches, mögliche Aktionen der jeweiligen Personengruppen zuordnet.

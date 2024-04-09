@@ -1,7 +1,7 @@
 import QuestionService from '../question.service';
 
 /**
- * @description this function gets gets the follow-up question 
+ * @description this function gets the follow-up question 
  * @param {Object} question the origin question object from the frontend
  * @param {String} answer the user answer to the origin qestion
  * @returns the follow-up question
