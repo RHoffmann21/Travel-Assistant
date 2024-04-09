@@ -28,6 +28,7 @@ const tripSchema = new mongoose.Schema({
       date: { type: date },
       mileage: { type: Number },
       routeBreakdown: { type: String },
+      cost: { type: Number }
   }],
   daysWithPrivateOvernightStay: [{ type: Date }],
   hotelCost: [{ 
