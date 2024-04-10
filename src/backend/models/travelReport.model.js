@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const tripSchema = new mongoose.Schema({
+const travelReport = new mongoose.Schema({
   chat:  [{
     question: { type: mongoose.Schema.Types.ObjectId, ref: 'Question' },
     answer: { type: String },
@@ -54,4 +54,4 @@ const tripSchema = new mongoose.Schema({
   }],
 });
 
-export default mongoose.model('Trip', tripSchema);
+export default mongoose.model('TravelReport', travelReport);
