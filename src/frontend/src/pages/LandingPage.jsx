@@ -1,8 +1,8 @@
 import '../App.css'
 import '../components/ChatBubble.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'react-bootstrap/'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap/';
 
 export default function TravelReportsOverview() {
   return (

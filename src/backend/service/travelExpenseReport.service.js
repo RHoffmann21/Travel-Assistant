@@ -33,7 +33,7 @@ async function createNewTravelExpenseReport(travelExpenseReport){
     const chat =  [{
       question: question._id
     }];
-    const newTravelExpenseReport = await new TravelExpenseReport({year, month, chat}).populate('chat.question')
+    const newTravelExpenseReport = await new TravelExpenseReport({year, month});
     return await newTravelExpenseReport.save();
   } catch (error) {
     throw new Error('Error creating new travelExpenseReport', error)

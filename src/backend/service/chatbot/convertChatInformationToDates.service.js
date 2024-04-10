@@ -1,7 +1,7 @@
 import countryLumpRatesModel from '../../models/countryLumpRates.model';
 import CountryLumpRateService from '../countryLumpRate.service';
 
-async function convertChatInformationToDates(trip){
+async function convertChatInformationToDates(travelReport){
   let dates = []
 
   function getDateIndex (searchedDate){
@@ -14,7 +14,7 @@ async function convertChatInformationToDates(trip){
   }
 
 
-    for (const partialTrip of trip.partialTrips){
+    for (const partialTrip of travelReport.partialTrips){
       const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(partialTrip.destination);
       dates[getDateIndex(partialTrip.tripStart)].allowance = countryLumpRate.arrivalDepartureDay;
       dates[getDateIndex(partialTrip.tripEnd)].allowance = countryLumpRate.arrivalDepartureDay;
