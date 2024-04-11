@@ -1,11 +1,6 @@
 import mongoose from 'mongoose';
 import logger from 'dts-node-logger';
 
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-};
-
 /**
  * @description This function creates a connection between the application and the mongo database
  * @param {String} mongoUri The connection uri for the mongo database 
@@ -15,7 +10,7 @@ export default async function connectDB (mongoUri) {
     logger.error('No mongoUri provided.');
   }
   try {
-    await mongoose.connect(mongoUri, options);
+    await mongoose.connect(mongoUri);
     logger.debug('Now connected to: ', mongoUri);
   } catch (err) {
     logger.error(`Something went wrong while connecting to uri ${mongoUri}. Error: `, err);

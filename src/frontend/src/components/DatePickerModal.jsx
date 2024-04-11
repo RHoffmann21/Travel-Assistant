@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import TimePicker from "react-multi-date-picker/plugins/time_picker";
 import "react-multi-date-picker/styles/layouts/mobile.css";
 import axios from 'axios';
-import { useStatem useEffect } from 'react';
+import { useStatem, useEffect } from 'react';
 
 
 export default function DatePickerModal({show, onHide, type, isMulti, minDate, maxDate}){

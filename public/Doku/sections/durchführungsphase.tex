@@ -20,12 +20,12 @@ In der Abteilung für Softwareentwicklung wird \gl{git} zur Versionsverwaltung e
 
 \subsection{Aufgabenaufteilung/Aufgabenmanagement}
 
-Als Vorgehensmodell wurde das Kanbanboard, da dieses hauptsächlich im Softwareentwicklungsteam verwendet wird. Die Anforderungen wurden in Aufgaben(Tasks) unterteilt und grob priorisiert, dazu wurde das Online-Webtool \gl{miro} zur Visualisierung der Tasks und deren Status verwendet.
+Als Vorgehensmodell wurde das Kanbanboard gewählt, da dieses hauptsächlich im Softwareentwicklungsteam verwendet wird. Die Anforderungen wurden in Aufgaben (Tasks) unterteilt und grob priorisiert, dazu wurde das Online-Webtool \gl{miro} zur Visualisierung der Tasks und deren Status verwendet.
 Ein Auszug des \sct{sec:Anhang:KanbanBoard}{Kanbanboards} ist im Anhang zu finden.
 
 \subsection{Vorbereitung des Applikationsgrundgerüsts}
 
-Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository. Eine .env-Datei mit zugehöriger .env.sample-Datei zum Bereitstellen von Umgebungsvariablen, wie z.B. client-id und secret zur Authentifizierung beim \gl{IDP}. Das Frontend, Backend und die Datenbank laufen in Containern. Docker ist eine Software zur Isolierung von Anwendungen in solchen Containern. Für die Umsetzung werden die notwendigen Dateien docker-compose.yml und Dockerfile benötigt.
+Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository. Eine .env-Datei mit zugehöriger .env.sample-Datei. Das Frontend, Backend und die Datenbank laufen in Containern. Docker ist eine Software zur Isolierung von Anwendungen in solchen Containern. Für die Umsetzung werden die notwendigen Dateien docker-compose.yml und Dockerfile benötigt.
 
 \subsection{Implementierung Backendapplikation}
 
@@ -43,7 +43,7 @@ Nach Fertigstellung des Großteils der \gl{API} im Backend wurde mit der Impleme
 Nachdem nun die \gl{CRUD}-Services und das Frontend grob vorhanden waren, wurde mit der Implementation der Chatbot Logik begonnen. Das Backend erhält nun Informationen wie im Abschnitt \sct{sec:ModelleDatenstruktur:ChatbotDatenstrukturLogik}{Chatbot Datenstruktur und Logik} beschrieben. Diese Informationen werden dann an die Services gesendet wie z.B. der Service, welcher die nächste Frage ermitteln soll (Ein Quellcode Ausschnitt ist unter \sct{sec:Anhang:Chatbot-Ausschnitt}{Chatbot-Quellcode} zu finden).  Im gleichen Schritt speichert das Backend die Änderung am Chat. Entscheidet sich der \gl{MA} die \gl{RA} freizugeben, zu Beginn wird der Chat ausgewertet. Mit diesen ausgewerteten Daten werden Berechnungen durchgeführt, die angezeigt werden können.
 \subsection{Verbindung zum IdP}
 
-Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs-Middleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet (Ausschnitt davon kann im Anhang unter \sct{sec:Anhang:IdP-Login}{IDP-Login} eingesehen werden), wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
+Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs-Middleware geprüft, ob der mitgesendete \gl{jwt} valide ist. Falls nicht, wird der Nutzer auf die Login-Seite des \gl{IDP} geleitet (Ausschnitt davon kann im Anhang unter \sct{sec:Anhang:IdP-Login}{IdP-Login} eingesehen werden), wo er sich authentifizieren muss. Sobald dies stattgefunden hat, wird der Nutzer zurück zum Travel-Assistant mit einem \gl{jwt} geleitet. Dieser \gl{jwt} enthält wichtige Informationen wie Vor- und Nachname, E-Mail-Adresse und Nutzerrollen. Diese Informationen werden genutzt, um das Frontend entsprechend auszurichten.
 
 \subsection{Testing}
 

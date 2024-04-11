@@ -1,20 +1,12 @@
-import { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
-import ChatBubble from './ChatBubble';
 import { Link } from 'react-router-dom';
 
 
-function ReportCard({ travelReport }) {
-
-	const [openChat, setOpenChat] = useState()
-	function handleOnClick() {
-		setOpenChat(true);
-	}
-
-	useEffect(() => {
-		console.log('chat opened: ', openChat)
-	}, [openChat]);
-
+function ReportCard({ travelExpenseReport }) {
+	const monatsNamen = [
+		"Januar", "Februar", "März", "April", "Mai", "Juni",
+		"Juli", "August", "September", "Oktober", "November", "Dezember"
+];
 	return (
 		<>
 			<Card className="mx-3 my-1">
@@ -23,22 +15,19 @@ function ReportCard({ travelReport }) {
 						<div className="container">
 							<div className="row justify-content-center">
 								<div className="col-2">
-									{getStatusIcon(travelReport.status)}
+									{getStatusIcon(travelExpenseReport.status)}
 								</div>
 								<div className="col-8">
-									{travelReport.month} {travelReport.year}
+									{monatsNamen[travelExpenseReport.month]} {travelExpenseReport.year}
 								</div>
 								<div className="col-2">
-									<Link to={`${travelReport.travelReportId}`} className="stretched-link"><i className="bi bi-caret-right"></i></Link>
+									<Link to={`${travelExpenseReport._id}`} className="stretched-link"><i className="bi bi-caret-right"></i></Link>
 								</div>
 							</div>
 						</div>
 					</Card.Title>
 				</Card.Body>
 			</Card>
-			{
-				openChat ? <ChatBubble side="question" type="text" content="kdjsksdjki" /> : null
-			}
 		</>
 	);
 }

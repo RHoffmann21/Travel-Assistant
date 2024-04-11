@@ -15,8 +15,9 @@ const router = express.Router();
 router.get('/api/v1/travelExpenseReports', TravelExpenseReportController.getTravelExpenseReports);
 router.post('/api/v1/travelExpenseReports/create', TravelExpenseReportController.createTravelExpenseReport);
 router.get('/api/v1/travelExpenseReports/:travelExpenseReportId', TravelExpenseReportController.getOneTravelExpenseReport);
+router.post('/api/v1/travelExpenseReports/:travelExpenseReportId/chat', TravelExpenseReportController.updateTravelExpenseReportChat);
+router.get('/api/v1/travelExpenseReports/questions/firstQuestion', TravelExpenseReportController.getFirstQuestion);
 // router.post('api/v1/travelExpenseReports/:travelExpenseId');
 // router.delete('api/v1/travelExpenseReports/:travelExpenseId');
-router.post('/api/v1/travelExpenseReports/:travelExpenseReportId/chat', TravelExpenseReportController.updateTravelExpenseReportChat);
 
 export default router;

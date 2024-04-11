@@ -20,6 +20,7 @@
 \usepackage{setspace}
 \usepackage{pdfpages}
 \usepackage{lscape}
+\usepackage{amsmath}
 
 \usepackage[
 backend=biber,
@@ -67,7 +68,6 @@ sorting=ynt
 \input{titlepage}
 
 \tableofcontents
-\pagebreak
 \vfill
 Legende:
 \begin{enumerate}
@@ -76,8 +76,8 @@ Legende:
   \item \dotuline{Links zu Glossareinträgen} 
 \end{enumerate}
 
+\pagebreak
 \pagenumbering{arabic}
-%\setcounter{page}{4}
 
 \setlength{\parskip}{0.2cm}
 
@@ -119,14 +119,14 @@ Legende:
 
 \section{Anhang}
 
-\input{attachments/microsoftexceldatei}
-\pagebreak
-
 \input{attachments/lastenheft}
 \pagebreak
 
-%\input{attachments/pflichtenheft}
-%\pagebreak
+\input{attachments/pflichtenheft}
+\pagebreak
+
+\input{attachments/microsoftexceldatei}
+\pagebreak
 
 \input{attachments/ressourcen}
 \pagebreak
@@ -156,5 +156,7 @@ Legende:
 \input{attachments/decisiontree}
 
 \input{attachments/sketches}
+
+\input{attachments/projektantrag}
 
 \end{document}

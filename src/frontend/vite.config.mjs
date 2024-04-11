@@ -15,6 +15,12 @@ export default defineConfig({
   },
   server: {
     open: false,
+    proxy: {
+      '/api': {
+        target: 'http://api-server:5000',
+        changeOrigin: true
+      }
+    }
   },
   define: {
     'process.env': JSON.stringify(process.env),

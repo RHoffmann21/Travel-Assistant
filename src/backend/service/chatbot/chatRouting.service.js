@@ -18,7 +18,7 @@ async function getFollowUpQuestion(question, answer, travelExpenseReport){
 }
 
 /**
- * @description this function is getting te result of give condition
+ * @description this function is getting the result of give condition
  * @param {String} condition the condtionen for the if-statement
  * @param {String} answer the user answer to the origin qestion
  * @param {Object} travelExpenseReport the existing travelexpense report
@@ -31,7 +31,7 @@ async function getResultOfCondition(condition, answer, travelExpenseReport){
     case 'gt1':
       return (answer.length > 1) ? true : false;
     case 'isTripEndDate':
-      return (Date.parse(answer) === travelExpenseReport.tripEndDate) ? true : false;
+      return (Date.parse(answer) === travelExpenseReport.tripReport.tripEnd) ? true : false;
     default:
       throw new Error('no matching condition found')
   }

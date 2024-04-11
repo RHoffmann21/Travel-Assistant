@@ -1,3 +1,4 @@
+import QuestionService from '../service/question.service.js';
 import TravelExpenseReportService from '../service/travelExpenseReport.service.js';
 
 async function getTravelExpenseReports (req, res, next) {
@@ -51,11 +52,20 @@ async function updateTravelExpenseReportChat (req, res, next) {
   }
 }
 
+async function getFirstQuestion (req, res, next) {
+  try {
+    return res.json(await QuestionService.getOneQuestionByQuestionId('ask.tripStart.dateTimeSelect'));
+  } catch (error) {
+    
+  }
+}
+
 export default { 
   getTravelExpenseReports,
   createTravelExpenseReport,
   getOneTravelExpenseReport,
   updateOneTravelExpenseReport,
   deleteOneTravelExpenseReport,
-  updateTravelExpenseReportChat
+  updateTravelExpenseReportChat,
+  getFirstQuestion
 }

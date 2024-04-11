@@ -12,7 +12,12 @@ async function getAllTravelExpenseReports () {
 
 async function getOneTravelExpenseReport (travelExpenseReportId) {
   try {
-    return await TravelExpenseReport.findById(travelExpenseReportId).populate('chat.question');
+    return await TravelExpenseReport.findById(travelExpenseReportId).populate({
+      path : 'travelReport',
+      populate : {
+        path : 'chat.question'
+      }
+    });
   } catch (error) {
     throw Error('Error getting one TravelExpenseReports', error);
   }
@@ -29,10 +34,6 @@ async function updateOneTravelExpenseReport (travelExpenseReportId, changes) {
 async function createNewTravelExpenseReport(travelExpenseReport){
   const { year, month } = travelExpenseReport;
   try {
-    const question = await QuestionService.getOneQuestionByQuestionId('ask.tripStart.dateTimeSelect');
-    const chat =  [{
-      question: question._id
-    }];
     const newTravelExpenseReport = await new TravelExpenseReport({year, month});
     return await newTravelExpenseReport.save();
   } catch (error) {

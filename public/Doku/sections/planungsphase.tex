@@ -1,4 +1,4 @@
-Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen. Die folgenden Abschnitte orientieren sich anhand der Vorgaben des \sct{sec:Anhang:Pflichtenheft}{Pflichtenhefts}\todo IST NOCH NICHT FERTIG .
+Nachdem die aktuelle Situation analysiert wurde, wurde mit der Planung der Applikation begonnen. Die folgenden Abschnitte orientieren sich anhand der Vorgaben des \sct{sec:Anhang:Pflichtenheft}{Pflichtenhefts}.
 
 \subsection{Applikationsart}
 
@@ -61,7 +61,7 @@ Die Chatbot-Fragen sind in der Datenbank wie folgt gespeichert:\\
 
 Um Folgefragen zu ermitteln, wird das Objekt \verb|nextQuestions| in Verbindung mit dem Attribut \verb|condition| verwendet, um eine If-Abfrage zu bilden. Dadurch wird geprüft, ob die Antwort auf diese Frage \textit{true} oder \textit{false} ist, und basierend auf dem Ergebnis wird die entsprechende Frage aus \verb|nextQuestions| an das Frontend zurückgegeben.
 
-Bei Fragen die keine \verb|condition| haben, also keine Abzweigungen, enthält das \verb|nextQuestions| Objekt ein Attribut namens \verb|default|. Diese wird dann dem Frontend zurückgegeben.
+Bei Fragen die keine \verb|condition| haben, also keine Abzweigungen, enthält das Objekt \verb|nextQuestions| ein Attribut namens \verb|default|. Diese wird dann dem Frontend zurückgegeben.
 
 Im Anhang ist eine Visualisierung der Fragenabfolge des Chatbots in Form eines \sct{sec:Anhang:DecisionTree}{Decision Trees} zu finden.  
 
