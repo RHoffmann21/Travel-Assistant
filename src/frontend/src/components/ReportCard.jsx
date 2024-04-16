@@ -17,11 +17,13 @@ function ReportCard({ travelExpenseReport }) {
 								<div className="col-2">
 									{getStatusIcon(travelExpenseReport.status)}
 								</div>
-								<div className="col-8">
+								<div className="col-6">
 									{monatsNamen[travelExpenseReport.month]} {travelExpenseReport.year}
 								</div>
 								<div className="col-2">
-									<Link to={`${travelExpenseReport._id}`} className="stretched-link"><i className="bi bi-caret-right"></i></Link>
+									{
+										(typeof (travelExpenseReport.status) === 'undefined' || travelExpenseReport.status === 'needsEditing') && <Link to={`${travelExpenseReport._id}`} className="stretched-link"><i className="bi bi-caret-right"></i></Link>
+									}
 								</div>
 							</div>
 						</div>
@@ -30,18 +32,22 @@ function ReportCard({ travelExpenseReport }) {
 			</Card>
 		</>
 	);
-}
+}'pending', 'verified', 'accepted', 'declined', 'needsEditing'
 
 function getStatusIcon(status) {
 	switch (status) {
 		case 'pending':
+			return (<i className="bi bi-file-earmark-break"></i>);
+		case 'verified':
+			return (<i style={{ color: "blue" }} className="bi bi-check2"></i>);
+		case 'needsEditing':
+			return (<i style={{ color: "orange" }} className="bi bi-exclamation-diamond-fill"></i>);
+		case 'accepted':
+			return (<i style={{ color: "green" }} className="bi bi-check2-all"></i>);
+		case 'declined':
+			return (<i style={{ color: "red" }} className="bi bi-ban"></i>);
+		default:
 			return (<i className="bi bi-three-dots"></i>);
-		case 'inReview':
-			return (<i style={{ color: "blue" }} className="bi bi-file-earmark-break"></i>);
-		case 'toBeCorrected':
-			return (<i style={{ color: "red" }} className="bi bi-exclamation-diamond-fill"></i>);
-		case 'finished':
-			return (<i style={{ color: "green" }} className="bi bi-check-lg success"></i>);
 	}
 }
 

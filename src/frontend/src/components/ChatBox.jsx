@@ -1,124 +1,309 @@
-import ChatBubble from "./ChatBubble";
-import { useEffect, useState } from "react";
-import axios from 'axios';
+import ChatBubble from './ChatBubble';
+import { useState } from 'react';
+import DatePickerModal from './DatePickerModal';
+import SelectModal from './SelectModal';
+import PictureModal from './PictureModal';
+import EditModal from './EditModal';
+import ReceiptModal from './ReceiptModal';
 
-function ChatBox({chat, setChat, nextQuestion, setNextQuestion}) {
+function ChatBox({chat, setChat, nextQuestion, values, minDate, maxDate}) {
+	const [showDatePickerModal, setShowDatePickerModal] = useState(false);
+	const [showSelectModal, setShowSelectModal] = useState(false);
+	const [formData, setFormData] = useState();
+	const [showPictureModal, setShowPictureModal] = useState(false);
+	const [showEditModal, setShowEditModal] = useState(false);
+	const [target, setTarget] = useState();
+	const [showReceiptModal, setShowReceiptModal] = useState(false);
+	const [receipt, setReceipt] = useState();
+
+	const splittedQuestionId = nextQuestion.questionId.split('.');
+	const type = splittedQuestionId[2];
+
+	const handleDatePickerChange = (date) => {
+
+		const newFormData = {
+			question: nextQuestion
+		};
+		if(date.length === 0){
+			newFormData.answer = {
+				value: [],
+				content: ''
+			}
+		} else if(date.length){
+			const dates = [];
+			let content = ''
+			date.forEach((selectedDate) => {
+				dates.push(selectedDate.toDate());
+				content = `${content} ${content && ', '}${selectedDate.toDate()}`
+			})
+			newFormData.answer = {
+				value: dates,
+				content: content
+			}
+		} else {
+			newFormData.answer = {
+				value: date.toDate(),
+				content: date.toDate()
+			}
+		}
+    setFormData(newFormData);
+		console.log('formData', formData);
+  };
+
+	const handleEdit = (event) => {
+		console.log('hello');
+		setTarget(event.target)
+		target && handleEditShow()
+    // setFormData({
+		// 	answer: {
+		// 		value: event.target.value,
+		// 		content: event.target.value
+		// 	},
+		// 	question: nextQuestion
+    // });
+  };
+
+	const handleTextFieldChange = (event) => {
+    setFormData({
+			answer: {
+				value: event.target.value,
+				content: event.target.value
+			},
+			question: nextQuestion
+    });
+  };
+
+	const handleCurrencyFieldChange = (event) => {
+    setFormData({
+			answer: {
+				value: event.target.value,
+				content: `${event.target.value}€`,
+				receipt: formData?.answer?.receipt && formData.answer.receipt
+			},
+			question: nextQuestion
+    });
+  };
+
+	const handleKmFieldChange = (event) => {
+    setFormData({
+			answer: {
+				value: event.target.value,
+				content: `${event.target.value}km`
+			},
+			question: nextQuestion
+    });
+  };
+
+	const handleViewReceipt = (event) => {
+		setReceipt(event.target.value);
+		handleReceiptShow();
+  }; 
+
+	const handleReceiptShow = () => setShowReceiptModal(true);
+  const handleReceiptClose = () => setShowReceiptModal(false);
+
+	const handleEditShow = () => setShowEditModal(true);
+  const handleEditClose = () => setShowEditModal(false);
+	
+  const handlePictureShow = () => setShowPictureModal(true);
+  const handlePictureClose = () => setShowPictureModal(false);
+
+  const handleDatePickerShow = () => setShowDatePickerModal(true);
+  const handleDatePickerClose = () => setShowDatePickerModal(false);
+
+	const handleSelectShow = () => setShowSelectModal(true);
+	const handleSelectClose = () => setShowSelectModal(false);
+	const handleSelectOnSubmit = (event) => {
+		event.preventDefault();
+		let content = '';
+		const results = [];
+		for(const result of event.target.results){
+			if(result.checked){
+				content = `${content} ${content && ', '} ${result.labels[0].firstChild.wholeText}`;
+				results.push(result.value);
+			}
+		}
+    setFormData({
+			answer: {
+				value: results,
+				content: content
+			},
+			question: nextQuestion
+    });
+  };
 
 	const handleAnswer = async (event) => {
     event.preventDefault();
-		// setChat(event.)
-
-    // try {
-    //   const response = await axios.post('/api/v1/travelExpenseReports/create', formData);
-    //   if (response.status === 200) {
-    //     setTravelExpenseReportId(response.data._id);
-    //   } else {
-    //     console.error('Error submitting form data');
-    //   }
-    // } catch (error) {
-    //   console.error('Network error:', error);
-    // }
+		setChat([...chat, formData]);
+		console.log('formData', JSON.stringify(formData));
+		setFormData();
   };
 
-	function chatInput(questionId) {
-		return (
-			<>
-				{ inputGenerator(questionId) }
-			</>
-		)
+	const handleBoolean = (boolean) => {
+		setFormData({
+			answer: {
+				value: boolean,
+				content: boolean ? 'Ja' : 'Nein'
+			},
+			question: nextQuestion
+    });
 	}
 
-function inputGenerator (questionId) {
-	const [ bubbleType, answerAttribute, type ] = questionId.split('.');
-
-	if (type === 'string') {
-		return (
-			<>
-				<div className="input-group">
-          <input type="text" className="form-control"/>
-          <button className="btn btn-outline-secondary" type="button">Senden</button>
-        </div>
-			</>
-		)
-	}else if (type === 'currency') {
-		return (
-			<>
-				<form onSubmit={handleAnswer}>
-					<div className="input-group">
-						<button className="btn btn-outline-secondary" type="button"><i className="bi bi-camera"></i></button>
-						<input type="number" step=".01" inputMode="numeric" className="form-control" aria-describedby="basic-addon2"/>
-						<span className="input-group-text" id="basic-addon2">€</span>
-						<button className="btn" type="subbmit">Senden</button>
-					</div>
-				</form>
-			</>
-		) 
-	}else if (type === 'km') {
-		return (
-			<>
-				<div className="input-group">
-          <input type="number" className="form-control" aria-describedby="basic-addon2"/>
-          <span className="input-group-text" id="basic-addon2">KM</span>
-          <button className="btn" type="button">Senden</button>
-        </div>
-			</>
-		) 
-	} else if (type === 'dateSelect') {
-		return (
-			<>
-				{}
-			</>
-		) 
-	} else if (type === 'multiDateSelect'){
-    return (
-			<>
-				{}
-			</>
-    )
-	} else if (type === 'dateTimeSelect'){
-    return (
-			<>
-				{}
-			</>
-    )
-	} else if (type === 'select'){
-    return (
-			<>
-				{}
-			</>
-    )
-	}else if (type === 'boolean'){
-    return (
-			<>
-				{}
-			</>
-    )
-	} else if (type === 'none'){
-    return (
-			<>
-				{}
-			</>
-    )
-  } else {
-    throw new Error('no recognized type')
+	function handleCapturedPicture (dataUrl) {
+		if(typeof(dataUrl) !== 'undefined'){
+			setFormData({
+				answer: {
+					value: formData?.answer?.value,
+					content: formData?.answer?.content,
+					receipt: dataUrl
+				},
+				question: formData?.question,
+			});
+		}
   }
-}
+	
+
+  const handleTrueBooleanChange = () => handleBoolean(true);
+  const handleFalseBooleanChange = () => handleBoolean(false);
+
+	function inputGenerator (type) {
+		if (type === 'string') {
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<input type="text" className="form-control" onChange={handleTextFieldChange} required/>
+							<button className="btn btn-outline-secondary" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			)
+		}else if (type === 'currency') {
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<button onClick={handlePictureShow} className="btn btn-outline-secondary" type="button"><i className="bi bi-camera"></i></button>
+							<input type="number" step=".01" onChange={handleCurrencyFieldChange} inputMode="numeric" className="form-control" required/>
+							<span className="input-group-text" id="basic-addon2">€</span>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			) 
+		}else if (type === 'km') {
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<input type="number" onChange={handleKmFieldChange} className="form-control" required/>
+							<span className="input-group-text" id="basic-addon2">KM</span>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			) 
+		} else if (type === 'dateSelect') {
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<button onClick={handleDatePickerShow} className="btn" type="button"><i className="bi bi-calendar-event"></i></button>
+							<input type="text" className="form-control" value={typeof (formData) !== 'undefined' ? formData.answer.content.toString(): ''} disabled={true} required/>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			) 
+		} else if (type === 'multiDateSelect'){
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<button onClick={handleDatePickerShow} className="btn" type="button"><i className="bi bi-calendar-event"></i></button>
+							<input type="text" className="form-control" value={typeof (formData) !== 'undefined' ? formData.answer.content.toString(): ''} disabled={true} required/>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			)
+		} else if (type === 'dateTimeSelect'){
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<button onClick={handleDatePickerShow} className="btn" type="button"><i className="bi bi-calendar-event"></i></button>
+							<input type="text" className="form-control" value={typeof (formData) !== 'undefined' ? formData.answer.content.toString(): ''} disabled={true} required/>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			)
+		}else if (type === 'multiSelect' || type === 'select'){
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<button onClick={handleSelectShow} className="btn" type="button"><i className="bi bi-list-check"></i></button>
+							<input type="text" className="form-control" value={typeof (formData) !== 'undefined' ? formData.answer.content.toString(): ''} disabled={true} required/>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			)
+		}else if (type === 'boolean'){
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<input onClick={handleTrueBooleanChange} type="radio" className="btn-check" name="boolean" id="true" required/>
+							<label className="btn btn-secondary" htmlFor="true">Ja</label>
+							<input onClick={handleFalseBooleanChange} type="radio" className="btn-check" name="boolean" id="false" required/>
+							<label className="btn btn-secondary" htmlFor="false">Nein</label>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			)
+		} else if (type === 'none'){
+			return (
+				<>
+					<form onSubmit={handleAnswer}>
+						<div className="input-group">
+							<input type="number" className="form-control"/>
+							<span className="input-group-text" id="basic-addon2">KM</span>
+							<button className="btn" type="submit">Senden</button>
+						</div>
+					</form>
+				</>
+			)
+		} else {
+			throw new Error('no recognized type')
+		}
+	}
   return (
-    <div className="chat">
-      {/* {
-				typeof (chat) !== 'undefined' && chat?.map(interaction => {
-					ChatBubble('question', interaction.question.content);
-					ChatBubble('answer', interaction.answer);
-				})
-			} */}
-			{
-				nextQuestion && console.log('nextQuestion.content',nextQuestion)
-			}
-			{
-				nextQuestion && <ChatBubble side={'question'} content={nextQuestion.content} />
-			}
-      { chatInput(nextQuestion.questionId) }
-    </div>
+		<>
+			<div className="chat">
+				{
+					chat?.map(interaction => (
+					<>
+						<ChatBubble side={'question'} content={interaction.question.content} key={`${interaction.question.questionId}${interaction.answer.content}`} isLast={true} />
+						<ChatBubble side={'answer'} content={interaction.answer.content.toString()} key={`${interaction.answer.content}${interaction.question.questionId}`} isLast={interaction.answer.receipt ? false : true} onClick={interaction.question.editable ? handleEdit : ''} />
+						{interaction.answer.receipt && <ChatBubble side={'answer'} content={<i className="bi bi-file-earmark-image"></i>} key={interaction.answer.receipt._id} isLast={true} onClick={handleViewReceipt} />}
+					</>
+					))
+				}
+				{
+					nextQuestion && <ChatBubble side={'question'} content={nextQuestion.content} />
+				}
+			</div>
+			{ inputGenerator(type, values) }
+			<DatePickerModal show={showDatePickerModal} onHide={handleDatePickerClose} onChange={handleDatePickerChange} type={type} minDate={minDate} maxDate={maxDate} />
+			<SelectModal show={showSelectModal} onHide={handleSelectClose} onSubmit={handleSelectOnSubmit} type={type} values={values} />
+			<PictureModal show={showPictureModal} onHide={handlePictureClose} onChange={handleCapturedPicture}/>
+			<EditModal show={showEditModal} onHide={handleEditClose} target={target}/>
+			<ReceiptModal show={showReceiptModal} onHide={handleReceiptClose} receipt={receipt}/>
+		</>
   )
 }
 

@@ -1,35 +1,37 @@
 import express from 'express';
-import { createProxyMiddleware } from 'http-proxy-middleware';
 import connectDB from './lib/connectDB.js';
 import router from './routes.js'
-import cors from 'cors';
+import auth from './lib/auth.js';
+import session from 'express-session';
+import dtsLogger from 'dts-node-logger';
+// import cookieParser from 'cookie-parser';
+import getMongoDBStore from 'connect-mongodb-session';
+const MongoDBStore = getMongoDBStore(session);
 
 
 const app = express();
-app.use(cors());
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(dtsLogger.httpLog())
+app.use(express.json({limit: '10mb'}));
+app.use(express.urlencoded({limit: '10mb', extended: true}));
+// app.use(cookieParser());
 
 await connectDB(process.env.MONGO_URI);
 
+app.set('trust proxy', 1)
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false },
+  store: new MongoDBStore({
+    uri: process.env.MONGO_URI,
+    collection: 'sessions'
+  })
+}))
+
+auth.initializeService(app);
+
 app.use('/', router);
-
-app.get('/api', (req, res, next) => {
-  return res.send('test');
-})
-
-// if (true) {
-//   app.use(createProxyMiddleware({
-//     target: 'http://react-app:5173',
-//     changeOrigin: true,
-//     ws: true,
-//   }))
-// } else {
-//   const base = '/opt/src/frontend/dist'
-//   app.use(express.static(base))
-//   app.use((req, res) => res.sendFile(`${frontend-build}/index.html`))
-// }
 
 app.listen(5000, () => {
   console.log('backend started')

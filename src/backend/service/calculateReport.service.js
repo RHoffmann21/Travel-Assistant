@@ -2,33 +2,8 @@ import CountryLumpRateService from './countryLumpRate.service.js';
 import SettingsService from './settings.service.js';
 
 /**
- * @description 
- * @param {*} conversation 
- * @returns 
- */
-async function calculateMealAllowance(countryId, isArrivalDepartureDay, isfullDay, isPrivateOvernightStay) {
-  const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(countryId)
-  let mealAllowance = 0;
-  const { arrivalDepartureDay, fullDay, privateOvernightStay} = conversation.countryLumpRates.rates;
-  if (conversation.wasArrivalDepartureDay) {
-    mealAllowance = arrivalDepartureDay;
-  } else if (conversation.wasFullDay) {
-    mealAllowance = fullDay
-  } else if (conversation.wasPrivateOvernightStay) {
-    mealAllowance = privateOvernightStay;
-  } else return 0;
-
-  // ggf trennen -> erst lump dann seperat nochmal die kosten raus rechnen 
-  if (!conversation.wasBreakfastIncluded && !conversation.wasLunchIncluded && !conversation.wasDinnerIncluded) {
-    return parseFloat(mealAllowance);
-  } else {
-    return parseFloat(mealAllowance - calculateLumpSumMealCut(mealAllowance, conversation.wasBreakfastIncluded, conversation.wasLunchIncluded,conversation.wasDinnerIncluded));
-  }
-};
-
-/**
  * @description calculates the deduction for included meals
- * @param {Number} mealAllowance the allowance the spesific day
+ * @param {Number} mealAllowance the allowance the specific day
  * @param {Boolean} breakfastIncluded if breakfast was included
  * @param {Boolean} lunchIncluded if lunch was included
  * @param {Boolean} dinnerIncluded if dinner was included
@@ -49,7 +24,7 @@ async function calculateMealDeduction(mealAllowance, breakfastIncluded, lunchInc
 
 /**
  * @description calculates the mileage allowance
- * @param {Number} mileage mileage of the spesific date
+ * @param {Number} mileage mileage of the specific date
  * @returns {Number} the calculated mileage allowance 
  */
 async function calculateMileageAllowance(mileage) {
@@ -62,10 +37,10 @@ async function calculateMileageAllowance(mileage) {
 }
 
 /**
- * @description calculates the total transportation cost of the spesific date
- * @param {Number} flightTicketCost the total cost of flight tickets of the spesific date
- * @param {Number} publicTransportCost the total cost of public transport tickets of the spesific date
- * @param {Number} taxiCost the total cost of taxi of the spesific date
+ * @description calculates the total transportation cost of the specific date
+ * @param {Number} flightTicketCost the total cost of flight tickets of the specific date
+ * @param {Number} publicTransportCost the total cost of public transport tickets of the specific date
+ * @param {Number} taxiCost the total cost of taxi of the specific date
  * @returns {Number} the total sum of transportation cost
  */
 function calculateTransportationCost(flightTicketCost, publicTransportCost, taxiCost) {
@@ -74,7 +49,7 @@ function calculateTransportationCost(flightTicketCost, publicTransportCost, taxi
 
 /**
  * @description
- * @param {Number} mileage mileage of the spesific date
+ * @param {Number} mileage mileage of the specific date
  * @returns 
  */
 async function calculatePrivateCarCost(mileage) {
@@ -102,7 +77,6 @@ async function calculateCateringCost(wasBreakfastIncluded, wasLunchIncluded, was
 }
 
 export default {
-  calculateMealAllowance,
   calculateMealDeduction,
   calculatePrivateCarCost,
   calculateTransportationCost

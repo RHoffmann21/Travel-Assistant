@@ -9,7 +9,7 @@ Bei der Auswahl der Libraries wurden einige Aspekte besonders berücksichtigt:
     \item Beliebtheit\\
     Für die Beliebtheit wurde sich an den Metriken der wöchentlichen Downloads bedient. Je beliebter eine Library ist, desto höher ist die Wahrscheinlichkeit, dass sie langfristig weiter gepflegt wird.
     \item Dependencies\footnote{engl. Abhängigkeiten, weitere einzubindende Pakete, ohne die die gegebene Library nicht funktioniert}\\
-	Die Anzahl und Art der Dependencies der Library ist ein nicht unwesentlicher Faktor. Eine Library, welche weniger Dependencies beinhaltet, kann besser eingesetzt werden. So kann man besser kontrollieren welcher Code in das Projekt gelangt.
+	Die Anzahl und Art der Dependencies der Library ist ein nicht unwesentlicher Faktor. Eine Library, welche weniger Dependencies beinhaltet, kann besser eingesetzt werden. So kann man besser kontrollieren, welcher Code in das Projekt gelangt.
 	\item Schwachstellen\\
 	Die Sicherheit der Library ist einer der wichtigsten Punkte. Daher ist es ratsam, eine Library mit weniger Dependencies zu verwenden, da diese weniger Risikopotential bietet. Sollten dennoch Schwachstellen vorhanden sein, müssen diese risikoarm sein.
 \end{itemize}
@@ -25,7 +25,7 @@ Ein Auszug des \sct{sec:Anhang:KanbanBoard}{Kanbanboards} ist im Anhang zu finde
 
 \subsection{Vorbereitung des Applikationsgrundgerüsts}
 
-Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository. Eine .env-Datei mit zugehöriger .env.sample-Datei. Das Frontend, Backend und die Datenbank laufen in Containern. Docker ist eine Software zur Isolierung von Anwendungen in solchen Containern. Für die Umsetzung werden die notwendigen Dateien docker-compose.yml und Dockerfile benötigt.
+Zunächst wurde das Grundgerüst der Anwendung vorbereitet. Dazu wurde ein \gl{git}-Repository angelegt. Im Repository wurden zwei Hauptverzeichnisse angelegt: Backend und Frontend. Im Backend-Verzeichnis befindet sich das \gl{JS}-Projekt der Backend-Applikation, im Frontend-Verzeichnis das mit \gl{vite} erstellte \gl{React} \gl{JS}-Projekt. Außerdem befinden sich im Hauptverzeichnis die .gitignore-Datei zum Ausschließen von Dateien aus dem \gl{git}-Repository. Eine .env-Datei und .env.sample-Datei. Das Frontend, Backend und die Datenbank laufen in Containern. Docker ist eine Software zur Isolierung von Anwendungen in solchen Containern. Für die Umsetzung werden die notwendigen Dateien docker-compose.yml und Dockerfile benötigt.
 
 \subsection{Implementierung Backendapplikation}
 
@@ -47,6 +47,6 @@ Bei jeder Anfrage an das Backend wird mithilfe einer Authentifizierungs-Middlewa
 
 \subsection{Testing}
 
-Nachdem die Berechnungslogik implementiert wurde, muss diese aufgrund des susdrücklichen Kundenwunsches ausgiebig getestet werden. Hierfür wurde \gl{jest} benutzt. Ein Auszug eines Unittest ist im Anhang unter \sct{sec:Anhang:Unittest-Ausschnitt}{Unittest-Ausschnitt} zu finden.
+Nachdem die Berechnungslogik implementiert wurde, muss diese aufgrund des ausdrücklichen Kundenwunschs ausgiebig getestet werden. Hierfür wurde \gl{jest} benutzt. Ein Auszug eines Unittest ist im Anhang unter \sct{sec:Anhang:Unittest-Ausschnitt}{Unittest-Ausschnitt} zu finden.
 
 Nachdem eine lauffähige Version vorhanden war, wurde diese mithilfe eines Außendienst \gl{MA} auf Funktionalität getestet und um Feedback einzuholen.

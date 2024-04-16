@@ -5,10 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-bootstrap/'
 import ReportCard from '../components/ReportCard';
 import axios from 'axios';
-import { useState,useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import { Calendar } from "react-multi-date-picker";
 import { Navigate } from 'react-router-dom';
+import AuthProvider from '../auth/AuthProvider';
 
 export default function TravelReportsOverview() {
   const [travelExpenseReports, setTravelExpenseReports] = useState();
@@ -16,6 +17,8 @@ export default function TravelReportsOverview() {
   const [formData, setFormData] = useState({});
   const [travelExpenseReportId, setTravelExpenseReportId] = useState();
 
+  const { auth: { user } } = useContext(AuthProvider);
+  
   useEffect(() => {
     axios.get(`/api/v1/travelExpenseReports`)
       .then((res) => {
@@ -24,6 +27,7 @@ export default function TravelReportsOverview() {
   }, []);
 
   const handleShow = () => setShowCreateModal(true);
+  const handleClose = () => setShowCreateModal(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -43,7 +47,8 @@ export default function TravelReportsOverview() {
   const handleDateChange = (date) => {
     setFormData({
       month: date.month.index,
-      year: date.year
+      year: date.year,
+      user
     });
   };
 
@@ -60,7 +65,7 @@ export default function TravelReportsOverview() {
 
   return (
     <>
-      <Modal show={showCreateModal} centered>
+      <Modal show={showCreateModal} onHide={handleClose} centered>
         <Modal.Body>
           <form onSubmit={handleSubmit}>
             <Calendar {...props} />
@@ -69,10 +74,7 @@ export default function TravelReportsOverview() {
         </Modal.Body>
       </Modal>
       {
-        travelExpenseReports?.length && console.log(JSON.stringify(travelExpenseReports))
-      }
-      { travelExpenseReports?.length &&
-        travelExpenseReports.map(travelExpenseReport => (
+        travelExpenseReports?.map(travelExpenseReport => (
           <ReportCard key={travelExpenseReport._id} travelExpenseReport={travelExpenseReport}></ReportCard>
         ))
       }

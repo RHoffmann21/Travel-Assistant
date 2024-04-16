@@ -7,7 +7,6 @@ const questionSchema = new mongoose.Schema({
   followingAnswerAttribute: { type: String, required: true },
   condition: { type: String, enum: ['gt1', 'truthy', 'isTripEndDate'] },
   editable: { type: Boolean, required: true},
-  receiptNecessary: { type: Boolean, default:false },
   nextQuestions: {
     true: { type: String },
     false: { type: String },

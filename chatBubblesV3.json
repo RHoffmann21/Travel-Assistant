@@ -10,7 +10,7 @@
 		}
 	},
 	{
-		"questionId": "ask.TripEnd.dateTimeSelect",
+		"questionId": "ask.tripEnd.dateTimeSelect",
 		"content": "Wann endete deine Dienstreise und um welche Uhrzeit?",
 		"followingAnswerType": "dateTimeSelect",
 		"followingAnswerAttribute": "tripEndDateTime",
@@ -83,7 +83,7 @@
 			"default": "ask.partialTripOccasion.string"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.mealsProvided.boolean",
 		"content": "Wurde an einem der Tage Frühstück, Mittagessen oder Abendessen gestellt?",
 		"followingAnswerType": "boolean",
@@ -95,7 +95,7 @@
 			"false": "ask.paidForTransport.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.breakfastProvided.boolean",
 		"content": "Wurde an einem der Tage Frühstück gestellt?",
 		"followingAnswerType": "boolean",
@@ -117,7 +117,7 @@
 			"default": "ask.lunchProvided.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.lunchProvided.boolean",
 		"content": "Wurde an einem der Tage Mittagessen gestellt?",
 		"followingAnswerType": "boolean",
@@ -139,16 +139,16 @@
 			"default": "ask.dinnerProvided.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.dinnerProvided.boolean",
-		"content": "Wurde an einem der Tage Mittagessen gestellt?",
+		"content": "Wurde an einem der Tage Abendessen gestellt?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "dinnerProvided",
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
 			"true": "ask.daysWithDinner.multiDateSelect",
-			"false": "ask.dinnerProvided.boolean"
+			"false": "ask.paidForTransport.boolean"
 		}
 	},
 	{
@@ -161,7 +161,7 @@
 			"default": "ask.paidForTransport.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.paidForTransport.boolean",
 		"content": "Musstest du für Flugtickets, Bus- oder Zugtickets oder Taxifahrten selbst aufkommen?",
 		"followingAnswerType": "boolean",
@@ -173,7 +173,7 @@
 			"false": "ask.privateCarUsed.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.paidForFlight.boolean",
 		"content": "Musstest du für Flugtickets selbst aufkommen?",
 		"followingAnswerType": "boolean",
@@ -205,7 +205,7 @@
 			"default": "ask.anotherFlightCost.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherFlightCost.boolean",
 		"content": "Musstest du für einen weiteren Tag Flugticket(s) bezahlen?",
 		"followingAnswerType": "boolean",
@@ -217,7 +217,7 @@
 			"false": "ask.paidForBusTrain.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.paidForBusTrain.boolean",
 		"content": "Musstest du für Bus/Zug Tickets selbst aufkommen?",
 		"followingAnswerType": "boolean",
@@ -235,7 +235,6 @@
 		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "busTrainCostDate",
 		"editable": false,
-		"condition": "truthy",
 		"nextQuestions": {
 			"default": "ask.busTrainCost.currency"
 		}
@@ -250,7 +249,7 @@
 			"default": "ask.anotherBusTrainCost.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherBusTrainCost.boolean",
 		"content": "Musstest du für einen weiteren Tag Bus/Zugticket(s) bezahlen?",
 		"followingAnswerType": "boolean",
@@ -262,7 +261,7 @@
 			"false": "ask.paidForCab.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.paidForCab.boolean",
 		"content": "Musstest du für Taxifahrten selbst aufkommen?",
 		"followingAnswerType": "boolean",
@@ -280,7 +279,6 @@
 		"followingAnswerType": "dateSelect",
 		"followingAnswerAttribute": "cabCostDate",
 		"editable": false,
-		"condition": "truthy",
 		"nextQuestions": {
 			"default": "ask.cabCost.currency"
 		}
@@ -295,7 +293,7 @@
 			"default": "ask.anotherCabCost.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherCabCost.boolean",
 		"content": "Musstest du für einen weiteren Tag Taxifahrt(en) bezahlen?",
 		"followingAnswerType": "boolean",
@@ -307,7 +305,7 @@
 			"false": "ask.privateCarUsed.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.privateCarUsed.boolean",
 		"content": "Hast du während der Dienstreise deinen privaten PKW gefahren?",
 		"followingAnswerType": "boolean",
@@ -349,7 +347,7 @@
 			"default": "ask.anotherPrivateCarUse.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherPrivateCarUse.boolean",
 		"content": "Gab es weitere Tage an welchen du deinen Privaten PKW für Dienstreisen benutzt hast?",
 		"followingAnswerType": "boolean",
@@ -361,7 +359,7 @@
 			"false": "ask.privateOvernightStay.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.privateOvernightStay.boolean",
 		"content": "Hast du an einem der Tage privat übernachtet?",
 		"followingAnswerType": "boolean",
@@ -383,7 +381,7 @@
 			"default": "ask.hotelCostAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.hotelCostAccrued.boolean",
 		"content": "Fielen Hotelkosten für dich an?",
 		"followingAnswerType": "boolean",
@@ -391,7 +389,7 @@
 		"editable": false,
 		"condition": "truthy",
 		"nextQuestions": {
-			"true": "ask.privateOvernightStayDates.dateSelect",
+			"true": "ask.hotelCostAccruedDate.dateSelect",
 			"false": "ask.cateringCostAccrued.boolean"
 		}
 	},
@@ -415,7 +413,7 @@
 			"default": "ask.anotherHotelCostAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherHotelCostAccrued.boolean",
 		"content": "Fielen an einem weiteren Tag Hotelkosten für dich an?",
 		"followingAnswerType": "boolean",
@@ -427,7 +425,7 @@
 			"false": "ask.cateringCostAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.cateringCostAccrued.boolean",
 		"content": "Fielen Bewirtungskosten für dich an?",
 		"followingAnswerType": "boolean",
@@ -459,7 +457,7 @@
 			"default": "ask.anotherCateringCostAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherCateringCostAccrued.boolean",
 		"content": "Fielen an einem weiteren Tag Bewirtungskosten an?",
 		"followingAnswerType": "boolean",
@@ -471,7 +469,7 @@
 			"false": "ask.tipAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.tipAccrued.boolean",
 		"content": "Wurde Trinkgeld ausgelegt?",
 		"followingAnswerType": "boolean",
@@ -503,7 +501,7 @@
 			"default": "ask.anotherTipAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherTipAccrued.boolean",
 		"content": "Wurden an einem weiteren Tag Tringgelder ausgelegt?",
 		"followingAnswerType": "boolean",
@@ -515,7 +513,7 @@
 			"false": "ask.otherCostAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.otherCostAccrued.boolean",
 		"content": "Wurden sonstige kosten von dir ausgelegt?",
 		"followingAnswerType": "boolean",
@@ -539,7 +537,7 @@
 	},
 	{
 		"questionId": "ask.otherCost.currency",
-		"content": "Wie hoch war das Trinkgeld?",
+		"content": "Wie hoch waren diese Kosten?",
 		"followingAnswerType": "currency",
 		"followingAnswerAttribute": "otherCost",
 		"editable": true,
@@ -549,7 +547,7 @@
 	},
 	{
 		"questionId": "ask.otherCostExplanation.string",
-		"content": "Erläutere bitte um was für kasten es sich handelt und weswegen du ",
+		"content": "Erläutere bitte um was für kosten es sich handelt.",
 		"followingAnswerType": "currency",
 		"followingAnswerAttribute": "otherCostExplanation",
 		"editable": false,
@@ -557,7 +555,7 @@
 			"default": "ask.anotherOtherCostAccrued.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherOtherCostAccrued.boolean",
 		"content": "Fielen an einem weiteren Tag sonstige Kosten an?",
 		"followingAnswerType": "boolean",
@@ -569,7 +567,7 @@
 			"false": "ask.anotherTrip.boolean"
 		}
 	},
-	{ //no
+	{
 		"questionId": "ask.anotherTrip.boolean",
 		"content": "Gab es ein weitere Dienstreise?",
 		"followingAnswerType": "boolean",

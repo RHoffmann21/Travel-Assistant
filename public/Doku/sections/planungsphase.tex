@@ -8,7 +8,7 @@ einfach aktualisieren kann. Die Full-Stack Lösung \gl{MERN} wird für die Erste
 \subsection{Applikationsarchitektur}
 \label{sec:Planungsphase:Applikationsarchitektur}
 
-Die Softwarelösung wird in zwei Teilapplikationen entwickelt: \sct{sec:Planungsphase:Frontend}{Frontend} und \sct{sec:Planungsphase:Backend}{Backend}. Eine Backend Applikation ist Notwenig um sicherzustellen, dass die \gl{SPA} sicher mit den Daten interagieren kann.
+Die Softwarelösung wird in zwei Teilapplikationen entwickelt: Frontend und Backend. Eine Backend Applikation ist notwenig um sicherzustellen, dass die \gl{SPA} sicher mit den Daten interagieren kann.
 
 \subsubsection{Frontend}
 \label{sec:Planungsphase:Frontend}
@@ -28,7 +28,7 @@ Das Backend wird auf Basis der \gl{MSC}-Architektur entwickelt. Dabei werden die
   \item \textbf{M}odel\\
   Das Model beschreibt die zu speichernden Daten im Rahmen einer einzelnen Entität. So werden im Model die klassischen CRUD-Operationen durchgeführt, wie das Erstellen einer \gl{RA}.
   \item \textbf{S}ervice\\
-  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD-, und gegebenenfalls noch weitere, Operationen auszuführen. Ein Beispiel für eine Operation wäre die Hintergrundberechnungen von Pauschalen.
+  Im Service findet die gesamte Logik statt. Services sind die einzigen Komponenten der Applikation, die mit Models interagieren. Sie bieten die Möglichkeit, die CRUD- und gegebenenfalls noch weitere Operationen auszuführen. Ein Beispiel für eine Operation wäre die Hintergrundberechnungen von Pauschalen.
   \item \textbf{C}ontroller\\
   Controller sind die Komponenten, die die tatsächliche Interaktion mit dem \gl{HTTP}-Client übernehmen. Sie interagieren mit den Services, um die Anfragen des Clients auszuführen. Controller stellen somit den Punkt dar, an dem die Daten vom Frontend an die Services zur Verarbeitung gesendet werden.
 \end{enumerate}
@@ -47,7 +47,7 @@ Eine Kernkomponente des Backends ist die Logik des Chatbots. Hierfür werden End
 \subsection{Modelle und Datenstruktur}
 \label{sec:Planungsphase:ModelleDatenstruktur}
 
-Die Anforderungen machen deutlich, dass mehrere Modelle und Datenstrukturen erforderlich sind. So wird ein Modell für die Länder und deren Pauschalen benötigt, die Reisekostenabrechnung, die sich aus dem Chatverlauf und Dienstreisen ergibt welche die Informationen aus dem Chat verarbeitet abspeichert, sowie ein Modell, das einige Berechnungsgrundlagen speichert. Außerdem wird ein Benutzermodell benötigt, um die jeweiligen Vorgesetzten zu speichern und ein Modell welches die Fragen für den Chatbot abspeichert.
+Die Anforderungen machen deutlich, dass mehrere Modelle und Datenstrukturen erforderlich sind. So wird ein Modell für die Länder und deren Pauschalen benötigt, die Reisekostenabrechnung, die sich aus dem Chatverlauf und Dienstreisen ergibt, welche die Informationen aus dem Chat verarbeitet abspeichert, sowie ein Modell, das einige Berechnungsgrundlagen speichert. Außerdem wird ein Benutzermodell benötigt, um die jeweiligen Vorgesetzten zu speichern und ein Modell welches die Fragen für den Chatbot abspeichert.
 Die Chatverläufe müssen deswegen gespeichert werden, um eine spätere Anpassung der \gl{RA} zu ermöglichen.
 
 \subsubsection{Chatbot Datenstruktur und Logik}
@@ -59,7 +59,7 @@ Diese Struktur bietet Vorteile in Bezug auf die Wartbarkeit, da bei Anpassungen 
 Die Chatbot-Fragen sind in der Datenbank wie folgt gespeichert:\\
 \includegraphics[width=1\textwidth]{fragestruktur.png}
 
-Um Folgefragen zu ermitteln, wird das Objekt \verb|nextQuestions| in Verbindung mit dem Attribut \verb|condition| verwendet, um eine If-Abfrage zu bilden. Dadurch wird geprüft, ob die Antwort auf diese Frage \textit{true} oder \textit{false} ist, und basierend auf dem Ergebnis wird die entsprechende Frage aus \verb|nextQuestions| an das Frontend zurückgegeben.
+Um Folgefragen zu ermitteln, wird das Objekt \verb|nextQuestions| in Verbindung mit dem Attribut \verb|condition| verwendet, um eine If-Abfrage zu bilden. Dadurch wird geprüft, ob die Antwort auf diese Frage \textit{true} oder \textit{false} ist und basierend auf dem Ergebnis wird die entsprechende Frage aus \verb|nextQuestions| an das Frontend zurückgegeben.
 
 Bei Fragen die keine \verb|condition| haben, also keine Abzweigungen, enthält das Objekt \verb|nextQuestions| ein Attribut namens \verb|default|. Diese wird dann dem Frontend zurückgegeben.
 

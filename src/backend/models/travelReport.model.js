@@ -3,14 +3,18 @@ import mongoose from 'mongoose';
 const travelReport = new mongoose.Schema({
   chat:  [{
     question: { type: mongoose.Schema.Types.ObjectId, ref: 'Question' },
-    answer: { type: String },
+    answer: { 
+      value: { type: mongoose.Schema.Types.Mixed },
+      content: { type: String },
+      receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
+    },
     _id: false
   }],
   tripStart: { type: Date },
   tripEnd: { type: Date },
   tripDestinations: [{type: mongoose.Schema.Types.ObjectId, ref: 'Country'}],
   partialTrips: [{
-      destination: {type: mongoose.Schema.Types.ObjectId, ref: 'Country', enum: this.destinations },
+      destination: { type: mongoose.Schema.Types.ObjectId, ref: 'Country' },
       startDate: { type: Date },
       endDate: { type: Date },
       occasion: { type: String },
@@ -22,10 +26,10 @@ const travelReport = new mongoose.Schema({
     type: { type: String, enum: ['cab', 'flight', 'busTrain']},
     date: { type: Date },
     cost: { type: Number },
-    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   }],
   privateCarTransportation: [{
-      date: { type: date },
+      date: { type: Date },
       mileage: { type: Number },
       routeBreakdown: { type: String },
       cost: { type: Number }
@@ -34,23 +38,23 @@ const travelReport = new mongoose.Schema({
   hotelCost: [{ 
     date: { type: Date },
     cost: { type: Number },
-    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   }],
   cateringCost: [{
     date: { type: Date },
     cost: { type: Number }, 
-    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   }],
   tip: [{
     date: { type: Date },
     cost: { type: Number }, 
-    reciept: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   }],
   other: [{
     date: { type: Date },
     explanation: { type: String },
     cost: { type: Number },
-    reciept: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+    receipt: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
   }],
 });
 

@@ -1,0 +1,56 @@
+{
+  "_id": {
+    "$oid": "661e732ee2a8030022ae5a8a"
+  },
+  "user": {
+    "$oid": "661e6ee1969a5969318162cd"
+  },
+  "year": 2024,
+  "month": 5,
+  "travelReports": [
+    {
+      "$oid": "661e732ee2a8030022ae5a88"
+    }
+  ],
+  "__v": 0,
+  "status": "pending",
+  "dates": [{
+    "date": "Tue Apr 16 2024 16:47:02 GMT+0200 (Mitteleuropäische Sommerzeit)",
+    "destination": "661e76b79e44d72e65771cc3",
+    "allowance": 40,
+    "occasion": "some Text",
+    "breakfastGiven": false,
+    "lunchGiven": true,
+    "dinnerGiven": false,
+    "mealDeduction": 16,
+    "flight": {
+      "cost": 22
+    },
+    "busTrain": {
+      "cost": 21
+    },
+    "cab": {
+      "cost": 20
+    },
+    "privateCarTransportation": {
+      "mileage": 400,
+      "routeBreakdown": "i broke down",
+      "mileageAllowance": 70
+    },
+    "privateOvernightCost": 120,
+    "hotelCost": {     
+      "cost": 30
+    },
+    "other": {
+      "explanation": "some explanation",
+      "cost": 31
+    },
+    "tip": {
+      "cost": 32
+    },
+    "catering": {
+      "cost": 33
+    },
+    "overallCost": 705
+  }]
+}

@@ -1,7 +1,5 @@
 {
-  "startDate": "",
-  "endDate": "",
-  "countryRates": [{
+  "country": [{
     "country": {
       "code": "de",
       "countryName": "Deutschland"

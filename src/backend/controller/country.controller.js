@@ -1,10 +1,18 @@
-import CountryService from "../service/country.service";
+import dtsLogger from "dts-node-logger";
+import CountryService from "../service/country.service.js";
 
+/**
+ * @description This function is trying to get all countries
+ * @param {*} req the request argument to the middleware
+ * @param {*} res the response argument to the middleware
+ * @param {*} next the callback argument to the middleware
+ * @returns all countries
+ */
 async function getAllCountries(req, res, next){
   try {
-    return res.send(await CountryService.getAllCountries());
+    return res.json(await CountryService.getAllCountries());
   } catch (error) {
-    throw new Error('Error getting all counties', error);
+    dtsLogger.error('Error getting all counties from db', error);
   }
 }
 

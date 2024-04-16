@@ -1,8 +1,7 @@
-function ChatBubble({ side, content }) {
-	console.log('content',content);
+function ChatBubble({ side, content, isLast, onClick=undefined }) {
 	return (
-		<div className={side === 'question' ? 'question messages' : 'answer messages'} >
-			<div className="message last">
+		<div className={side === 'question' ? 'question messages' : 'answer messages'} onClick={onClick ? onClick : undefined}>
+			<div className={isLast ? 'message last' : 'message'}>
 				{content}
 			</div>
 		</div>

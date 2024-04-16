@@ -1,40 +1,57 @@
-import logger from 'dts-node-logger';
 import passport from 'passport';
+import dtsOidc from 'dts-node-oidc-client';
+import express from 'express';
+import logger from 'dts-node-logger';
+import UserService from '../service/user.service.js';
 
-import { openidStrategy, ensureLoggedIn, ensureLoggedOut }  from('dts-node-oidc-client');
+async function initializeService(app) {
 
-export default async function (app) {
-  // Configure Passport Strategy
-  const oidcStrategy = await openidStrategy({
+  const oidcStrategy = await dtsOidc.openidStrategy({
     issuer: process.env.OIDC_ISSUER,
     clientId: process.env.TRAVEL_ASSISTANT_OIDC_CLIENT_ID,
     clientSecret: process.env.TRAVEL_ASSISTANT_OIDC_CLIENT_SECRET,
     redirectUri: process.env.OIDC_REDIRECT_URI,
-    scope: 'openid profile email',
+    scope: 'openid profile email groups',
     resource: 'no://resource',
     debug: false
-  }, (req, tokenSet, userInfo, done) => {
+  }, async (req, tokenSet, userInfo, done) => {
     logger.info('userInfo: %o', userInfo);
-
-    // Place the access token into the current session
-    req.session.accessToken = tokenSet.access_token;
-
+    const userId = await UserService.upsertUser(userInfo);
+    req.session.userId = userId;
     return done(null, userInfo);
   });
 
-  // Passport configuration
   passport.serializeUser((user, done) => done(null, user));
   passport.deserializeUser((obj, done) => done(null, obj));
   passport.use('oidc', oidcStrategy);
 
   app.use(passport.initialize());
   app.use(passport.session());
+}
+
+export const ensureLoggedIn = dtsOidc.ensureLoggedIn;
+export const ensureLoggedOut = dtsOidc.ensureLoggedOut;
+
+export const authRouter = express.Router();
+
+authRouter.get('/login', passport.authenticate('oidc', { response_mode: 'form_post' }));
+authRouter.get('/logout', function (req, res) {
+  req.session.destroy();
+  res.redirect('/');
+});
+authRouter.post(
+  '/callback',
+  passport.authenticate('oidc', {
+    callback: true,
+    successRedirect: '/',
+    failureRedirect: '/failureRedirect_callback',
+    keepSessionInfo: true,
+  })
+);
+
+export default {
+  initializeService,
+  ensureLoggedIn,
+  ensureLoggedOut,
+  authRouter
 };
-
-export function authenticate (method, options) {
-  return passport.authenticate(method, options);
-};
-
-export ensureLoggedIn;
-
-export ensureLoggedOut;

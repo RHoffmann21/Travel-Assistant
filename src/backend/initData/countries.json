@@ -1,3 +1,11 @@
 [
-  
+  {
+    "code": "de",
+    "countryName": "Deutschland"
+  },
+  {
+    "code": "gr",
+    "countryName": "Griechenland",
+    "specialLocation": "Athen"
+  }
 ]
