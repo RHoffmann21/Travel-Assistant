@@ -1,7 +1,6 @@
 import Modal from 'react-bootstrap/Modal';
 
 export default function SelectModal({show, onHide, onSubmit, type, values}){
-console.log('values', values);
   return (
     <Modal show={show} onHide={onHide} centered scrollable>
       <Modal.Body>

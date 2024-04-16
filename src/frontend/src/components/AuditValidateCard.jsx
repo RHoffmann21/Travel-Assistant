@@ -7,9 +7,7 @@ export default function AuditValidateCard({ travelExpenseReport, type }) {
 		"Januar", "Februar", "März", "April", "Mai", "Juni",
 		"Juli", "August", "September", "Oktober", "November", "Dezember"
   ];
-travelExpenseReport.user = {
-  fullName: 'Ricardo Hoffmann'
-}
+
 	return (
 		<>
 			<Card className="mx-3 my-1">

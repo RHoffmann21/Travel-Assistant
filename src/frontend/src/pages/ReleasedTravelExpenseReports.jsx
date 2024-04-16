@@ -1,15 +1,9 @@
-import '../App.css'
-import '../components/ChatBubble.css'
-import 'bootstrap/dist/js/bootstrap.bundle.min';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'react-bootstrap/'
 import AuditValidateCard from '../components/AuditValidateCard';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 
 export default function TravelReportsOverview({type}) {
-  // audit oder validate
   const [travelExpenseReports, setTravelExpenseReports] = useState();
 
   useEffect(() => {

@@ -101,7 +101,7 @@ export default function Chat() {
   <>
     <div>
     <h3>{travelExpenseReport && monatsNamen[travelExpenseReport?.month]} {travelExpenseReport?.year}</h3>
-      <button type="button" onClick={deleteTravelExpenseReport} className="btn btn-danger">Delete</button>
+      <button type="button" onClick={deleteTravelExpenseReport} className="btn btn-danger">Löschen</button>
       <button type="button" onClick={checkTravelExpenseReport} className="btn btn-primary">Freigeben</button>
     </div>
     {

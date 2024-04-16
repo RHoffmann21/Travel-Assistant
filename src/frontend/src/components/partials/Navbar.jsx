@@ -1,4 +1,4 @@
-import dtsLogo from '../../assets/default-logo.svg';
+import dtsLogo from '../../../public/default-logo.svg';
 import { Link } from 'react-router-dom';
 import AuthProvider from '../../auth/AuthProvider';
 import { useContext } from 'react';
@@ -6,7 +6,7 @@ import { useContext } from 'react';
 function Navbar() {
   const { auth: { user } } = useContext(AuthProvider);
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           <img src={dtsLogo} alt="DTS" height="50" width="50" />

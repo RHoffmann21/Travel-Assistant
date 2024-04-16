@@ -47,20 +47,11 @@ function ChatBox({chat, setChat, nextQuestion, values, minDate, maxDate}) {
 			}
 		}
     setFormData(newFormData);
-		console.log('formData', formData);
   };
 
 	const handleEdit = (event) => {
-		console.log('hello');
 		setTarget(event.target)
-		target && handleEditShow()
-    // setFormData({
-		// 	answer: {
-		// 		value: event.target.value,
-		// 		content: event.target.value
-		// 	},
-		// 	question: nextQuestion
-    // });
+		event.target && handleEditShow()
   };
 
 	const handleTextFieldChange = (event) => {
@@ -135,7 +126,6 @@ function ChatBox({chat, setChat, nextQuestion, values, minDate, maxDate}) {
 	const handleAnswer = async (event) => {
     event.preventDefault();
 		setChat([...chat, formData]);
-		console.log('formData', JSON.stringify(formData));
 		setFormData();
   };
 

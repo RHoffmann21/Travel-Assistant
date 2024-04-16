@@ -9,6 +9,7 @@ import TravelReportsOverview from './pages/TravelReportsOverview';
 import ReleasedTravelExpenseReports from './pages/ReleasedTravelExpenseReports';
 import LandingPage from './pages/LandingPage';
 import Error404 from './pages/errorPages/404';
+import Error403 from './pages/errorPages/403';
 import MainFrame from './components/MainFrame';
 import Chat from './pages/Chat';
 import ReportsOverview from './pages/ReportsOverview'
@@ -35,6 +36,8 @@ export default function App() {
             <Route path='travelExpenseReports/:travelExpenseReportId/audit' element={<ReportsOverview type={'audit'}/>}/> 
             {/* view one created travelExpenseReport as chat */}
             <Route path='travelExpenseReports/:travelExpenseReportId' element={<Chat/>}/>
+            {/* view error 403 page */}
+            <Route path='403' element={<Error403/>}/>
             {/* view error 404 page for undefined routes */}
             <Route path='*' element={<Error404/>}/>  
             {/* '/auth-failure' */}
