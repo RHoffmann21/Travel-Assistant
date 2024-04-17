@@ -1,5 +1,10 @@
 import TravelReportService from "../travelReport.service.js";
 
+/**
+ * @description this function is extracting the information out of the given travelReport chat
+ * @param {Object} travelReport a travel report
+ * @returns the updated travelReport 
+ */
 async function extractInformationOutOfChat(travelReport) {
   const { chat } = travelReport;
   let partialTripIterator = 0;
@@ -151,7 +156,13 @@ async function extractInformationOutOfChat(travelReport) {
   return await TravelReportService.replaceOneTravelReport(travelReport._id, travelReport)
 }
 
-async function settingGroundInformation(travelReport, question, answer){
+/**
+ * @description this function is checking if basic information is provided and saves it for further chat handling 
+ * @param {Object} travelReport the travel report
+ * @param {Object} question the origin question
+ * @param {String} answer the answer to the origin question
+ */
+async function settingBasicInformation(travelReport, question, answer){
   switch (question.followingAnswerAttribute) {
     case 'tripDestinations': 
       await TravelReportService.updateOneTravelReport(travelReport._id, {tripDestinations: answer})
@@ -165,4 +176,4 @@ async function settingGroundInformation(travelReport, question, answer){
   }
 }
 
-export default { extractInformationOutOfChat, settingGroundInformation };
+export default { extractInformationOutOfChat, settingBasicInformation };

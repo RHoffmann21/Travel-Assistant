@@ -2,7 +2,7 @@ import UserService from "../service/user.service.js";
 import AuthService from "../service/auth.service.js";
 
 /**
- * @description This function is trying to get a user of session information
+ * @description This function is redirecting the request with needed data trying to get a user of given session information
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
@@ -16,9 +16,9 @@ async function getUser (req, res, next) {
 }
 
 /**
- * @description This function checks if user has given required role 
+ * @description This function checks if user has the given role 
  * @param {String} requiredRole the required role for getting access
- * @returns true or throws error
+ * @returns true or sends 403 error
  */
 function getEnsureRoleMiddleware(requiredRole) {
   return function (req, res, next) {
@@ -37,7 +37,7 @@ const ensureIsSupervisor = getEnsureRoleMiddleware('isSupervisor');
 
 
 /**
- * @description This function resolves the user by given session and passes it into the req
+ * @description This function is redirecting the request with needed data to resolve the user by given session and passes it into the req
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware

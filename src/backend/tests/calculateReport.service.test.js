@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import SettingsService from '../service/settings.service.js';
 import connectDB from '../lib/connectDB.js';
 dotenv.config()
+
 beforeAll(async () => {
   await connectDB(process.env.MONGO_URI);
   await SettingsService.importSettingsData();

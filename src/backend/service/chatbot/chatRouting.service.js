@@ -3,27 +3,25 @@ import CountryService from '../country.service.js';
 
 /**
  * @description this function gets the follow-up question 
- * @param {Object} question the origin question object from the frontend
- * @param {Object} answer the user answer to the origin qestion
+ * @param {Question} question the origin question object from the frontend
+ * @param {Object} answer the user answer to the origin question
  * @returns the follow-up question
  */
 async function getFollowUpQuestion(question, answer, travelReport){
-  console.log('getFollowUpQuestion');
   if (typeof (question.condition) === 'undefined'){
     return await QuestionService.getOneQuestionByQuestionId(question.nextQuestions.default);
   }
   const conditionResult = getResultOfCondition(question.condition, answer, travelReport);
-  console.log('conditionResult', conditionResult);
   if(conditionResult){
-    return await QuestionService.getOneQuestionByQuestionId(question.nextQuestions.true)
+    return await QuestionService.getOneQuestionByQuestionId(question.nextQuestions.true);
   }
   return await QuestionService.getOneQuestionByQuestionId(question.nextQuestions.false);
 }
 
 /**
- * @description this function is getting the result of give condition
- * @param {String} condition the condtionen for the if-statement
- * @param {String} answer the user answer to the origin qestion
+ * @description this function is getting the result of given condition
+ * @param {String} condition the condition for the if-statement
+ * @param {String} answer the user answer to the origin question
  * @param {Object} travelReport the existing travelReport
  * @returns the result of the condition
  */
@@ -40,11 +38,15 @@ function getResultOfCondition(condition, answer, travelReport){
       && answerDate.getMonth() === tripEndDate.getMonth()
       && answerDate.getFullYear() === tripEndDate.getFullYear()
       ) ? true : false;
-    default:
-      throw new Error('no matching condition found')
   }
 }
 
+/**
+ * @description this function is getting answer values for the next question, based on already saved information
+ * @param {Object} nextQuestion the next question
+ * @param {Object} travelReport the existing travelReport
+ * @returns values for the next question
+ */
 async function getNextAnswerValues(nextQuestion, travelReport){
   switch (nextQuestion.followingAnswerAttribute) {
     case 'tripDestinations':

@@ -4,7 +4,6 @@ import router from './routes.js'
 import auth from './lib/auth.js';
 import session from 'express-session';
 import dtsLogger from 'dts-node-logger';
-// import cookieParser from 'cookie-parser';
 import getMongoDBStore from 'connect-mongodb-session';
 const MongoDBStore = getMongoDBStore(session);
 
@@ -13,7 +12,6 @@ const app = express();
 app.use(dtsLogger.httpLog())
 app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({limit: '10mb', extended: true}));
-// app.use(cookieParser());
 
 await connectDB(process.env.MONGO_URI);
 
@@ -34,5 +32,5 @@ auth.initializeService(app);
 app.use('/', router);
 
 app.listen(5000, () => {
-  console.log('backend started')
+  dtsLogger.info('backend started')
 })

@@ -1,5 +1,10 @@
 import Receipt from '../models/receipt.model.js';
 
+/**
+ * @description this function is getting a receipt with given receiptId
+ * @param {*} receiptId the receiptId of the receipt
+ * @returns the receipt
+ */
 async function getOneReceipt(receiptId){
   try {
     return await Receipt.findById(receiptId);
@@ -8,6 +13,11 @@ async function getOneReceipt(receiptId){
   }
 }
 
+/**
+ * @description this function is creating or retrieving a receipt if available
+ * @param {*} receipt the given receipt or information
+ * @returns thr receipt
+ */
 async function createNewReceipt(receipt) {
   try {
     const existingReceipt = await getOneReceipt(receipt)

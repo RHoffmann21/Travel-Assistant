@@ -1,4 +1,3 @@
-import CountryLumpRateService from './countryLumpRate.service.js';
 import SettingsService from './settings.service.js';
 
 /**
@@ -36,48 +35,7 @@ async function calculateMileageAllowance(mileage) {
   return mileageAllowance;
 }
 
-/**
- * @description calculates the total transportation cost of the specific date
- * @param {Number} flightTicketCost the total cost of flight tickets of the specific date
- * @param {Number} publicTransportCost the total cost of public transport tickets of the specific date
- * @param {Number} taxiCost the total cost of taxi of the specific date
- * @returns {Number} the total sum of transportation cost
- */
-function calculateTransportationCost(flightTicketCost, publicTransportCost, taxiCost) {
-  return parseFloat(flightTicketCost + publicTransportCost + taxiCost );
-}
-
-/**
- * @description
- * @param {Number} mileage mileage of the specific date
- * @returns 
- */
-async function calculatePrivateCarCost(mileage) {
-  return calculateMileageAllowance(mileage);
-}
-
-async function calculateItemizationCost(hotelCost, cateringCost, tips, otherCosts, isPrivateOverstay, countryId) {
-  let itemizationCost = 0;
-  if (isPrivateOverstay){
-    const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(countryId)
-    itemizationCost += countryLumpRate.privateOvernightStay;
-  }
-  return parseFloat(itemizationCost + hotelCost + cateringCost + tips, otherCosts)
-}
-
-async function calculateCateringCost(wasBreakfastIncluded, wasLunchIncluded, wasDinnerIncluded) {
-  let cateringCost = 0;
-  const mealAllowance = await calculateMealAllowance(countryId)
-  const mealDeduction = await calculateMealDeduction(cateringCost, )
-  if (isPrivateOverstay){
-    const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(countryId)
-    itemizationCost += countryLumpRate.privateOvernightStay;
-  }
-  return parseFloat(itemizationCost + hotelCost + cateringCost + tips, otherCosts)
-}
-
 export default {
   calculateMealDeduction,
-  calculatePrivateCarCost,
-  calculateTransportationCost
+  calculateMileageAllowance
 }

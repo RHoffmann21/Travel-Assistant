@@ -1,6 +1,11 @@
 import CountryLumpRateService from './countryLumpRate.service.js';
 import CalculateReportService from './calculateReport.service.js';
 
+/**
+ * @description this function is converting the previously extracted chat information into single dates so they can easily be displayed on date bases
+ * @param {Object} travelReport the travelReport 
+ * @returns {Array} dates array with every cost splitted on the given date
+ */
 async function convertTripReportInformationToDates(travelReport){
   let dates = []
 

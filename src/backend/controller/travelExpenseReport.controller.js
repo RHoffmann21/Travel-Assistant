@@ -11,14 +11,14 @@ import dtsLogger from 'dts-node-logger';
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns an all travel expense reports of given user
+ * @returns all travel expense reports of given user
  */
 async function getTravelExpenseReports (req, res, next) {
   try {
     const travelExpenseReports = await TravelExpenseReportService.getAllTravelExpenseReportsOfUser(req.user);
     return res.json(travelExpenseReports);
   } catch (error) {
-    dtsLogger.error('Error getting all travel expense reports of a user', error);
+    dtsLogger.error('Error trying to get all travel expense reports of a user', error);
   }
 }
 
@@ -27,14 +27,14 @@ async function getTravelExpenseReports (req, res, next) {
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns the newly created travel expense report
+ * @returns the newly created travel expense report
  */
 async function createTravelExpenseReport (req, res, next) {
   const { body } = req;
   try {
     return res.json(await TravelExpenseReportService.createNewTravelExpenseReport(body));
   } catch (error) {
-    dtsLogger.error('Error creating new travel expense report', error)
+    dtsLogger.error('Error trying to create new travel expense report', error)
   }
 }
 
@@ -43,14 +43,14 @@ async function createTravelExpenseReport (req, res, next) {
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns the travel expense report
+ * @returns the travel expense report
  */
 async function getOneTravelExpenseReport (req, res, next) {
   const travelExpenseReportId = req.params.travelExpenseReportId;
   try {
     return res.json(await TravelExpenseReportService.getOneTravelExpenseReport(travelExpenseReportId))
   } catch (error) {
-    dtsLogger.error('Error getting one travel expense report', error)
+    dtsLogger.error('Error trying to get one travel expense report', error)
   }
 }
 
@@ -59,7 +59,7 @@ async function getOneTravelExpenseReport (req, res, next) {
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns the updated travel expense report
+ * @returns the updated travel expense report
  */
 async function updateOneTravelExpenseReport (req, res, next) {
   const { body } = req;
@@ -67,7 +67,7 @@ async function updateOneTravelExpenseReport (req, res, next) {
   try {
     return res.json(await TravelExpenseReportService.updateOneTravelExpenseReport(travelExpenseReportId, body))
   } catch (error) {
-    
+    dtsLogger.error('Error trying to update one travel expense report', error)
   }
 }
 
@@ -76,7 +76,7 @@ async function updateOneTravelExpenseReport (req, res, next) {
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns the next question and if given answers values for the next questions
+ * @returns the next question and if given answers values for the next questions
  */
 async function updateTravelExpenseReportChat (req, res, next) {
   const { body } = req;
@@ -90,11 +90,11 @@ async function updateTravelExpenseReportChat (req, res, next) {
     }
     const travelReport = await TravelReportService.updateOneTravelReport(travelExpenseReport.travelReports[0]._id, { chat: body });
     const question = await ChatRoutingService.getFollowUpQuestion(body[index].question, body[index].answer.value, travelReport);
-    await ChatInformationExtractionService.settingGroundInformation(travelReport, body[index].question, body[index].answer.value)
+    await ChatInformationExtractionService.settingBasicInformation(travelReport, body[index].question, body[index].answer.value)
     const nextAnswerValues = await ChatRoutingService.getNextAnswerValues(question, travelReport, body[index].answer.value);
     return res.json({question, nextAnswerValues});
   } catch (error) {
-    
+    dtsLogger.error('Error trying to update one travel expense report chat', error)
   }
 }
 
@@ -103,37 +103,43 @@ async function updateTravelExpenseReportChat (req, res, next) {
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns the first question
+ * @returns the first question of a chat
  */
 async function getFirstQuestion (req, res, next) {
   try {
     return res.json(await QuestionService.getOneQuestionByQuestionId('ask.tripStart.dateTimeSelect'));
   } catch (error) {
-    
+    dtsLogger.error('Error trying to get the first question of a travel expense report chat', error);
   }
 }
 
 /**
- * @description This function is redirecting the request with needed data, trying to get the first question for a travel expense report chat
+ * @description This function is redirecting the request, trying to get all travel expense reports available for auditing
  * @param {*} req the request argument to the middleware
  * @param {*} res the response argument to the middleware
  * @param {*} next the callback argument to the middleware
- * @returns returns the first question
+ * @returns returns all travel expense reports available for auditing
  */
 async function getTravelExpenseReportsToAudit(req, res, next) {
   try {
     return res.json(await TravelExpenseReportService.getAllTravelExpenseReportsToAudit());
   } catch (error) {
-    
+    dtsLogger.error('Error trying to get all travel expense reports available for auditing', error);
   }
 }
 
-
+/**
+ * @description This function is redirecting the request with needed data, trying to get all travel expense reports for given supervisor available for validating
+ * @param {*} req the request argument to the middleware
+ * @param {*} res the response argument to the middleware
+ * @param {*} next the callback argument to the middleware
+ * @returns returns the first question
+ */
 async function getTravelExpenseReportsToValidate(req, res, next) {
   try {
     return res.json(await TravelExpenseReportService.getAllTravelExpenseReportsToValidate(req.user.userSupervisorSubjectId));
   } catch (error) {
-    
+    dtsLogger.error('Error trying to get all travel expense reports available for validation', error);
   }
 }
 
@@ -148,7 +154,7 @@ async function deleteTravelExpenseReport(req, res, next) {
   try {
     return res.json(await TravelExpenseReportService.deleteOneTravelExpenseReport(req.params.travelExpenseReportId));
   } catch (error) {
-    
+    dtsLogger.error('Error trying to delete travel expense report', error);
   }
 }
 
@@ -163,7 +169,7 @@ async function convertTravelExpenseReport(req, res, next) {
   try {
     return res.json(await TravelExpenseReportService.convertTravelExpenseReport(req.params.travelExpenseReportId));
   } catch (error) {
-    
+    dtsLogger.error('Error trying to convert travel expense report chat', error);
   }
 }
 
