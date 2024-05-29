@@ -12,18 +12,20 @@ export default function ReportsOverview({type}) {
     getTravelExpenseReport();
   }, []);
 
-  function sumProps(array, prop) {
-    const props = prop.split('.');
-    if(props.length === 2){
-      return array.reduce((accumulator, currentValue) => accumulator + currentValue[props[0]][props[1]]|| 0, 0);
-    }
-    return array.reduce((accumulator, currentValue) => accumulator + currentValue[prop] || 0, 0);
-  }
+  // function sumProps(array, prop) {
+  //   const props = prop.split('.');
+  //   if(props.length === 2){
+  //     return array.reduce((accumulator, currentValue) => accumulator + (currentValue[props[0]][props[1]])|| 0, 0);
+  //   }
+  //   return array.reduce((accumulator, currentValue) => accumulator + currentValue[prop] || 0, 0);
+  // }
 
   async function getTravelExpenseReport(){
     try {
       const response = await axios.get(`/api/v1/travelExpenseReports/${travelExpenseReportId}`);
       if (response.status === 200) {
+        response.data.dates = response.data.dates.sort();
+        response.data.dates = response.data.dates.reverse()
         setTravelExpenseReport(response.data);
       } else {
         console.error('Error getting travel expense report');
@@ -89,25 +91,25 @@ export default function ReportsOverview({type}) {
         <tbody>
         {travelExpenseReport.dates?.map((date) =>(
           <tr key={date.date}>
-            <th>{new Date(date.date).getDate()}.</th>
-            <td>{date.destination.countryName}</td>
-            <td>{date.allowance || 0}€</td>
-            <td>{date.mealDeduction || 0}€</td>
-            <td>{date.flight.cost || 0}€</td>
-            <td>{date.busTrain.cost || 0}€</td>
-            <td>{date.cab.cost || 0}€</td>
-            <td>{date.privateCarTransportation.mileageAllowance || 0}€</td>
-            <td>{date.privateOvernightCost || 0}€</td>
-            <td>{date.hotelCost.cost || 0}€</td>
-            <td>{date.catering.cost || 0}€</td>
-            <td>{date.tip.cost || 0}€</td>
-            <td>{date.other.cost || 0}€</td>
-            <td>{date.overallCost || 0}€</td>
+            <th>{new Date(date.date).getDate()-1}.</th>
+            <td>{date?.destination.countryName}</td>
+            <td>{date?.allowance || 0}€</td>
+            <td>{date?.mealDeduction || 0}€</td>
+            <td>{date?.flight?.cost || 0}€</td>
+            <td>{date?.busTrain?.cost || 0}€</td>
+            <td>{date?.cab?.cost || 0}€</td>
+            <td>{date?.privateCarTransportation?.mileageAllowance || 0}€</td>
+            <td>{date?.privateOvernightCost || 0}€</td>
+            <td>{date?.hotelCost?.cost || 0}€</td>
+            <td>{date?.catering?.cost || 0}€</td>
+            <td>{date?.tip?.cost || 0}€</td>
+            <td>{date?.other?.cost || 0}€</td>
+            <td>{date?.overallCost || 0}€</td>
           </tr>
         ))}
 
         </tbody>
-        <tfoot>
+        {/* <tfoot>
           <tr>
             <th>Summe</th>
             <td></td>
@@ -124,7 +126,7 @@ export default function ReportsOverview({type}) {
             <td>{ sumProps(travelExpenseReport.dates, 'other.cost') }€ </td>
             <td>{ sumProps(travelExpenseReport.dates, 'overallCost') }€ </td>
           </tr>
-        </tfoot>
+        </tfoot> */}
       </table>
       <form onSubmit={handleSubmit}>
         <div className="input-group">

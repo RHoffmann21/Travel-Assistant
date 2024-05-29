@@ -2,7 +2,7 @@ import TravelReportService from "../travelReport.service.js";
 
 /**
  * @description this function is extracting the information out of the given travelReport chat
- * @param {Object} travelReport a travel report
+ * @param {object} travelReport a travel report
  * @returns the updated travelReport 
  */
 async function extractInformationOutOfChat(travelReport) {
@@ -14,165 +14,167 @@ async function extractInformationOutOfChat(travelReport) {
   let cateringCostIterator = 0;
   let tipCostIterator = 0;
   let otherCostIterator = 0;
+  const newTravelReport = {
+    chat,
+    partialTrips:[]
+  };
   for (const interaction of chat) {
     switch (interaction.question.followingAnswerAttribute) {
       case 'tripStartDateTime':
-        travelReport.tripStart = Date.parse(interaction.answer.value);
+        newTravelReport.tripStart = Date.parse(interaction.answer.value);
         break;
       case 'tripEndDateTime':
-        travelReport.tripEnd = Date.parse(interaction.answer.value);
+        newTravelReport.tripEnd = Date.parse(interaction.answer.value);
         break;
       case 'tripDestinations':
-        travelReport.tripDestinations = interaction.answer.value;
+        newTravelReport.tripDestinations = interaction.answer.value;
         break;
       case 'firstPartialTripDestination':
-        travelReport.partialTrips.push({
+        newTravelReport.partialTrips.push({
           destination: interaction.answer.value,
-          startDate: travelReport.tripStart
+          startDate: newTravelReport.tripStart
         });
         break;
       case 'partialTripOccasion':
-        travelReport.partialTrips[partialTripIterator].occasion = interaction.answer.value;
+        newTravelReport.partialTrips[partialTripIterator].occasion = interaction.answer.value;
         break;
       case 'tripOccasion':
-        travelReport.partialTrips.push({
-          destination: travelReport.tripDestinations[0],
-          startDate: travelReport.tripStart,
-          endDate: travelReport.tripEnd,
+        newTravelReport.partialTrips.push({
+          destination: newTravelReport.tripDestinations[0],
+          startDate: newTravelReport.tripStart,
+          endDate: newTravelReport.tripEnd,
           occasion: interaction.answer.value
         });
         break;
       case 'partialTripEndDate':
-        travelReport.partialTrips[partialTripIterator].endDate = interaction.answer.value;
+        newTravelReport.partialTrips[partialTripIterator].endDate = interaction.answer.value;
         break;
       case 'nextPartialTripDestination':
-        let nextDay = new Date(travelReport.partialTrips[partialTripIterator].endDate);
+        let nextDay = new Date(newTravelReport.partialTrips[partialTripIterator].endDate);
         nextDay.setDate(nextDay.getDate() +1);
         partialTripIterator++;
-        travelReport.partialTrips[partialTripIterator] = {
+        newTravelReport.partialTrips[partialTripIterator] = {
           destination: interaction.answer.value,
           startDate: nextDay
         };
         break;
       case 'daysWithBreakfast':
-        travelReport.daysWithBreakfast = interaction.answer.value;
+        newTravelReport.daysWithBreakfast = interaction.answer.value;
         break;
       case 'daysWithLunch':
-        travelReport.daysWithLunch = interaction.answer.value;
+        newTravelReport.daysWithLunch = interaction.answer.value;
         break;
       case 'daysWithDinner':
-        travelReport.daysWithDinner = interaction.answer.value;
+        newTravelReport.daysWithDinner = interaction.answer.value;
         break;
       case 'flightCostDay':
-        travelReport.transportationCost.push({
+        newTravelReport.transportationCost.push({
           type: 'flight',
           date: interaction.answer.value,
           receipt: interaction.answer.receipt
         });
         break; 
       case 'flightCost':
-        travelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
+        newTravelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
         transportationIterator++;
         break;
       case 'busTrainCostDate':
-        travelReport.transportationCost.push({
+        newTravelReport.transportationCost.push({
           type: 'busTrain',
           date: interaction.answer.value
         });
         break;
       case 'busTrainCost':
-        travelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
+        newTravelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
         transportationIterator++;
         break;
       case 'cabCostDate':
-        travelReport.transportationCost.push({
+        newTravelReport.transportationCost.push({
           type: 'cab',
           date: interaction.answer.value
         });
         break;
       case 'cabCost':
-        travelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
+        newTravelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
         transportationIterator++;
         break;
       case 'privateCarUsedDate':
-        travelReport.privateCarTransportation.push({
+        newTravelReport.privateCarTransportation.push({
           date: interaction.answer.value, 
         });
         break;
       case 'privateCarUsedDistance':
-        travelReport.privateCarTransportation[privateCarTransportationIterator].mileage = interaction.answer.value;
+        newTravelReport.privateCarTransportation[privateCarTransportationIterator].mileage = interaction.answer.value;
         break;
       case 'privateCarUsedRouteBrakedown':
-        travelReport.privateCarTransportation[privateCarTransportationIterator].routeBreakdown = interaction.answer.value;
+        newTravelReport.privateCarTransportation[privateCarTransportationIterator].routeBreakdown = interaction.answer.value;
         transportationIterator++;
         break;
       case 'privateOvernightStayDates':
-        travelReport.daysWithPrivateOvernightStay = interaction.answer.value;
+        newTravelReport.daysWithPrivateOvernightStay = interaction.answer.value;
         break;
       case 'hotelCostAccruedDate':
-        travelReport.hotelCost.push({
+        newTravelReport.hotelCost.push({
           date: interaction.answer.value
         });
         break;
       case 'hotelCost':
-        travelReport.hotelCost[hotelCostIterator].cost = interaction.answer.value;
+        newTravelReport.hotelCost[hotelCostIterator].cost = interaction.answer.value;
         hotelCostIterator++;
         break;
       case 'cateringCostAccruedDate':
-        travelReport.cateringCost.push({
+        newTravelReport.cateringCost.push({
           date: interaction.answer.value,
           receipt: interaction.answer.receipt
         });
         break;
       case 'cateringCost':
-        travelReport.cateringCost[cateringCostIterator].cost = interaction.answer.value;
+        newTravelReport.cateringCost[cateringCostIterator].cost = interaction.answer.value;
         cateringCostIterator++;
         break;
       case 'tipAccruedDate':
-        travelReport.tip.push({
+        newTravelReport.tip.push({
           date: interaction.answer.value,
           receipt: interaction.answer.receipt
         });
         break;
       case 'tipCost':
-        travelReport.tip[tipCostIterator].cost = interaction.answer.value;
+        newTravelReport.tip[tipCostIterator].cost = interaction.answer.value;
         tipCostIterator++;
         break;
       case 'otherCostAccruedDate':
-        travelReport.other.push({
+        newTravelReport.other.push({
           date: interaction.answer.value,
           receipt: interaction.answer.receipt
         });
         break;
       case 'otherCost':
-        travelReport.other[otherCostIterator].cost = interaction.answer.value;
+        newTravelReport.other[otherCostIterator].cost = interaction.answer.value;
         break;
       case 'otherCostExplanation':
-        travelReport.other[otherCostIterator].explanation = interaction.answer.value;
+        newTravelReport.other[otherCostIterator].explanation = interaction.answer.value;
         tipCostIterator++;
         break;
     }
   }
-  return await TravelReportService.replaceOneTravelReport(travelReport._id, travelReport)
+  return await TravelReportService.replaceOneTravelReport(travelReport._id, newTravelReport)
 }
 
 /**
  * @description this function is checking if basic information is provided and saves it for further chat handling 
- * @param {Object} travelReport the travel report
- * @param {Object} question the origin question
+ * @param {object} travelReport the travel report
+ * @param {object} question the origin question
  * @param {String} answer the answer to the origin question
+ * @returns the updated travel report 
  */
 async function settingBasicInformation(travelReport, question, answer){
   switch (question.followingAnswerAttribute) {
     case 'tripDestinations': 
-      await TravelReportService.updateOneTravelReport(travelReport._id, {tripDestinations: answer})
-      break;
+      return await TravelReportService.updateOneTravelReport(travelReport._id, {tripDestinations: answer});
     case 'tripStartDateTime':
-      await TravelReportService.updateOneTravelReport(travelReport._id, {tripStart: answer});
-      break;
+      return await TravelReportService.updateOneTravelReport(travelReport._id, {tripStart: answer});
     case 'tripEndDateTime':
-      await TravelReportService.updateOneTravelReport(travelReport._id, {tripEnd: answer});
-      break;
+      return await TravelReportService.updateOneTravelReport(travelReport._id, {tripEnd: answer});
   }
 }
 

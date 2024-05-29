@@ -1,59 +1,55 @@
+[{
+  "_id": {
+    "$oid": "664c4f3531be216d645505ca"
+  },
+  "country": "664c4e5731be216d645505c1",
+  "rates": {
+    "arrivalDepartureDay": 14,
+    "fullDay": 28,
+    "privateOvernightStay": 20
+  }
+},
 {
-  "country": [{
-    "country": {
-      "code": "de",
-      "countryName": "Deutschland"
-    },
-    "rates": {
-      "arrivalDepartureDay": 14,
-      "allDay":  28, 
-      "privateOvernightStay": 20
-    }
+  "_id": {
+    "$oid": "664c4f3531be216d645505cb"
   },
-  {
-    "country": {
-      "code": "fr",
-      "countryName": "Frankreich"
-    },
-    "rates": {
-      "arrivalDepartureDay": 36,
-      "allDay": 53, 
-      "privateOvernightStay": 105
-    }
+  "country": "664c4e5731be216d645505c2",
+  "rates": {
+    "arrivalDepartureDay": 36,
+    "fullDay": 53,
+    "privateOvernightStay": 105
+  }
+},
+{
+  "_id": {
+    "$oid": "664c4f3531be216d645505cc"
   },
-  {
-    "country": {
-      "code": "fr",
-      "countryName": "Frankreich",
-      "specialLocation": "Paris & Dep. 77, 78, 91, 95"
-    },
-    "rates": {
-      "arrivalDepartureDay": 39,
-      "allDay":  58, 
-      "privateOvernightStay": 159
-    }
+  "country": "664c4e5731be216d645505c3",
+  "rates": {
+    "arrivalDepartureDay": 39,
+    "fullDay": 58,
+    "privateOvernightStay": 159
+  }
+},
+{
+  "_id": {
+    "$oid": "664c4f3531be216d645505cd"
   },
-  {
-    "country": {
-      "code": "gr",
-      "countryName": "Griechenland"
-    },
-    "rates": {
-      "arrivalDepartureDay": 24,
-      "allDay": 36, 
-      "privateOvernightStay": 150
-    }
+  "country": "664c4e5731be216d645505c4",
+  "rates": {
+    "arrivalDepartureDay": 24,
+    "fullDay": 36,
+    "privateOvernightStay": 150
+  }
+},
+{
+  "_id": {
+    "$oid": "664c4f3531be216d645505ce"
   },
-  {
-    "country": {
-      "code": "gr",
-      "countryName": "Griechenland",
-      "specialLocation": "Athen"
-    },
-    "rates": {
-      "arrivalDepartureDay": 27,
-      "allDay":  40, 
-      "privateOvernightStay": 139
-    }
-  }]
-}
+  "country": "664c4e5731be216d645505c5",
+  "rates": {
+    "arrivalDepartureDay": 27,
+    "fullDay": 40,
+    "privateOvernightStay": 139
+  }
+}]

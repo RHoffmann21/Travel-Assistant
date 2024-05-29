@@ -20,7 +20,7 @@ export default function DatePickerModal({show, onHide, onChange, type, minDate, 
     }
     else if (type === 'dateTimeSelect'){
       props.format = 'DD.MM.YYYY HH:mm'
-      props.plugins = [<TimePicker position='bottom'/>];
+      props.plugins = [<TimePicker hideSeconds key="timePickerId" position="bottom"/>];
     }
 
     return (
@@ -28,9 +28,11 @@ export default function DatePickerModal({show, onHide, onChange, type, minDate, 
     )
   }
   return (
-    <Modal show={show} onHide={onHide} centered>
+    <Modal show={show} onHide={onHide}>
       <Modal.Body>
+        <div className="d-flex justify-content-center">
         {createCalender(type, minDate, maxDate)}
+        </div>
       </Modal.Body>
     </Modal>
   );

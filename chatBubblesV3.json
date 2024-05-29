@@ -175,7 +175,7 @@
 	},
 	{
 		"questionId": "ask.paidForFlight.boolean",
-		"content": "Musstest du für Flugtickets selbst aufkommen?",
+		"content": "Musstest du die Flugtickets selbst bezahlen?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "paidForFlight",
 		"editable": false,

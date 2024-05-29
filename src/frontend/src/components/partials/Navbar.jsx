@@ -14,12 +14,12 @@ function Navbar() {
         {user && <Link to={'/travelExpenseReports'}>Erstellen</Link>}
         {(user && user.isSupervisor) && <Link to={'/travelExpenseReports/validate'}>Validieren</Link>}
         {(user && user.isAuditor) && <Link to={'/travelExpenseReports/audit'}>Prüfen</Link>}
-        {!user && <Link to={'/api/auth/login'}>Login</Link> }
+        {!user && <a href="/api/auth/login">Login</a> }
         {
           user && 
           <>
             <a className="nav-link py-0 dropdown-toggle d-flex align-items-center" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <img src={user && user.picture} height="50" width="50" className="rounded-circle img-fluid" alt="TA" />
+              <img src={user.picture && user.picture} height="50" width="50" className="rounded-circle img-fluid" alt={user.userFirstName[0].concat(user.userName[0])} />
             </a>
             <div className="dropdown-menu shadow px-2 m-2 row" aria-labelledby="accountDropdown" role="menu" aria-hidden="false">
               <div className="bg-light rounded mb-2 p-3">

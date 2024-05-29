@@ -9,7 +9,8 @@ import AuthService from "../service/auth.service.js";
  * @returns the user if in db. else throw error
  */
 async function getUser (req, res, next) {
-  const userId  = req.session.userId;
+  const userId  = req.session?.userId;
+  if(!userId) return res.status(403).send('no user found');
   const user = await AuthService.getUser(userId)
   if(!user) return res.status(401).send('no user found');
   return res.json(user);
@@ -46,6 +47,7 @@ async function ensureLoggedIn(req, res, next){
   const userId = req.session.userId;
   const user = await UserService.getOneUserById(userId);
   req.user = user;
+  !user && res.status(403);
   next()
 }
 

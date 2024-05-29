@@ -15,35 +15,39 @@ async function convertTripReportInformationToDates(travelReport){
       datesBetween.push(new Date(tripStartDate));
       tripStartDate.setDate(tripStartDate.getDate() + 1);
     }
+    return datesBetween;
   }
 
   function getDateIndex (searchedDate){
     const index = dates.findIndex(entry => entry.date.getDate() === searchedDate.getDate());
-    if (typeof (index) === 'undefined') {
+    if (index === -1) {
       dates.push({ date: searchedDate });
-      return dates.length;
+      return dates.length-1;
     }
     return index;
   }
   for await(const partialTrip of travelReport.partialTrips){
     const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(partialTrip.destination);
-    dates[getDateIndex(partialTrip.startDate)] = {
-      ...dates[getDateIndex(partialTrip.startDate)],
-      allowance: countryLumpRate.arrivalDepartureDay,
+    let index = getDateIndex(partialTrip.startDate);
+    dates[index] = {
+      ...dates[index],
+      allowance: countryLumpRate.rates.arrivalDepartureDay,
       destination: partialTrip.destination,
       occasion: partialTrip.occasion
     };
-    dates[getDateIndex(partialTrip.endDate)] = {
-      ...dates[getDateIndex(partialTrip.endDate)],
-      allowance: countryLumpRate.arrivalDepartureDay,
+    index = getDateIndex(partialTrip.endDate)
+    dates[index] = {
+      ...dates[index],
+      allowance: countryLumpRate.rates.arrivalDepartureDay,
       destination: partialTrip.destination,
       occasion: partialTrip.occasion
     };
     const datesBetween = getDatesBetween(partialTrip.startDate, partialTrip.endDate);
-    for(let i = 1; i<datesBetween.length; i++){fullDay
-      dates[getDateIndex(datesBetween[i])] = {
-        ...dates[getDateIndex(datesBetween[i])],
-        allowance: countryLumpRate.fullDay,
+    for(let i = 1; i<datesBetween.length -1; i++){
+      index = getDateIndex(datesBetween[i])
+      dates[index] = {
+        ...dates[index],
+        allowance: countryLumpRate.rates.fullDay,
         destination: partialTrip.destination,
         occasion: partialTrip.occasion
       };
@@ -62,11 +66,12 @@ async function convertTripReportInformationToDates(travelReport){
 
   for(const date of dates){
     if(date.allowance){
-      CalculateReportService.calculateMealDeduction(date.allowance,
-        dates[getDateIndex(dayWithBreakfast)].breakfastGiven,
-        dates[getDateIndex(dayWithLunch)].lunchGiven,
-        dates[getDateIndex(dayWithDinner)].dinnerGiven
-       )
+      date.mealDeduction = await CalculateReportService.calculateMealDeduction(
+        date.allowance,
+        date.breakfastGiven,
+        date.lunchGiven,
+        date.dinnerGiven
+      );
     }
   }
 
@@ -129,10 +134,9 @@ async function convertTripReportInformationToDates(travelReport){
     dates[getDateIndex(other.date)].other = {
       cost: other.cost,
       receipt: other.receipt,
-      explenation: other.explanation
+      explanation: other.explanation
     };
   }
-
   return dates;
 }
 

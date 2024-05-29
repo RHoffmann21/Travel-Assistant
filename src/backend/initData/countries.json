@@ -1,11 +1,37 @@
-[
-  {
-    "code": "de",
-    "countryName": "Deutschland"
+[{
+  "_id": {
+    "$oid": "664c4e5731be216d645505c1"
   },
-  {
-    "code": "gr",
-    "countryName": "Griechenland",
-    "specialLocation": "Athen"
-  }
-]
+  "code": "de",
+  "countryName": "Deutschland"
+},
+{
+  "_id": {
+    "$oid": "664c4e5731be216d645505c2"
+  },
+  "code": "gr",
+  "countryName": "Griechenland",
+  "specialLocation": "Athen"
+},
+{
+  "_id": {
+    "$oid": "664c4e5731be216d645505c3"
+  },
+  "code": "gr",
+  "countryName": "Griechenland"
+},
+{
+  "_id": {
+    "$oid": "664c4e5731be216d645505c4"
+  },
+  "code": "fr",
+  "countryName": "Frankreich"
+},
+{
+  "_id": {
+    "$oid": "664c4e5731be216d645505c5"
+  },
+  "code": "fr",
+  "countryName": "Frankreich",
+  "specialLocation": "Paris & Dep. 77, 78, 91, 95"
+}]

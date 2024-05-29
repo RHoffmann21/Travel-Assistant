@@ -44,7 +44,7 @@ authRouter.post(
   passport.authenticate('oidc', {
     callback: true,
     successRedirect: '/',
-    failureRedirect: '/failureRedirect_callback',
+    failureRedirect: '/403',
     keepSessionInfo: true,
   })
 );

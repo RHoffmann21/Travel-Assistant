@@ -21,7 +21,7 @@ export default function TravelReportsOverview({type}) {
         ))
       }
       {!travelExpenseReports || !travelExpenseReports?.length &&
-      <Card>
+      <Card className="mx-3">
         <Card.Body>
           <Card.Title className="my-1">
             Keine Reisekostenabrechnung zur {type==='validate'? 'validierung': 'überprüfung'} gefunden! 

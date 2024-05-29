@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import { Calendar } from "react-multi-date-picker";
 import { Navigate } from 'react-router-dom';
 import AuthProvider from '../auth/AuthProvider';
+import { Card } from 'react-bootstrap';
 
 export default function TravelReportsOverview() {
   const [travelExpenseReports, setTravelExpenseReports] = useState();
@@ -60,18 +61,31 @@ export default function TravelReportsOverview() {
 
   return (
     <>
-      <Modal show={showCreateModal} onHide={handleClose} centered>
+      <Modal show={showCreateModal} onHide={handleClose}>
         <Modal.Body>
-          <form onSubmit={handleSubmit}>
+        <div className="container d-flex align-items-center justify-content-center">
+          <form onSubmit={handleSubmit} className="justify-center">
             <Calendar {...props} />
-            <button type="submit">Erstellen</button>
+            <div className="container d-flex align-items-center justify-content-center">
+            <button className="btn btn-primary mt-2" type="submit">Erstellen</button>
+            </div>
           </form>
+          </div>
         </Modal.Body>
       </Modal>
       {
         travelExpenseReports?.map(travelExpenseReport => (
           <ReportCard key={travelExpenseReport._id} travelExpenseReport={travelExpenseReport}></ReportCard>
         ))
+      }
+      {!travelExpenseReports || !travelExpenseReports?.length &&
+      <Card className="mx-3">
+        <Card.Body>
+          <Card.Title className="my-1">
+            Keine Reisekostenabrechnung gefunden! 
+          </Card.Title>
+        </Card.Body>
+      </Card>
       }
       { typeof (travelExpenseReportId) !== 'undefined' && (<Navigate to={travelExpenseReportId} />) }
       <i onClick={handleShow} className="bi bi-plus-circle-dotted add-travelExpense-button"></i>

@@ -7,15 +7,15 @@ import CommentModal from '../components/CommentModal';
 
 export default function Chat() {
   const { travelExpenseReportId } = useParams();
-  const [ travelExpenseReport, setTravelExpenseReport ] = useState();
-  const [ nextQuestion, setNextQuestion ] = useState();
-  const [ chat, setChat ] = useState([]);
-  const [ values, setValues ] = useState([]);
-  const [ showCommentModal, setShowCommentModal ] = useState(true);
+  const [travelExpenseReport, setTravelExpenseReport] = useState();
+  const [nextQuestion, setNextQuestion] = useState();
+  const [chat, setChat] = useState([]);
+  const [values, setValues] = useState([]);
+  const [showCommentModal, setShowCommentModal] = useState(true);
 
   const monatsNamen = [
-		"Januar", "Februar", "März", "April", "Mai", "Juni",
-		"Juli", "August", "September", "Oktober", "November", "Dezember"
+    "Januar", "Februar", "März", "April", "Mai", "Juni",
+    "Juli", "August", "September", "Oktober", "November", "Dezember"
   ];
 
   useEffect(() => {
@@ -23,12 +23,12 @@ export default function Chat() {
   }, []);
 
 
-  async function getTravelExpenseReport(){
+  async function getTravelExpenseReport() {
     try {
       const response = await axios.get(`/api/v1/travelExpenseReports/${travelExpenseReportId}`);
       if (response.status === 200) {
         setTravelExpenseReport(response.data);
-        if(response.data.travelReports[0]?.chat?.length){
+        if (response.data.travelReports[0]?.chat?.length) {
           setChat(response.data.travelReports[0].chat)
         }
       } else {
@@ -39,7 +39,7 @@ export default function Chat() {
     }
   }
 
-  async function getFirstQuestion(){
+  async function getFirstQuestion() {
     try {
       const response = await axios.get('/api/v1/travelExpenseReports/questions/firstQuestion');
       if (response.status === 200) {
@@ -52,9 +52,10 @@ export default function Chat() {
     }
   }
 
-  async function getNextQuestion(){
+  async function getNextQuestion() {
     try {
       const response = await axios.post(`/api/v1/travelExpenseReports/${travelExpenseReportId}/chat`, chat);
+
       if (response.status === 200) {
         const { question, nextAnswerValues } = response.data;
         setValues(nextAnswerValues);
@@ -67,7 +68,7 @@ export default function Chat() {
     }
   }
 
-  async function deleteTravelExpenseReport(){
+  async function deleteTravelExpenseReport() {
     try {
       await axios.delete(`/api/v1/travelExpenseReports/${travelExpenseReportId}`);
       window.location.href = '/travelExpenseReports';
@@ -76,7 +77,7 @@ export default function Chat() {
     }
   }
 
-  async function checkTravelExpenseReport(){
+  async function checkTravelExpenseReport() {
     try {
       await axios.post(`/api/v1/travelExpenseReports/${travelExpenseReportId}/convert`);
       window.location.href = '/travelExpenseReports';
@@ -86,30 +87,33 @@ export default function Chat() {
   }
 
   useEffect(() => {
-    if(travelExpenseReport && travelExpenseReport.travelReports[0].chat.length === 0){
+    if (travelExpenseReport && travelExpenseReport.travelReports[0].chat.length === 0) {
       getFirstQuestion();
     }
-  },[travelExpenseReport]);
+  }, [travelExpenseReport]);
 
   useEffect(() => {
-    if(chat?.length){
+    if (chat?.length) {
       getNextQuestion();
     }
-  },[chat]);
+  }, [chat]);
 
-  return(
-  <>
-    <div>
-    <h3>{travelExpenseReport && monatsNamen[travelExpenseReport?.month]} {travelExpenseReport?.year}</h3>
-      <button type="button" onClick={deleteTravelExpenseReport} className="btn btn-danger">Löschen</button>
-      <button type="button" onClick={checkTravelExpenseReport} className="btn btn-primary">Freigeben</button>
-    </div>
-    {
-      (nextQuestion) && <ChatBox chat={chat} setChat={setChat} nextQuestion={nextQuestion} setNextQuestion={setNextQuestion} values={values} />
-    }
-    {
-    travelExpenseReport?.comment && <CommentModal show={showCommentModal} onHide={()=> setShowCommentModal(false)} comment={travelExpenseReport.comment} />
-    }
-  </>
+  return (
+    <>
+      <div>
+        
+        <div className="d-flex justify-content-between py-2">
+          <button type="button" onClick={deleteTravelExpenseReport} className="btn btn-danger">Löschen</button>
+          <h3>{travelExpenseReport && monatsNamen[travelExpenseReport?.month]} {travelExpenseReport?.year}</h3>
+          <button type="button" onClick={checkTravelExpenseReport} className="btn btn-primary">Freigeben</button>
+        </div>
+      </div>
+      {
+        (nextQuestion) && <ChatBox chat={chat} setChat={setChat} nextQuestion={nextQuestion} setNextQuestion={setNextQuestion} values={values} />
+      }
+      {
+        travelExpenseReport?.comment && <CommentModal show={showCommentModal} onHide={() => setShowCommentModal(false)} comment={travelExpenseReport.comment} />
+      }
+    </>
   )
 }

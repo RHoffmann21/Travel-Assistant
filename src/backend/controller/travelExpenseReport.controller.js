@@ -90,8 +90,8 @@ async function updateTravelExpenseReportChat (req, res, next) {
     }
     const travelReport = await TravelReportService.updateOneTravelReport(travelExpenseReport.travelReports[0]._id, { chat: body });
     const question = await ChatRoutingService.getFollowUpQuestion(body[index].question, body[index].answer.value, travelReport);
-    await ChatInformationExtractionService.settingBasicInformation(travelReport, body[index].question, body[index].answer.value)
-    const nextAnswerValues = await ChatRoutingService.getNextAnswerValues(question, travelReport, body[index].answer.value);
+    const updatedTravelReport = await ChatInformationExtractionService.settingBasicInformation(travelReport, body[index].question, body[index].answer.value);
+    const nextAnswerValues = await ChatRoutingService.getNextAnswerValues(question, updatedTravelReport, body[index].answer.value);
     return res.json({question, nextAnswerValues});
   } catch (error) {
     dtsLogger.error('Error trying to update one travel expense report chat', error)

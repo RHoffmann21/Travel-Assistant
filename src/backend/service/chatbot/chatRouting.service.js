@@ -54,7 +54,7 @@ async function getNextAnswerValues(nextQuestion, travelReport){
     case 'firstPartialTripDestination':
     case 'nextPartialTripDestination':
       let destinations = [];
-      for await (const destination of travelReport.tripDestinations){
+      for await(const destination of travelReport.tripDestinations){
         destinations.push(await CountryService.getCountry(destination));
       }
       return destinations;

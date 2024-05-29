@@ -1,4 +1,5 @@
 import Receipt from '../models/receipt.model.js';
+import dtsLogger from 'dts-node-logger';
 
 /**
  * @description this function is getting a receipt with given receiptId
@@ -20,14 +21,13 @@ async function getOneReceipt(receiptId){
  */
 async function createNewReceipt(receipt) {
   try {
-    const existingReceipt = await getOneReceipt(receipt)
-    if(!receipt){
+    if(receipt.toString().startsWith('data:image/png;base64,')){
       const base64Receipt = receipt.split(',')[1];
       const buffer = Buffer.from(base64Receipt, 'base64');
       receipt = await new Receipt({ receipt: buffer});
       return await receipt.save();
     } else {
-      return existingReceipt
+      return await getOneReceipt(receipt)
     }
   } catch (error) {
     dtsLogger.error('Error creating new receipt', error);

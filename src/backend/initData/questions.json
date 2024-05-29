@@ -1,0 +1,739 @@
+[{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea31"
+  },
+  "questionId": "ask.tripStart.dateTimeSelect",
+  "content": "Wann hast du deine Dienstreise begonnen und um welche Uhrzeit?",
+  "followingAnswerType": "dateTimeSelect",
+  "followingAnswerAttribute": "tripStartDateTime",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.tripEnd.dateTimeSelect"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea32"
+  },
+  "questionId": "ask.tripEnd.dateTimeSelect",
+  "content": "Wann endete deine Dienstreise und um welche Uhrzeit?",
+  "followingAnswerType": "dateTimeSelect",
+  "followingAnswerAttribute": "tripEndDateTime",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.tripDestinations.multiSelect"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea33"
+  },
+  "questionId": "ask.tripDestinations.multiSelect",
+  "content": "Welche Zielländer/Standorte hast du besucht?",
+  "followingAnswerType": "multiSelect",
+  "followingAnswerAttribute": "tripDestinations",
+  "editable": false,
+  "condition": "gt1",
+  "nextQuestions": {
+    "true": "ask.firstTripDestination.select",
+    "false": "ask.tripOccasion.string"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea34"
+  },
+  "questionId": "ask.firstTripDestination.select",
+  "content": "Was war dein erstes Reiseziel oder der erste Ort, den du besucht hast?",
+  "followingAnswerType": "select",
+  "followingAnswerAttribute": "firstPartialTripDestination",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.partialTripOccasion.string"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea35"
+  },
+  "questionId": "ask.partialTripOccasion.string",
+  "content": "Was war der Anlass für diesen Teil der Dienstreise?",
+  "followingAnswerType": "string",
+  "followingAnswerAttribute": "partialTripOccasion",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.partialTripEndDate.dateSelect"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea36"
+  },
+  "questionId": "ask.tripOccasion.string",
+  "content": "Was war der Grund für die Dienstreise?",
+  "followingAnswerType": "string",
+  "followingAnswerAttribute": "tripOccasion",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.mealsProvided.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea37"
+  },
+  "questionId": "ask.partialTripEndDate.dateSelect",
+  "content": "Wann endete dieser Teil der Dienstreise?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "partialTripEndDate",
+  "editable": false,
+  "condition": "isTripEndDate",
+  "nextQuestions": {
+    "true": "ask.mealsProvided.boolean",
+    "false": "ask.nextPartialTripDestination.select"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea38"
+  },
+  "questionId": "ask.nextPartialTripDestination.select",
+  "content": "Was war dein nächstes Zielland oder Standort?",
+  "followingAnswerType": "select",
+  "followingAnswerAttribute": "nextPartialTripDestination",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.partialTripOccasion.string"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea39"
+  },
+  "questionId": "ask.mealsProvided.boolean",
+  "content": "Wurde an einem der Tage Frühstück, Mittagessen oder Abendessen gestellt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "mealsProvided",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.breakfastProvided.boolean",
+    "false": "ask.paidForTransport.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea3a"
+  },
+  "questionId": "ask.breakfastProvided.boolean",
+  "content": "Wurde an einem der Tage Frühstück gestellt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "breakfastProvided",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.daysWithBreakfast.multiDateSelect",
+    "false": "ask.lunchProvided.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea3b"
+  },
+  "questionId": "ask.daysWithBreakfast.multiDateSelect",
+  "content": "An welchen Tagen wurde dir ein Frühstück gestellt?",
+  "followingAnswerType": "multiDateSelect",
+  "followingAnswerAttribute": "daysWithBreakfast",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.lunchProvided.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea3c"
+  },
+  "questionId": "ask.lunchProvided.boolean",
+  "content": "Wurde an einem der Tage Mittagessen gestellt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "lunchProvided",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.daysWithLunch.multiDateSelect",
+    "false": "ask.dinnerProvided.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea3d"
+  },
+  "questionId": "ask.daysWithLunch.multiDateSelect",
+  "content": "An welchen Tagen wurde dir ein Mittagessen gestellt?",
+  "followingAnswerType": "multiDateSelect",
+  "followingAnswerAttribute": "daysWithLunch",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.dinnerProvided.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea3e"
+  },
+  "questionId": "ask.dinnerProvided.boolean",
+  "content": "Wurde an einem der Tage Abendessen gestellt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "dinnerProvided",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.daysWithDinner.multiDateSelect",
+    "false": "ask.paidForTransport.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea3f"
+  },
+  "questionId": "ask.daysWithDinner.multiDateSelect",
+  "content": "An welchen Tagen wurde dir ein Abendessen gestellt?",
+  "followingAnswerType": "multiDateSelect",
+  "followingAnswerAttribute": "daysWithDinner",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.paidForTransport.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea40"
+  },
+  "questionId": "ask.paidForTransport.boolean",
+  "content": "Musstest du für Flugtickets, Bus- oder Zugtickets oder Taxifahrten selbst aufkommen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "paidForTransport",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.paidForFlight.boolean",
+    "false": "ask.privateCarUsed.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea41"
+  },
+  "questionId": "ask.paidForFlight.boolean",
+  "content": "Musstest du für Flugtickets selbst aufkommen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "paidForFlight",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.flightCostDay.dateSelect",
+    "false": "ask.paidForBusTrain.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea42"
+  },
+  "questionId": "ask.flightCostDay.dateSelect",
+  "content": "Für welchen Tag musstest du Flugticket(s) bezahlen?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "flightCostDay",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.flightCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea43"
+  },
+  "questionId": "ask.flightCost.currency",
+  "content": "Was waren die kosten für das/die Flugticket(s)?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "flightCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherFlightCost.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea44"
+  },
+  "questionId": "ask.anotherFlightCost.boolean",
+  "content": "Musstest du für einen weiteren Tag Flugticket(s) bezahlen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherFlightCost",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.flightCostDay.dateSelect",
+    "false": "ask.paidForBusTrain.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea45"
+  },
+  "questionId": "ask.paidForBusTrain.boolean",
+  "content": "Musstest du für Bus/Zug Tickets selbst aufkommen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "paidForBusTrain",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.busTrainCostDate.dateSelect",
+    "false": "ask.paidForCab.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea46"
+  },
+  "questionId": "ask.busTrainCostDate.dateSelect",
+  "content": "Für welchen Tag fielen kosten für Bus-/Zugticket(s) an?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "busTrainCostDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.busTrainCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea47"
+  },
+  "questionId": "ask.busTrainCost.currency",
+  "content": "Was waren die kosten für das/die Bus/Zugticket(s)?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "flightCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherBusTrainCost.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea48"
+  },
+  "questionId": "ask.anotherBusTrainCost.boolean",
+  "content": "Musstest du für einen weiteren Tag Bus/Zugticket(s) bezahlen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherBusTrainCost",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.busTrainCostDate.dateSelect",
+    "false": "ask.paidForCab.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea49"
+  },
+  "questionId": "ask.paidForCab.boolean",
+  "content": "Musstest du für Taxifahrten selbst aufkommen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "paidForCab",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.cabCostDate.dateSelect",
+    "false": "ask.privateCarUsed.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea4a"
+  },
+  "questionId": "ask.cabCostDate.dateSelect",
+  "content": "für welchen Tag fielen kosten für Taxifahrten an?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "cabCostDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.cabCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea4b"
+  },
+  "questionId": "ask.cabCost.currency",
+  "content": "Was waren die kosten für die Taxifahrt(en)?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "cabCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherCabCost.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea4c"
+  },
+  "questionId": "ask.anotherCabCost.boolean",
+  "content": "Musstest du für einen weiteren Tag Taxifahrt(en) bezahlen?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherCabCost",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.cabCostDate.dateSelect",
+    "false": "ask.privateCarUsed.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea4d"
+  },
+  "questionId": "ask.privateCarUsed.boolean",
+  "content": "Hast du während der Dienstreise deinen privaten PKW gefahren?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "privateCarUsed",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.privateCarUsedDate.dateSelect",
+    "false": "ask.privateOvernightStay.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea4e"
+  },
+  "questionId": "ask.privateCarUsedDate.dateSelect",
+  "content": "An welchen Tag bist du mit deinen Privaten PKW gefahren?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "privateCarUsedDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.privateCarUsedDistance.km"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea4f"
+  },
+  "questionId": "ask.privateCarUsedDistance.km",
+  "content": "Wie viele Kilometer hast du zurückgelegt?",
+  "followingAnswerType": "km",
+  "followingAnswerAttribute": "privateCarUsedDistance",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.privateCarUsedRouteBrakedown.string"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea50"
+  },
+  "questionId": "ask.privateCarUsedRouteBrakedown.string",
+  "content": "Gib bitte die Einzelnen Wegstrecken mit KM angaben an.",
+  "followingAnswerType": "string",
+  "followingAnswerAttribute": "privateCarUsedRouteBrakedown",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherPrivateCarUse.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea51"
+  },
+  "questionId": "ask.anotherPrivateCarUse.boolean",
+  "content": "Gab es weitere Tage an welchen du deinen Privaten PKW für Dienstreisen benutzt hast?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherPrivateCarUse",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.privateCarUsedDate.dateSelect",
+    "false": "ask.privateOvernightStay.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea52"
+  },
+  "questionId": "ask.privateOvernightStay.boolean",
+  "content": "Hast du an einem der Tage privat übernachtet?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "privateOvernightStay",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.privateOvernightStayDates.multiDateSelect",
+    "false": "ask.hotelCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea53"
+  },
+  "questionId": "ask.privateOvernightStayDates.multiDateSelect",
+  "content": "An welchen Tagen hast du privat übernachtet?",
+  "followingAnswerType": "multiDateSelect",
+  "followingAnswerAttribute": "privateOvernightStayDates",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.hotelCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea54"
+  },
+  "questionId": "ask.hotelCostAccrued.boolean",
+  "content": "Fielen Hotelkosten für dich an?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "hotelCostAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.hotelCostAccruedDate.dateSelect",
+    "false": "ask.cateringCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea55"
+  },
+  "questionId": "ask.hotelCostAccruedDate.dateSelect",
+  "content": "An Welchem Tag fielen Hotelkosten für dich an",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "hotelCostAccruedDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.hotelCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea56"
+  },
+  "questionId": "ask.hotelCost.currency",
+  "content": "Wie viel musstest du am Hotelkosten bezahlen?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "hotelCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherHotelCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea57"
+  },
+  "questionId": "ask.anotherHotelCostAccrued.boolean",
+  "content": "Fielen an einem weiteren Tag Hotelkosten für dich an?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherHotelCostAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.hotelCostAccruedDate.dateSelect",
+    "false": "ask.cateringCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea58"
+  },
+  "questionId": "ask.cateringCostAccrued.boolean",
+  "content": "Fielen Bewirtungskosten für dich an?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "cateringCostAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.cateringCostAccruedDate.dateSelect",
+    "false": "ask.tipAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea59"
+  },
+  "questionId": "ask.cateringCostAccruedDate.dateSelect",
+  "content": "An Welchen Tag fielen Bewirtungskosten für dich an?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "cateringCostAccruedDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.cateringCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea5a"
+  },
+  "questionId": "ask.cateringCost.currency",
+  "content": "Was hat die Bewirtung gekostet?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "cateringCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherCateringCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea5b"
+  },
+  "questionId": "ask.anotherCateringCostAccrued.boolean",
+  "content": "Fielen an einem weiteren Tag Bewirtungskosten an?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherCateringCostAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.cateringCostAccruedDate.dateSelect",
+    "false": "ask.tipAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea5c"
+  },
+  "questionId": "ask.tipAccrued.boolean",
+  "content": "Wurde Trinkgeld ausgelegt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "tipAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.tipAccruedDate.dateSelect",
+    "false": "ask.otherCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea5d"
+  },
+  "questionId": "ask.tipAccruedDate.dateSelect",
+  "content": "An Welchen Tag wurden Trinkgelder ausgelegt?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "tipAccruedDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.tipCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea5e"
+  },
+  "questionId": "ask.tipCost.currency",
+  "content": "Wie hoch war das Trinkgeld?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "tipCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.anotherTipAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea5f"
+  },
+  "questionId": "ask.anotherTipAccrued.boolean",
+  "content": "Wurden an einem weiteren Tag Tringgelder ausgelegt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherTipAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.tipAccruedDate.dateSelect",
+    "false": "ask.otherCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea60"
+  },
+  "questionId": "ask.otherCostAccrued.boolean",
+  "content": "Wurden sonstige kosten von dir ausgelegt?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "otherCostAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.otherCostAccruedDate.dateSelect",
+    "false": "ask.anotherTrip.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea61"
+  },
+  "questionId": "ask.otherCostAccruedDate.dateSelect",
+  "content": "An Welchen Tag wurden sonstige Kosten ausgelegt?",
+  "followingAnswerType": "dateSelect",
+  "followingAnswerAttribute": "otherCostAccruedDate",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.otherCost.currency"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea62"
+  },
+  "questionId": "ask.otherCost.currency",
+  "content": "Wie hoch waren diese Kosten?",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "otherCost",
+  "editable": true,
+  "nextQuestions": {
+    "default": "ask.otherCostExplanation.string"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea63"
+  },
+  "questionId": "ask.otherCostExplanation.string",
+  "content": "Erläutere bitte um was für kosten es sich handelt.",
+  "followingAnswerType": "currency",
+  "followingAnswerAttribute": "otherCostExplanation",
+  "editable": false,
+  "nextQuestions": {
+    "default": "ask.anotherOtherCostAccrued.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea64"
+  },
+  "questionId": "ask.anotherOtherCostAccrued.boolean",
+  "content": "Fielen an einem weiteren Tag sonstige Kosten an?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherOtherCostAccrued",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.otherCostAccruedDate.dateSelect",
+    "false": "ask.anotherTrip.boolean"
+  }
+},
+{
+  "_id": {
+    "$oid": "6640eaf8f21f092cad5cea65"
+  },
+  "questionId": "ask.anotherTrip.boolean",
+  "content": "Gab es ein weitere Dienstreise?",
+  "followingAnswerType": "boolean",
+  "followingAnswerAttribute": "anotherTrip",
+  "editable": false,
+  "condition": "truthy",
+  "nextQuestions": {
+    "true": "ask.tripStart.dateTimeSelect",
+    "false": "Null"
+  }
+}]

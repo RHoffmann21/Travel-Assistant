@@ -56,7 +56,7 @@ async function getOneTravelExpenseReport (travelExpenseReportId) {
  */
 async function updateOneTravelExpenseReport (travelExpenseReportId, changes) {
   try {
-    return await TravelExpenseReport.findOneAndUpdate({_id: travelExpenseReportId}, changes);
+    return await TravelExpenseReport.findOneAndUpdate({_id: travelExpenseReportId}, changes, { new: true });
   } catch (error) {
     dtsLogger.error('Error updating one TravelExpenseReport', error);
   }
@@ -75,20 +75,6 @@ async function createNewTravelExpenseReport(travelExpenseReportInformation){
     return await newTravelExpenseReport.save();
   } catch (error) {
     dtsLogger.error('Error creating new TravelExpenseReport/newTravelReport', error);
-  }
-}
-
-/**
- * @description this function is updating a travelExpenseReport with given changes
- * @param {String} travelExpenseReportId the id of the travelExpenseReport
- * @param {Object} changes the changes that needs to be set
- * @returns the updated travelExpenseReport
- */
-async function updateTravelExpenseReport(travelExpenseReportId, changes){
-  try {
-    return await TravelExpenseReport.findOneAndUpdate({_id: travelExpenseReportId}, changes)
-  } catch (error) {
-    dtsLogger.error('Error updating TravelExpenseReport', error);
   }
 }
 
@@ -137,10 +123,13 @@ async function deleteOneTravelExpenseReport(travelExpenseReportId){
  */
 async function convertTravelExpenseReport(travelExpenseReportId){
   try {
-    const travelExpenseReport = await updateOneTravelExpenseReport(travelExpenseReportId, {status: 'pending'});
+    
+    const travelExpenseReport = await getOneTravelExpenseReport(travelExpenseReportId);
     const travelReport = await TravelReportService.getOneTravelReport(travelExpenseReport.travelReports[0]);
     const updatedTravelReport = await ChatInformationExtractionService.extractInformationOutOfChat(travelReport);
-    await ConvertTripReportInformationToDatesService.convertTripReportInformationToDates(updatedTravelReport);
+    travelExpenseReport.dates = await ConvertTripReportInformationToDatesService.convertTripReportInformationToDates(updatedTravelReport);
+    travelExpenseReport.status = 'pending';
+    await updateOneTravelExpenseReport(travelExpenseReportId, travelExpenseReport);
   } catch (error) {
     dtsLogger.error('Error converting a travelExpenseReport', error);
   }
@@ -152,7 +141,6 @@ export default {
   getOneTravelExpenseReport,
   updateOneTravelExpenseReport,
   createNewTravelExpenseReport,
-  updateTravelExpenseReport,
   getAllTravelExpenseReportsToAudit,
   getAllTravelExpenseReportsToValidate,
   deleteOneTravelExpenseReport,

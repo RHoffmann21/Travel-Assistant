@@ -11,14 +11,14 @@ import SettingsService from './settings.service.js';
 async function calculateMealDeduction(mealAllowance, breakfastIncluded, lunchIncluded,
   wasDinnerIncluded) {
   const settings = await SettingsService.getSettings();
-  if(typeof (mealAllowance) === 'undefined') throw new TypeError('mealAllowance is undefined');
+  if (typeof (mealAllowance) === 'undefined') throw new TypeError('mealAllowance is undefined');
   let mealDeduction = 0;
   if (!breakfastIncluded && !lunchIncluded && !wasDinnerIncluded) return mealDeduction;
   if (breakfastIncluded && lunchIncluded && wasDinnerIncluded) return mealAllowance;
-  breakfastIncluded && (mealDeduction = mealAllowance * settings.breakfastDeductionPercentage);
-  lunchIncluded && (mealDeduction += mealAllowance * settings.lunchDeductionPercentage);
-  wasDinnerIncluded && (mealDeduction += mealAllowance * settings.dinnerDeductionPercentage);
-  return mealDeduction;
+  breakfastIncluded && (mealDeduction += mealAllowance * (settings.breakfastDeductionPercentage || 0.2));
+  lunchIncluded && (mealDeduction += mealAllowance * (settings.lunchDeductionPercentage || 0.4));
+  wasDinnerIncluded && (mealDeduction += mealAllowance * (settings.dinnerDeductionPercentage || 0.4));
+  return Math.round(mealDeduction * 100) / 100;
 }
 
 /**
@@ -29,7 +29,7 @@ async function calculateMealDeduction(mealAllowance, breakfastIncluded, lunchInc
 async function calculateMileageAllowance(mileage) {
   const settings = await SettingsService.getSettings();
   if (typeof (mileage) === 'undefined') throw new TypeError('mileage is undefined');
-  if (mileage < 1) return 0; 
+  if (mileage < 1) return 0;
   let mileageAllowance = 0;
   mileageAllowance = parseFloat(mileage * settings.mileageAllowance);
   return mileageAllowance;

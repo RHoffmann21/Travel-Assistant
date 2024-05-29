@@ -19,8 +19,8 @@ export default function PictureModal({show, onHide, onChange}){
 
   const capturePicture = () => {
     const canvas = document.createElement('canvas');
-    canvas.width = 300;
-    canvas.height = 300;
+    canvas.width = playerRef.current.clientWidth;
+    canvas.height = playerRef.current.clientHeight;
     const context = canvas.getContext('2d');
     context.drawImage(
       playerRef.current,
@@ -36,13 +36,12 @@ export default function PictureModal({show, onHide, onChange}){
     onChange(canvas.toDataURL())
   };
 
-
   return (
-    <Modal show={show} onHide={onHide} centered>
+    <Modal show={show} onHide={onHide} className="modal">
       <Modal.Body>  
-      <video ref={playerRef} autoPlay />
-      <button onClick={initializeMedia}>Kamera starten</button>
-      <button onClick={capturePicture}>Foto aufnehmen</button>
+      <video ref={playerRef} autoPlay className="w-100"/>
+      <button className="btn btn-secondary" onClick={initializeMedia}>Kamera starten</button>
+      <button className="btn btn-primary" onClick={capturePicture}>Foto aufnehmen</button>
       </Modal.Body>
     </Modal>
   );

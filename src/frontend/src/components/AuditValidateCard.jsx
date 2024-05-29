@@ -16,7 +16,7 @@ export default function AuditValidateCard({ travelExpenseReport, type }) {
 						<div className="container">
 							<div className="row justify-content-center">
                 <div className="col-6">
-									{travelExpenseReport.user.fullName}
+									{travelExpenseReport.user.userFirstName.concat(' ', travelExpenseReport.user.userName)}
 								</div>
 								<div className="col-4">
 									{monatsNamen[travelExpenseReport.month]} {travelExpenseReport.year}

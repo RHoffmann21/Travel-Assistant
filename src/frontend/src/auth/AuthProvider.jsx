@@ -18,7 +18,10 @@ export const AuthProvider = ({ children }) => {
         setAuth({ user });
       })
       .catch(() => {
-        window.location.replace('/api/auth/login')
+        const newURL = document.createElement('a');
+        newURL.href = '/api/auth/login';
+        document.body.appendChild(newURL);
+        newURL.click();
         setAuth({ user: undefined });
       });
   }, []);

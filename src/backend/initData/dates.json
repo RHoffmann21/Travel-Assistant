@@ -1,0 +1,33 @@
+{
+  "date": "2024-05-24T08:38:09.201+00:00",
+  "destination": "664c4e5731be216d645505c3",
+  "allowance": 39,
+  "occasion": "Standort besuch / Teammeeting",
+  "breakfastGiven": false,
+  "lunchGiven": false,
+  "dinnerGiven": false,
+  "mealDeduction": 0,
+  "flight": {
+    "cost": 33,
+    "receipt": "664cb858c4258520e0fec0ec"
+  },
+  "privateOvernightCost": { type: Number },
+  hotelCost: {     
+    cost: { type: Number },
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' } 
+  },
+  other: {
+    explanation: { type: String },
+    cost: { type: Number },
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
+  },
+  tip: {
+    cost: { type: Number },
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
+  },
+  catering: {
+    cost: { type: Number },
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
+  },
+  overallCost: { type: Number }
+}

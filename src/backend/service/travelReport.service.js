@@ -36,7 +36,8 @@ async function getOneTravelReport(travelReportId){
  */
 async function updateOneTravelReport(travelReportId, changes){
   try {
-    return await TravelReport.findOneAndUpdate({_id: travelReportId}, changes);
+    
+    return await TravelReport.findOneAndUpdate({_id: travelReportId}, changes); 
   } catch (error) {
     dtsLogger.error('Error updating one travelReport', error);
   }
@@ -50,7 +51,7 @@ async function updateOneTravelReport(travelReportId, changes){
  */
 async function replaceOneTravelReport(travelReportId, newTravelReport){
   try {
-    return await TravelReport.findOneAndUpdate({_id: travelReportId}, newTravelReport);
+    return await TravelReport.findOneAndUpdate({_id: travelReportId}, newTravelReport, { new: true });
   } catch (error) {
     dtsLogger.error('Error replacing one travelReport', error);
   }
