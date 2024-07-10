@@ -3,16 +3,22 @@ import Modal from 'react-bootstrap/Modal';
 import TimePicker from 'react-multi-date-picker/plugins/time_picker';
 import 'react-multi-date-picker/styles/layouts/mobile.css';
 
-export default function DatePickerModal({show, onHide, onChange, type, minDate, maxDate}){
+export default function DatePickerModal({show, onHide, onChange, type, travelExpenseReport}){
 
-  function createCalender(type, minDate, maxDate){
+  const minDate = new Date(travelExpenseReport.year, travelExpenseReport.month, 1);
+  const maxDate = new Date(travelExpenseReport.year, travelExpenseReport.month + 1, 0);
+
+  function createCalender(){
     const props = {
       format: 'DD.MM.YYYY',
       className: 'rmdp-mobile',
       highlightToday: false,
       minDate,
       maxDate,
-      onChange
+      onChange,
+      weekStartDayIndex: 1,
+      hideYear: true,
+      // buttons: false
     }
     if (type === 'multiDateSelect') {
       props.multiple = true;
@@ -31,7 +37,7 @@ export default function DatePickerModal({show, onHide, onChange, type, minDate, 
     <Modal show={show} onHide={onHide}>
       <Modal.Body>
         <div className="d-flex justify-content-center">
-        {createCalender(type, minDate, maxDate)}
+        {createCalender()}
         </div>
       </Modal.Body>
     </Modal>

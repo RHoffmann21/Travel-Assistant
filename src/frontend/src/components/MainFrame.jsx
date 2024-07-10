@@ -6,7 +6,7 @@ export default function MainFrame (props) {
     <>
       <Navbar/>
       <div className="row justify-content-center">
-        <div className="col-12 col-sm-11 col-md-10">
+        <div>
           {props.children}
         </div>
       </div>

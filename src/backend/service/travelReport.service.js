@@ -36,7 +36,6 @@ async function getOneTravelReport(travelReportId){
  */
 async function updateOneTravelReport(travelReportId, changes){
   try {
-    
     return await TravelReport.findOneAndUpdate({_id: travelReportId}, changes); 
   } catch (error) {
     dtsLogger.error('Error updating one travelReport', error);

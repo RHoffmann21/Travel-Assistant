@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import util from '../utils/util';
 
 import ChatBox from '../components/ChatBox';
 import CommentModal from '../components/CommentModal';
@@ -13,15 +14,9 @@ export default function Chat() {
   const [values, setValues] = useState([]);
   const [showCommentModal, setShowCommentModal] = useState(true);
 
-  const monatsNamen = [
-    "Januar", "Februar", "März", "April", "Mai", "Juni",
-    "Juli", "August", "September", "Oktober", "November", "Dezember"
-  ];
-
   useEffect(() => {
     getTravelExpenseReport();
   }, []);
-
 
   async function getTravelExpenseReport() {
     try {
@@ -104,12 +99,12 @@ export default function Chat() {
         
         <div className="d-flex justify-content-between py-2">
           <button type="button" onClick={deleteTravelExpenseReport} className="btn btn-danger">Löschen</button>
-          <h3>{travelExpenseReport && monatsNamen[travelExpenseReport?.month]} {travelExpenseReport?.year}</h3>
+          <h3>{travelExpenseReport && util.getMonth(travelExpenseReport?.month)} {travelExpenseReport?.year}</h3>
           <button type="button" onClick={checkTravelExpenseReport} className="btn btn-primary">Freigeben</button>
         </div>
       </div>
       {
-        (nextQuestion) && <ChatBox chat={chat} setChat={setChat} nextQuestion={nextQuestion} setNextQuestion={setNextQuestion} values={values} />
+        (nextQuestion) && <ChatBox chat={chat} setChat={setChat} nextQuestion={nextQuestion} setNextQuestion={setNextQuestion} values={values} travelExpenseReport={travelExpenseReport} />
       }
       {
         travelExpenseReport?.comment && <CommentModal show={showCommentModal} onHide={() => setShowCommentModal(false)} comment={travelExpenseReport.comment} />

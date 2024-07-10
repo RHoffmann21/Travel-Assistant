@@ -10,10 +10,10 @@ async function convertTripReportInformationToDates(travelReport){
   let dates = []
 
   function getDatesBetween(tripStartDate, tripEndDate){
-    const datesBetween = []
-    while (tripStartDate <= tripEndDate) {
-      datesBetween.push(new Date(tripStartDate));
-      tripStartDate.setDate(tripStartDate.getDate() + 1);
+    const datesBetween = [];
+    for (let i = 1; tripStartDate.getDate() + i < tripEndDate.getDate(); i++) {
+      const newDate = new Date(tripStartDate);
+      datesBetween.push(new Date(newDate.setDate(newDate.getDate() + i)));
     }
     return datesBetween;
   }
@@ -26,33 +26,44 @@ async function convertTripReportInformationToDates(travelReport){
     }
     return index;
   }
-  for await(const partialTrip of travelReport.partialTrips){
-    const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(partialTrip.destination);
-    let index = getDateIndex(partialTrip.startDate);
+  for (let i = 0; i < travelReport.partialTrips.length; i++){
+    const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(travelReport.partialTrips[i].destination);
+    const tripStartDate = travelReport.partialTrips[i].startDate;
+    const tripEndDate = travelReport.partialTrips[i].endDate;
+    let index = getDateIndex(tripStartDate);
     dates[index] = {
       ...dates[index],
-      allowance: countryLumpRate.rates.arrivalDepartureDay,
-      destination: partialTrip.destination,
-      occasion: partialTrip.occasion
+      allowance: (i === 0) ? countryLumpRate.rates.arrivalDepartureDay : countryLumpRate.rates.fullDay,
+      destination: travelReport.partialTrips[i].destination,
+      occasion: travelReport.partialTrips[i].occasion,
+      overallCost: (i === 0) ? countryLumpRate.rates.arrivalDepartureDay : countryLumpRate.rates.fullDay
     };
-    index = getDateIndex(partialTrip.endDate)
+    dates[index].overallCost = Math.round(dates[index].overallCost * 100) / 100;
+    index = getDateIndex(tripEndDate);
     dates[index] = {
       ...dates[index],
-      allowance: countryLumpRate.rates.arrivalDepartureDay,
-      destination: partialTrip.destination,
-      occasion: partialTrip.occasion
+      allowance: (i === travelReport.partialTrips.length -1 || i === 0) ? countryLumpRate.rates.arrivalDepartureDay : countryLumpRate.rates.fullDay,
+      destination: travelReport.partialTrips[i].destination,
+      occasion: travelReport.partialTrips[i].occasion,
+      overallCost: (i === travelReport.partialTrips.length -1 || i === 0) ? countryLumpRate.rates.arrivalDepartureDay : countryLumpRate.rates.fullDay
     };
-    const datesBetween = getDatesBetween(partialTrip.startDate, partialTrip.endDate);
-    for(let i = 1; i<datesBetween.length -1; i++){
-      index = getDateIndex(datesBetween[i])
+    dates[index].overallCost = Math.round(dates[index].overallCost * 100) / 100
+
+    const datesBetween = getDatesBetween(tripStartDate, tripEndDate);
+    for (let j = 0; j < datesBetween.length; j++){
+      index = getDateIndex(datesBetween[j]);
       dates[index] = {
         ...dates[index],
         allowance: countryLumpRate.rates.fullDay,
-        destination: partialTrip.destination,
-        occasion: partialTrip.occasion
+        destination: travelReport.partialTrips[i].destination,
+        occasion: travelReport.partialTrips[i].occasion,
+        overallCost: countryLumpRate.rates.fullDay
       };
+      dates[index].overallCost = Math.round(dates[index].overallCost * 100) / 100
     }
+    
   }
+  dates.sort((a, b) => new Date(a.date) - new Date(b.date));
 
   for(const dayWithBreakfast of travelReport.daysWithBreakfast){
     dates[getDateIndex(dayWithBreakfast)].breakfastGiven = true;
@@ -64,7 +75,7 @@ async function convertTripReportInformationToDates(travelReport){
     dates[getDateIndex(dayWithDinner)].dinnerGiven = true;
   }
 
-  for(const date of dates){
+  for await (const date of dates){
     if(date.allowance){
       date.mealDeduction = await CalculateReportService.calculateMealDeduction(
         date.allowance,
@@ -72,71 +83,95 @@ async function convertTripReportInformationToDates(travelReport){
         date.lunchGiven,
         date.dinnerGiven
       );
+      date.overallCost -= date.mealDeduction;
+      date.overallCost = Math.round(date.overallCost * 100) / 100
     }
   }
+
 
   for(const transportationCost of travelReport.transportationCost){
-    if(type==='flight'){
-      dates[getDateIndex(transportationCost.date)].flight = {
+    const date = dates[getDateIndex(transportationCost.date)];
+    if(transportationCost.type==='flight'){
+      date.flight = {
         cost: transportationCost.cost,
         receipt: transportationCost.receipt
       }
+      date.overallCost += transportationCost.cost;
+      date.overallCost = Math.round(date.overallCost * 100) / 100
     }
-    else if(type==='busTrain'){
-      dates[getDateIndex(transportationCost.date)].flight = {
+    else if(transportationCost.type==='busTrain'){
+      date.busTrain = {
         cost: transportationCost.cost,
         receipt: transportationCost.receipt
       }
+      date.overallCost += transportationCost.cost;
+      date.overallCost = Math.round(date.overallCost * 100) / 100
     }
-    else if(type==='cab'){
-      dates[getDateIndex(transportationCost.date)].flight = {
+    else if(transportationCost.type==='cab'){
+      date.cab = {
         cost: transportationCost.cost,
         receipt: transportationCost.receipt
       }
+      date.overallCost += transportationCost.cost;
+      date.overallCost = Math.round(date.overallCost * 100) / 100
     }
   }
 
-  for(const privateCarTransport of travelReport.privateCarTransportation){
-    dates[getDateIndex(privateCarTransport.date)].privateCarTransportation = {
+  for await (const privateCarTransport of travelReport.privateCarTransportation){
+    const date = dates[getDateIndex(privateCarTransport.date)]
+    date.privateCarTransportation = {
       mileage: privateCarTransport.mileage,
       routeBreakdown: privateCarTransport.routeBreakdown,
-      mileageAllowance: CalculateReportService.calculateMileageAllowance(privateCarTransport.mileage)
+      mileageAllowance: await CalculateReportService.calculateMileageAllowance(privateCarTransport.mileage)
     }
+    date.overallCost += date.privateCarTransportation.mileageAllowance;
+    date.overallCost = Math.round(date.overallCost * 100) / 100
   }
 
   for(const dayWithPrivateOvernightStay of travelReport.daysWithPrivateOvernightStay){
-    const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(dates[getDateIndex(dayWithPrivateOvernightStay)].destination);
-    dates[getDateIndex(dayWithPrivateOvernightStay)].privateOvernightCost = countryLumpRate.privateOvernightStay ;
+    const date = dates[getDateIndex(dayWithPrivateOvernightStay)];
+    const countryLumpRate = await CountryLumpRateService.getCountryLumpRate(date.destination);
+    date.privateOvernightCost = countryLumpRate.rates.privateOvernightStay;
+    date.overallCost += countryLumpRate.rates.privateOvernightStay
   }
 
   for(const hotelCost of travelReport.hotelCost){
-    dates[getDateIndex(hotelCost.date)].hotelCost = {
+    const date = dates[getDateIndex(hotelCost.date)];
+    date.hotelCost = {
       cost: hotelCost.cost,
       receipt: hotelCost.receipt
     };
+    date.overallCost += hotelCost.cost;
   }
 
   for(const catering of travelReport.cateringCost){
-    dates[getDateIndex(catering.date)].catering = {
+    const date = dates[getDateIndex(catering.date)];
+    date.catering = {
       cost: catering.cost,
       receipt: catering.receipt
     };
+    date.overallCost += catering.cost;
   }
 
   for(const tip of travelReport.tip){
-    dates[getDateIndex(tip.date)].tip = {
+    const date = dates[getDateIndex(tip.date)];
+    date.tip = {
       cost: tip.cost,
       receipt: tip.receipt
     };
+    date.overallCost += tip.cost
   }
 
   for(const other of travelReport.other){
-    dates[getDateIndex(other.date)].other = {
+    const date = dates[getDateIndex(other.date)];
+    date.other = {
       cost: other.cost,
       receipt: other.receipt,
       explanation: other.explanation
     };
+    date.overallCost += other.cost; 
   }
+  dates.sort((a, b) => new Date(a.date) - new Date(b.date));
   return dates;
 }
 

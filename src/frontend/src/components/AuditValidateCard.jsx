@@ -1,13 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import util from '../utils/util';
 
 
 export default function AuditValidateCard({ travelExpenseReport, type }) {
-	const monatsNamen = [
-		"Januar", "Februar", "März", "April", "Mai", "Juni",
-		"Juli", "August", "September", "Oktober", "November", "Dezember"
-  ];
-
 	return (
 		<>
 			<Card className="mx-3 my-1">
@@ -19,7 +15,7 @@ export default function AuditValidateCard({ travelExpenseReport, type }) {
 									{travelExpenseReport.user.userFirstName.concat(' ', travelExpenseReport.user.userName)}
 								</div>
 								<div className="col-4">
-									{monatsNamen[travelExpenseReport.month]} {travelExpenseReport.year}
+									{util.getMonth(travelExpenseReport.month)} {travelExpenseReport.year}
 								</div>
 								<div className="col-2">
 									<Link to={`/travelExpenseReports/${travelExpenseReport._id}/${type}`} className="stretched-link"><i className="bi bi-caret-right"></i></Link>

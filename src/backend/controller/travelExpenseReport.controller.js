@@ -90,7 +90,8 @@ async function updateTravelExpenseReportChat (req, res, next) {
     }
     const travelReport = await TravelReportService.updateOneTravelReport(travelExpenseReport.travelReports[0]._id, { chat: body });
     const question = await ChatRoutingService.getFollowUpQuestion(body[index].question, body[index].answer.value, travelReport);
-    const updatedTravelReport = await ChatInformationExtractionService.settingBasicInformation(travelReport, body[index].question, body[index].answer.value);
+    await ChatInformationExtractionService.settingBasicInformation(travelReport, body[index].question, body[index].answer.value);
+    const updatedTravelReport = await TravelReportService.getOneTravelReport(travelReport._id);
     const nextAnswerValues = await ChatRoutingService.getNextAnswerValues(question, updatedTravelReport, body[index].answer.value);
     return res.json({question, nextAnswerValues});
   } catch (error) {

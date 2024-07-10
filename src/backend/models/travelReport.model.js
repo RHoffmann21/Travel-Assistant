@@ -7,8 +7,7 @@ const travelReport = new mongoose.Schema({
       value: { type: mongoose.Schema.Types.Mixed },
       content: { type: String },
       receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
-    },
-    _id: false
+    }
   }],
   tripStart: { type: Date },
   tripEnd: { type: Date },
@@ -54,7 +53,7 @@ const travelReport = new mongoose.Schema({
     date: { type: Date },
     explanation: { type: String },
     cost: { type: Number },
-    receipt: [ { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }]
+    receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   }],
 });
 

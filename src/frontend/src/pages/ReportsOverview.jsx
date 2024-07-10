@@ -1,31 +1,44 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import util from '../utils/util';
+import ReceiptModal from '../components/ReceiptModal';
 
 export default function ReportsOverview({type}) {
   const { travelExpenseReportId } = useParams();
   const [ travelExpenseReport, setTravelExpenseReport ] = useState();
   const [ formData, setFormData ] = useState();
   const [ status, setStatus ] = useState();
+  const [showReceiptModal, setShowReceiptModal] = useState(false);
+	const [receipt, setReceipt] = useState();
 
   useEffect(() => {
     getTravelExpenseReport();
   }, []);
 
-  // function sumProps(array, prop) {
-  //   const props = prop.split('.');
-  //   if(props.length === 2){
-  //     return array.reduce((accumulator, currentValue) => accumulator + (currentValue[props[0]][props[1]])|| 0, 0);
-  //   }
-  //   return array.reduce((accumulator, currentValue) => accumulator + currentValue[prop] || 0, 0);
-  // }
+  function handleViewReceipt(receipt) {
+		setReceipt(receipt);
+		handleReceiptShow();
+	}
+
+	const handleReceiptShow = () => setShowReceiptModal(true);
+	const handleReceiptClose = () => setShowReceiptModal(false);
+
+  function sumProps(array, prop) {
+    const props = prop.split('.');
+    let sum = 0;
+    if(props.length === 2){
+      return Math.round(array.reduce((accumulator, currentValue) =>  accumulator + currentValue[props[0]][props[1]], sum) * 100) / 100;
+    } else if(props.length === 1) {
+      return Math.round(array.reduce((accumulator, currentValue) => accumulator + currentValue[prop], sum) * 100) / 100;
+    }
+  }
 
   async function getTravelExpenseReport(){
     try {
       const response = await axios.get(`/api/v1/travelExpenseReports/${travelExpenseReportId}`);
       if (response.status === 200) {
-        response.data.dates = response.data.dates.sort();
-        response.data.dates = response.data.dates.reverse()
+        response.data.dates.sort((a, b) => new Date(a.date) - new Date(b.date));
         setTravelExpenseReport(response.data);
       } else {
         console.error('Error getting travel expense report');
@@ -45,7 +58,7 @@ export default function ReportsOverview({type}) {
   };
 
   async function submitReview() {
-    event.preventDefault();
+    // event.preventDefault();
 
     const data = {
       comment: formData,
@@ -59,16 +72,11 @@ export default function ReportsOverview({type}) {
     }
   }
 
-  const monatsNamen = [
-		"Januar", "Februar", "März", "April", "Mai", "Juni",
-		"Juli", "August", "September", "Oktober", "November", "Dezember"
-  ];
-
   return (
     <>{
       travelExpenseReport &&
       <>
-      <h3>{travelExpenseReport.user.userFirstName} {travelExpenseReport.user.userName} {monatsNamen[travelExpenseReport.month]} {travelExpenseReport.year}</h3>
+      <h3>{travelExpenseReport.user.userFirstName} {travelExpenseReport.user.userName} {util.getMonth(travelExpenseReport.month)} {travelExpenseReport.year}</h3>
       <table className="table">
         <thead>
           <tr>
@@ -79,8 +87,8 @@ export default function ReportsOverview({type}) {
             <th scope="col">Flug</th>
             <th scope="col">Bus- /Bahn</th>
             <th scope="col">Taxi</th>
-            <th scope="col">Kilometer-geld</th>
-            <th scope="col">Privat Übernachtung</th>
+            <th scope="col">KM-geld</th>
+            <th scope="col">P. Über- nachtung</th>
             <th scope="col">Hotel</th>
             <th scope="col">Bewirtung</th>
             <th scope="col">Trink-geld</th>
@@ -91,25 +99,25 @@ export default function ReportsOverview({type}) {
         <tbody>
         {travelExpenseReport.dates?.map((date) =>(
           <tr key={date.date}>
-            <th>{new Date(date.date).getDate()-1}.</th>
-            <td>{date?.destination.countryName}</td>
-            <td>{date?.allowance || 0}€</td>
-            <td>{date?.mealDeduction || 0}€</td>
-            <td>{date?.flight?.cost || 0}€</td>
-            <td>{date?.busTrain?.cost || 0}€</td>
-            <td>{date?.cab?.cost || 0}€</td>
-            <td>{date?.privateCarTransportation?.mileageAllowance || 0}€</td>
-            <td>{date?.privateOvernightCost || 0}€</td>
-            <td>{date?.hotelCost?.cost || 0}€</td>
-            <td>{date?.catering?.cost || 0}€</td>
-            <td>{date?.tip?.cost || 0}€</td>
-            <td>{date?.other?.cost || 0}€</td>
-            <td>{date?.overallCost || 0}€</td>
+            <th>{new Date(date.date).getDate()}.</th>
+            <td>{date?.destination.countryName}{date?.destination.specialLocation && ` - ${date?.destination.specialLocation}`}</td>
+            <td>{date?.allowance}€</td>
+            <td>{date?.mealDeduction}€</td>
+            <td onClick={(date?.flight?.receipt) ? () => handleViewReceipt(date?.flight?.receipt) : undefined}>{date?.flight?.cost}€</td>
+            <td onClick={(date?.busTrain?.receipt) ? () => handleViewReceipt(date?.busTrain?.receipt) : undefined}>{date?.busTrain?.cost}€</td>
+            <td onClick={(date?.cab?.receipt) ? () => handleViewReceipt(date?.cab?.receipt) : undefined}>{date?.cab?.cost}€</td>
+            <td>{date?.privateCarTransportation?.mileageAllowance}€</td>
+            <td>{date?.privateOvernightCost}€</td>
+            <td onClick={(date?.hotelCost?.receipt) ? () => handleViewReceipt(date?.hotelCost?.receipt) : undefined}>{date?.hotelCost?.cost}€</td>
+            <td onClick={(date?.catering?.receipt) ? () => handleViewReceipt(date?.catering?.receipt) : undefined}>{date?.catering?.cost}€</td>
+            <td onClick={(date?.tip?.receipt) ? () => handleViewReceipt(date?.tip?.receipt) : undefined}>{date?.tip?.cost}€</td>
+            <td onClick={(date?.other?.receipt) ? () => handleViewReceipt(date?.other?.receipt) : undefined}>{date?.other?.cost}€</td>
+            <td>{date?.overallCost}€</td>
           </tr>
         ))}
 
         </tbody>
-        {/* <tfoot>
+        <tfoot>
           <tr>
             <th>Summe</th>
             <td></td>
@@ -126,7 +134,7 @@ export default function ReportsOverview({type}) {
             <td>{ sumProps(travelExpenseReport.dates, 'other.cost') }€ </td>
             <td>{ sumProps(travelExpenseReport.dates, 'overallCost') }€ </td>
           </tr>
-        </tfoot> */}
+        </tfoot>
       </table>
       <form onSubmit={handleSubmit}>
         <div className="input-group">
@@ -140,6 +148,7 @@ export default function ReportsOverview({type}) {
           <button className="btn btn-outline-secondary" type="submit">Senden</button>
         </div>
       </form>
+      <ReceiptModal show={showReceiptModal} onHide={handleReceiptClose} receipt={receipt} />
       </>
     }
     </>

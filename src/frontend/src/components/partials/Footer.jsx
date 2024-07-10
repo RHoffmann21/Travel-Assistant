@@ -7,7 +7,7 @@ function Footer () {
               <a href="https://www.dts.de/de/agb" className="d-none text-nowrap d-inline-block mx-2" target="_blank" rel="noopener noreferrer">Allgemeine Geschäftsbedingungen</a>
               <a href="https://www.dts.de/de/datenschutz" className="text-nowrap d-inline-block mx-2" target="_blank" rel="noopener noreferrer">Datenschutz</a>
               <a href="https://www.dts.de/de/datenschutzhinweise" className="text-nowrap d-inline-block mx-2" target="_blank" rel="noopener noreferrer">Datenschutzhinweise</a>
-              <span className="mx-2">Version 0.9</span>
+              <span className="mx-2">Version 0.11</span>
           </p>
       </footer>
   )

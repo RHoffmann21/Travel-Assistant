@@ -16,9 +16,15 @@ async function extractInformationOutOfChat(travelReport) {
   let otherCostIterator = 0;
   const newTravelReport = {
     chat,
-    partialTrips:[]
+    partialTrips:[],
+    transportationCost: [],
+    privateCarTransportation: [],
+    hotelCost: [],
+    cateringCost: [],
+    tip: [],
+    other: []
   };
-  for (const interaction of chat) {
+  for await(const interaction of chat) {
     switch (interaction.question.followingAnswerAttribute) {
       case 'tripStartDateTime':
         newTravelReport.tripStart = Date.parse(interaction.answer.value);
@@ -71,11 +77,11 @@ async function extractInformationOutOfChat(travelReport) {
         newTravelReport.transportationCost.push({
           type: 'flight',
           date: interaction.answer.value,
-          receipt: interaction.answer.receipt
         });
         break; 
       case 'flightCost':
         newTravelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.transportationCost[transportationIterator].receipt = interaction.answer.receipt;
         transportationIterator++;
         break;
       case 'busTrainCostDate':
@@ -86,6 +92,7 @@ async function extractInformationOutOfChat(travelReport) {
         break;
       case 'busTrainCost':
         newTravelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.transportationCost[transportationIterator].receipt = interaction.answer.receipt;
         transportationIterator++;
         break;
       case 'cabCostDate':
@@ -96,6 +103,7 @@ async function extractInformationOutOfChat(travelReport) {
         break;
       case 'cabCost':
         newTravelReport.transportationCost[transportationIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.transportationCost[transportationIterator].receipt = interaction.answer.receipt;
         transportationIterator++;
         break;
       case 'privateCarUsedDate':
@@ -106,9 +114,9 @@ async function extractInformationOutOfChat(travelReport) {
       case 'privateCarUsedDistance':
         newTravelReport.privateCarTransportation[privateCarTransportationIterator].mileage = interaction.answer.value;
         break;
-      case 'privateCarUsedRouteBrakedown':
+      case 'privateCarUsedRouteBreakdown':
         newTravelReport.privateCarTransportation[privateCarTransportationIterator].routeBreakdown = interaction.answer.value;
-        transportationIterator++;
+        privateCarTransportationIterator++;
         break;
       case 'privateOvernightStayDates':
         newTravelReport.daysWithPrivateOvernightStay = interaction.answer.value;
@@ -120,36 +128,37 @@ async function extractInformationOutOfChat(travelReport) {
         break;
       case 'hotelCost':
         newTravelReport.hotelCost[hotelCostIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.hotelCost[hotelCostIterator].receipt = interaction.answer.receipt;
         hotelCostIterator++;
         break;
       case 'cateringCostAccruedDate':
         newTravelReport.cateringCost.push({
-          date: interaction.answer.value,
-          receipt: interaction.answer.receipt
+          date: interaction.answer.value
         });
         break;
       case 'cateringCost':
         newTravelReport.cateringCost[cateringCostIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.cateringCost[cateringCostIterator].receipt = interaction.answer.receipt;
         cateringCostIterator++;
         break;
       case 'tipAccruedDate':
         newTravelReport.tip.push({
-          date: interaction.answer.value,
-          receipt: interaction.answer.receipt
+          date: interaction.answer.value
         });
         break;
       case 'tipCost':
         newTravelReport.tip[tipCostIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.tip[tipCostIterator].receipt = interaction.answer.receipt;
         tipCostIterator++;
         break;
       case 'otherCostAccruedDate':
         newTravelReport.other.push({
-          date: interaction.answer.value,
-          receipt: interaction.answer.receipt
+          date: interaction.answer.value
         });
         break;
       case 'otherCost':
         newTravelReport.other[otherCostIterator].cost = interaction.answer.value;
+        if (interaction.answer.receipt) newTravelReport.other[otherCostIterator].receipt = interaction.answer.receipt;
         break;
       case 'otherCostExplanation':
         newTravelReport.other[otherCostIterator].explanation = interaction.answer.value;
@@ -170,11 +179,14 @@ async function extractInformationOutOfChat(travelReport) {
 async function settingBasicInformation(travelReport, question, answer){
   switch (question.followingAnswerAttribute) {
     case 'tripDestinations': 
-      return await TravelReportService.updateOneTravelReport(travelReport._id, {tripDestinations: answer});
+      await TravelReportService.updateOneTravelReport(travelReport._id, {tripDestinations: answer});
+      break;
     case 'tripStartDateTime':
-      return await TravelReportService.updateOneTravelReport(travelReport._id, {tripStart: answer});
+      await TravelReportService.updateOneTravelReport(travelReport._id, {tripStart: answer});
+      break;
     case 'tripEndDateTime':
-      return await TravelReportService.updateOneTravelReport(travelReport._id, {tripEnd: answer});
+      await TravelReportService.updateOneTravelReport(travelReport._id, {tripEnd: answer});
+      break;
   }
 }
 

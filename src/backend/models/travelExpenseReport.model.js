@@ -3,48 +3,48 @@ import mongoose from 'mongoose';
 const dateSchema = new mongoose.Schema({
   date: { type: Date, required: true },
   destination: { type: mongoose.Schema.Types.ObjectId, ref: 'Country', required: true },
-  allowance: { type: Number },
+  allowance: { type: Number, default: 0 },
   occasion: { type: String, required: true  },
   breakfastGiven: { type: Boolean },
   lunchGiven: { type: Boolean },
   dinnerGiven: { type: Boolean },
-  mealDeduction: { type: Number },
+  mealDeduction: { type: Number, default: 0 },
   flight: {
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   },
   busTrain: {
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   },
   cab: {
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   },
   privateCarTransportation: {
-    mileage: { type: Number },
+    mileage: { type: Number, default: 0 },
     routeBreakdown: { type: String },
-    mileageAllowance: { type: Number }
+    mileageAllowance: { type: Number, default: 0 }
   },
-  privateOvernightCost: { type: Number },
+  privateOvernightCost: { type: Number, default: 0 },
   hotelCost: {     
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' } 
   },
   other: {
     explanation: { type: String },
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   },
   tip: {
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   },
   catering: {
-    cost: { type: Number },
+    cost: { type: Number, default: 0 },
     receipt: { type: mongoose.Schema.Types.ObjectId, ref: 'Receipt' }
   },
-  overallCost: { type: Number }
+  overallCost: { type: Number, default: 0 }
 });
 
 const travelExpenseReportSchema = new mongoose.Schema({

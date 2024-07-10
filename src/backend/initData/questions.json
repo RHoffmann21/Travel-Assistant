@@ -643,7 +643,7 @@
     "$oid": "6640eaf8f21f092cad5cea5f"
   },
   "questionId": "ask.anotherTipAccrued.boolean",
-  "content": "Wurden an einem weiteren Tag Tringgelder ausgelegt?",
+  "content": "Wurden an einem weiteren Tag Trinkgelder ausgelegt?",
   "followingAnswerType": "boolean",
   "followingAnswerAttribute": "anotherTipAccrued",
   "editable": false,

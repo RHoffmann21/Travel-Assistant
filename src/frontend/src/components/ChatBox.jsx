@@ -1,12 +1,12 @@
 import ChatBubble from './ChatBubble';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DatePickerModal from './DatePickerModal';
 import SelectModal from './SelectModal';
 import PictureModal from './PictureModal';
 import EditModal from './EditModal';
 import ReceiptModal from './ReceiptModal';
 
-function ChatBox({ chat, setChat, nextQuestion, values, minDate, maxDate }) {
+function ChatBox({ chat, setChat, nextQuestion, values, travelExpenseReport }) {
 	const [showDatePickerModal, setShowDatePickerModal] = useState(false);
 	const [showSelectModal, setShowSelectModal] = useState(false);
 	const [formData, setFormData] = useState();
@@ -15,44 +15,51 @@ function ChatBox({ chat, setChat, nextQuestion, values, minDate, maxDate }) {
 	const [target, setTarget] = useState();
 	const [showReceiptModal, setShowReceiptModal] = useState(false);
 	const [receipt, setReceipt] = useState();
+	const [editType, setEditType] = useState();
 
 	const splittedQuestionId = nextQuestion.questionId.split('.');
 	const type = splittedQuestionId[2];
 
-	const handleDatePickerChange = (date) => {
+	function scrollToBottomOfChat () {
+		const chat = document.getElementById("chat");
+		chat.children[chat.children.length - 1].scrollIntoView({ behavior: 'smooth' });
+  }
 
+  useEffect(() => {
+    scrollToBottomOfChat();
+  }, [chat]);
+
+	const handleDatePickerChange = (date) => {
 		const newFormData = {
 			question: nextQuestion
 		};
-		if (date.length === 0) {
-			newFormData.answer = {
-				value: [],
-				content: ''
-			}
-		} else if (date.length) {
-			const dates = [];
-			let content = ''
-			date.forEach((selectedDate) => {
-				dates.push(selectedDate.toDate());
-				content = `${content} ${content && ', '}${selectedDate.toDate()}`
-
-			})
-			newFormData.answer = {
-				value: dates,
-				content: content
-			}
-		} else {
-			newFormData.answer = {
-				value: date.toDate(),
-				content: date.format("DD.MM hh:mm")
-			}
+		newFormData.answer = {
+			value: [],
+			content: ''
 		}
+		if (date) {
+			
+			date = !date.length ? [date] : date;
+			date.forEach((selectedDate) => {
+				newFormData.answer.value.push(selectedDate.toDate());
+				if (nextQuestion.followingAnswerType === 'dateSelect') {
+					newFormData.answer.content = selectedDate.format("DD.MM");
+				} else if (nextQuestion.followingAnswerType === 'multiDateSelect') {
+					newFormData.answer.content = (newFormData.answer.content) ? newFormData.answer.content.concat(', ', selectedDate.format("DD.MM")) : selectedDate.format("DD.MM");
+				} else if(nextQuestion.followingAnswerType === 'dateTimeSelect'){
+					newFormData.answer.content = selectedDate.format("DD.MM HH:mm");
+				}
+			});
+		} 
 		setFormData(newFormData);
 	};
 
 	const handleEdit = (event) => {
-		setTarget(event.target)
-		event.target && handleEditShow()
+		const id = event.target.getAttribute("data-id");
+		const type = chat[id].question.followingAnswerType;
+		setTarget(id);
+		setEditType(type);
+		handleEditShow();
 	};
 
 	const handleTextFieldChange = (event) => {
@@ -153,6 +160,25 @@ function ChatBox({ chat, setChat, nextQuestion, values, minDate, maxDate }) {
 		}
 	}
 
+	const handleChatEdit = (event) =>  {
+		event.preventDefault();
+		const value = event.target[0].value;
+
+		const answer = {
+			value,
+			receipt: chat[target].answer.receipt,
+			content: value
+		}
+		if (chat[target].answer.content.endsWith('km')){
+			answer.content = value.concat('km');
+		} else if (chat[target].answer.content.endsWith('€')){
+			answer.content = value.concat('€');
+		}
+		const updatedChat = [...chat];
+		updatedChat[target].answer = answer;
+		setChat(updatedChat);
+		setShowEditModal(false);
+	}
 
 	const handleTrueBooleanChange = () => handleBoolean(true);
 	const handleFalseBooleanChange = () => handleBoolean(false);
@@ -237,7 +263,7 @@ function ChatBox({ chat, setChat, nextQuestion, values, minDate, maxDate }) {
 						<div className="input-group">
 							<button onClick={handleSelectShow} className="btn" type="button"><i className="bi bi-list-check"></i></button>
 							<input type="text" className="form-control" value={typeof (formData) !== 'undefined' ? formData.answer.content.toString() : ''} disabled={true} required />
-							<button className="btn" type="submit">Senden</button>
+							<button className="btn btn-light" type="submit">Senden</button>
 						</div>
 					</form>
 				</>
@@ -246,17 +272,12 @@ function ChatBox({ chat, setChat, nextQuestion, values, minDate, maxDate }) {
 			return (
 				<>
 					<form onSubmit={handleAnswer}>
-						<div className="input-group row">
-							<div className="col-4 p-0">
-								<input onClick={handleTrueBooleanChange} type="radio" className="btn-check w-100" name="boolean" id="true" required />
-								<label className="btn btn-secondary w-100" htmlFor="true">Ja</label>
+						<div className="row input-group">
+							<div className="col-6">
+								<button onClick={handleTrueBooleanChange} type="submit" className="btn btn-success w-100 mx-4">Ja</button>
 							</div>
-							<div className="col-4 p-0">
-								<input onClick={handleFalseBooleanChange} type="radio" className="btn-check w-100" name="boolean" id="false" required />
-								<label className="btn btn-secondary w-100" htmlFor="false">Nein</label>
-							</div>
-							<div className="col-2">
-							<button className="btn col-2 w-100" type="submit">Senden</button>
+							<div className="col-6">
+								<button onClick={handleFalseBooleanChange} type="submit" className="btn btn-danger w-100">Nein</button>
 							</div>
 						</div>
 					</form>
@@ -280,25 +301,25 @@ function ChatBox({ chat, setChat, nextQuestion, values, minDate, maxDate }) {
 	}
 	return (
 		<>
-			<div className="chat">
+			<div id="chat" className="chat" style={{overflowY:"auto", height:"75vh"}}>
 				{
-					chat?.map(interaction => (
+					chat?.map((interaction, index) => (
 						<>
-							<ChatBubble side={'question'} content={interaction.question.content} key={`${interaction.question.questionId}${interaction.answer.content}`} isLast={true} />
-							<ChatBubble side={'answer'} content={interaction.answer.content.toString()} key={`${interaction.answer.content}${interaction.question.questionId}`} isLast={interaction.answer.receipt ? false : true} onClick={interaction.question.editable ? handleEdit : ''} />
-							{interaction.answer.receipt && <ChatBubble side={'answer'} content={<i className="bi bi-file-earmark-image"></i>} key={interaction.answer.receipt._id} isLast={true} onClick={() => handleViewReceipt(interaction.answer.receipt.receipt)} />}
+							<ChatBubble side={'question'} content={interaction?.question?.content} key={`${index}-question`}/>
+							<ChatBubble side={'answer'} content={interaction?.answer?.content.toString()} key={`${index}-answer`} bubbleId={index} isLast={interaction?.answer?.receipt || !interaction?.question?.followingAnswerType === 'currency'  ? false : true} onClick={interaction?.question?.editable ? handleEdit : undefined} />
+							{interaction.answer.receipt && <ChatBubble side={'answer'} content={<i className="bi bi-file-earmark-image"></i>} key={`${index}-receipt`} isLast={true} onClick={() => handleViewReceipt(interaction.answer.receipt)} />}
 						</>
 					))
 				}
 				{
-					nextQuestion && <ChatBubble side={'question'} content={nextQuestion.content} />
+					nextQuestion && <ChatBubble side={'question'} content={nextQuestion.content} key={'newQuestion'} />
 				}
 			</div>
 			{inputGenerator(type, values)}
-			<DatePickerModal show={showDatePickerModal} onHide={handleDatePickerClose} onChange={handleDatePickerChange} type={type} minDate={minDate} maxDate={maxDate} />
+			<DatePickerModal show={showDatePickerModal} onHide={handleDatePickerClose} onChange={handleDatePickerChange} type={type} travelExpenseReport={travelExpenseReport} />
 			<SelectModal show={showSelectModal} onHide={handleSelectClose} onSubmit={handleSelectOnSubmit} type={type} values={values} />
 			<PictureModal show={showPictureModal} onHide={handlePictureClose} onChange={handleCapturedPicture} />
-			<EditModal show={showEditModal} onHide={handleEditClose} target={target} />
+			<EditModal show={showEditModal} onHide={handleEditClose} onSubmit={handleChatEdit} type={editType}/>
 			<ReceiptModal show={showReceiptModal} onHide={handleReceiptClose} receipt={receipt} />
 		</>
 	)

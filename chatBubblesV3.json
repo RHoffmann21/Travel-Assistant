@@ -334,14 +334,14 @@
 		"followingAnswerAttribute": "privateCarUsedDistance",
 		"editable": true,
 		"nextQuestions": {
-			"default": "ask.privateCarUsedRouteBrakedown.string"
+			"default": "ask.privateCarUsedRouteBreakdown.string"
 		}
 	},
 	{
-		"questionId": "ask.privateCarUsedRouteBrakedown.string",
+		"questionId": "ask.privateCarUsedRouteBreakdown.string",
 		"content": "Gib bitte die Einzelnen Wegstrecken mit KM angaben an.",
 		"followingAnswerType": "string",
-		"followingAnswerAttribute": "privateCarUsedRouteBrakedown",
+		"followingAnswerAttribute": "privateCarUsedRouteBreakdown",
 		"editable": true,
 		"nextQuestions": {
 			"default": "ask.anotherPrivateCarUse.boolean"
@@ -503,7 +503,7 @@
 	},
 	{
 		"questionId": "ask.anotherTipAccrued.boolean",
-		"content": "Wurden an einem weiteren Tag Tringgelder ausgelegt?",
+		"content": "Wurden an einem weiteren Tag Trinkgelder ausgelegt?",
 		"followingAnswerType": "boolean",
 		"followingAnswerAttribute": "anotherTipAccrued",
 		"editable": false,

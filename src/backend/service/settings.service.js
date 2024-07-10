@@ -5,7 +5,11 @@ import Settings from '../models/settings.model.js';
  * @returns the settings with the calculation information
  */
 async function getSettings() {
-  return await Settings.find()
+  try {
+    return await Settings.findOne();
+  } catch (error) {
+    throw new Error(error)
+  }
 }
 
 export default { getSettings };

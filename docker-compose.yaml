@@ -35,9 +35,20 @@ services:
       - travelAssistantDB:/data/db
     networks:
       - travelAssistant-network
+  mongoTest:
+    image: mongo
+    command: mongod --quiet --logpath /dev/null
+    ports:
+      - "27019:27017"
+    volumes:
+      - travelAssistantTestDB:/data/db
+    networks:
+      - travelAssistant-network
 networks:
   travelAssistant-network:
     driver: bridge
 volumes:
   travelAssistantDB:
+    driver: local
+  travelAssistantTestDB:
     driver: local

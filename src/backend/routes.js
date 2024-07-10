@@ -2,6 +2,7 @@ import express from 'express';
 import TravelExpenseReportController from './controller/travelExpenseReport.controller.js';
 import AuthController from './controller/auth.controller.js';
 import Auth from './lib/auth.js';
+import ReceiptController from './controller/receipt.controller.js';
 
 const router = express.Router();
 
@@ -29,5 +30,6 @@ router.delete('/api/v1/travelExpenseReports/:travelExpenseReportId', AuthControl
 
 router.get('/api/v1/travelExpenseReports/questions/firstQuestion', AuthController.ensureLoggedIn, TravelExpenseReportController.getFirstQuestion);
 
+router.get('/api/v1/receipt/:receiptId', AuthController.ensureLoggedIn, ReceiptController.getOneReceipt);
 
 export default router;

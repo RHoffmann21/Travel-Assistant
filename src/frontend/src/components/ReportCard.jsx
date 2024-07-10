@@ -1,12 +1,9 @@
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import util from '../utils/util';
 
 
 function ReportCard({ travelExpenseReport }) {
-	const monatsNamen = [
-		"Januar", "Februar", "März", "April", "Mai", "Juni",
-		"Juli", "August", "September", "Oktober", "November", "Dezember"
-];
 	return (
 		<>
 			<Card className="mx-3 my-1">
@@ -18,7 +15,7 @@ function ReportCard({ travelExpenseReport }) {
 									{getStatusIcon(travelExpenseReport.status)}
 								</div>
 								<div className="col-6">
-									{monatsNamen[travelExpenseReport.month]} {travelExpenseReport.year}
+									{util.getMonth(travelExpenseReport.month)} {travelExpenseReport.year}
 								</div>
 								<div className="col-2">
 									{

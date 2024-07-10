@@ -36,12 +36,6 @@ async function getOneTravelExpenseReport (travelExpenseReportId) {
       populate : {
         path : 'destination'
       },
-    })
-    .populate({
-      path : 'travelReports',
-      populate : {
-        path : 'chat.answer.receipt'
-      },
     });
   } catch (error) {
     dtsLogger.error('Error getting one TravelExpenseReport', error);
@@ -84,7 +78,7 @@ async function createNewTravelExpenseReport(travelExpenseReportInformation){
  */
 async function getAllTravelExpenseReportsToAudit(){
   try {
-    return await TravelExpenseReport.find({status: 'verified'});
+    return await TravelExpenseReport.find({status: 'verified'}).populate('user');
   } catch (error) {
     dtsLogger.error('Error getting all travelExpenseReport for auditing', error);
   }
